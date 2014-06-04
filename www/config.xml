@@ -8,9 +8,6 @@
         Kroose ZapCG Team
     </author>
 	
-	<gap:platform name="android" />
-	
-	<gap:plugin name="org.apache.cordova.splashscreen" />
 	
     <preference name="phonegap-version" value="3.4.0" /> <!-- all: current version of PhoneGap -->
     <preference name="orientation" value="default" /> <!-- all: default means both landscape and portrait are enabled -->
@@ -64,4 +61,5 @@
 
     <content src="index.html" />
     <access origin="*" />
+	
 </widget>
