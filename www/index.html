@@ -48,7 +48,7 @@
                   <div class="category-header">Theme</div>
                   <div class="wrapper">
                       
-                    <span class="thumbimg">
+                    <span class="thumbimg" onclick="javascript:themeSelector('family');">
                         <img src="img/theme/family.png" width="116" height="100" />
                         <span class="imgname">Family</span>
                     </span>
@@ -185,7 +185,12 @@
 
 	  <!-- Home Page - 1 ENDS HERE -->
       <script>
-	     
+	     var themeSelected = 'any';
+		 
+	     function themeSelector(themSel){
+		   themeSelected = themSel;
+		   alert('themeSelected = '+themeSelected);
+		 }
 	  </script>	  
     </body>
 </html>
