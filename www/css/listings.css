@@ -207,6 +207,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     border-bottom:2px solid #FF8A0C;
 }
 
+.selected {
+    border-bottom:2px solid #FF8A0C;
+}
+
 .wrapper span.destimg-name {
     background: none repeat scroll 0 0 #F3F8FA;
     /*border-bottom: 2px solid #007DBD;*/
