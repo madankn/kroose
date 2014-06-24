@@ -206,24 +206,39 @@
             }
 
             function viewList() {
+			
+			    
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8084/webtest/server.jsp",
+                    url: "http://107.161.124.98/server.html",
                     cache: false,
                     dataType: "html",
                     success: onSuccess,
                     error: fatalErrorGot
                 });
-
-                function onSuccess(data) {
-                    $("#listPageWrapper").html(data);
-                    $.mobile.navigate( "#list-view" );
-                }
-                
-                function fatalErrorGot(request, error){
-                    alert('Error Occurred '+error);
-                }
+				
+				
+				/*
+				$.jsonp({
+					dataType: 'json',
+					url: 'http://localhost:9000/menu',
+					success: onSuccess,
+					error: fatalErrorGot
+				}); //end ajax
+		        */
+				
             }
+			
+			
+			
+			function onSuccess(data) {
+				$("#listPageWrapper").html(data);
+				$.mobile.navigate( "#list-view" );
+			}
+			
+			function fatalErrorGot(request, status , error){
+				alert('Error Occurred '+error);
+			}			
         </script>	  
         <!-- Home Page - 1 ENDS HERE -->
 
