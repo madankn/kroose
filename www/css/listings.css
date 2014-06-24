@@ -207,6 +207,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     border-bottom:2px solid #FF8A0C;
 }
 
+.ui-loader-verbose h1 {
+    font-size: 1.5em !important;
+    margin: 0;
+	color: #f1f1f1 !important;
+	font-weight: bold;
+    text-align: center;
+}
+
+
 .selected {
     border-bottom:2px solid #FF8A0C;
 }
