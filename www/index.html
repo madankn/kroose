@@ -276,7 +276,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: 'http://107.161.124.98/server.html',
+                    url: listUrl,
                     cache: false,
                     dataType: "html",
                     success: onSuccess,
@@ -304,7 +304,7 @@
         <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                 <a href="#main-page" data-role="button" data-transition="fade"></a>
-                <div class="header secondary-title">576 Cruises Found</div>
+                <div class="header secondary-title">Your Cruises</div>
             </div>
             <div id="listPageWrapper" class="pagerapper" data-theme="i">  </div>   
         </div>
