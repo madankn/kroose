@@ -205,7 +205,7 @@
                     <div class="line"></div>  
 
                     <div class="results-btn" data-theme="i">
-                        <a href="javascript:viewList();" data-role="button" data-theme="i">
+                        <a id="cruiseCount" href="javascript:viewList();" data-role="button" data-theme="i">
                             View Cruises
                         </a> 
                     </div>
@@ -222,18 +222,21 @@
                 themeSelected = themSel;
                 $("#themeWraper span").removeClass("selected");
                 $("#" + themeSelected).addClass("selected");
+				$("#cruiseCount").html("View 10 Cruises");
             }
 
             function destinationSelector(destSel) {
                 destinationSelected = destSel;
                 $("#destinationWraper span").removeClass("selected");
                 $("#" + destinationSelected).addClass("selected");
+				$("#cruiseCount").html("View 05 Cruises");
             }
 
             function durationSelector(durSel) {
                 durationSelected = durSel;
                 $("#durationWraper span").removeClass("selected");
                 $("#" + durationSelected).addClass("selected");
+				$("#cruiseCount").html("View 15 Cruises");
             }
 
             function viewList() {
@@ -286,8 +289,6 @@
 				
             }
 			
-			
-			
 			function onSuccess(data) {
 				$("#listPageWrapper").html(data);
 				$.mobile.navigate( "#list-view" );
@@ -303,7 +304,7 @@
 
         <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
-                <a href="#main-page" data-role="button" data-transition="fade"></a>
+                <a href="#main-page" data-role="button" data-transition="reverse slide"></a>
                 <div class="header secondary-title">Your Cruises</div>
             </div>
             <div id="listPageWrapper" class="pagerapper" data-theme="i">  </div>   
