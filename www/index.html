@@ -218,25 +218,70 @@
             var destinationSelected = '';
             var durationSelected = '';
 
+			function refreshCount(){
+			
+  			    var countUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/count/searchby';
+
+				countUrl+= '?lifestyle='+themeSelected;
+				
+ 			    if(countUrl.indexOf('?') < 0 ){
+  				     countUrl += '?destination='+destinationSelected;
+				 }else{
+				     countUrl += '&destination='+destinationSelected; 
+                }  				   
+				
+ 			    if(countUrl.indexOf('?') < 0 ){
+  				     countUrl += '?duration='+durationSelected;
+				 }else{
+				     countUrl += '&duration='+durationSelected; 
+                }  		
+
+                $.ajax({
+                    type: "GET",
+                    url: countUrl,
+                    cache: false,
+                    dataType: "html",
+                    success: function (data){
+					   var obj = jQuery.parseJSON( data );
+				       $("#cruiseCount").html("View "+obj.cruiseCount+" Cruises"); 	   
+					   
+					},
+                    error: fatalErrorGot
+                });				
+			  
+			    
+				
+				
+			}
+			
             function themeSelector(themSel) {
                 themeSelected = themSel;
                 $("#themeWraper span").removeClass("selected");
                 $("#" + themeSelected).addClass("selected");
-				$("#cruiseCount").html("View 10 Cruises");
+				if(themeSelected == 'themeAny'){
+				    themeSelected = '';
+				}
+				refreshCount();
             }
 
             function destinationSelector(destSel) {
                 destinationSelected = destSel;
                 $("#destinationWraper span").removeClass("selected");
                 $("#" + destinationSelected).addClass("selected");
-				$("#cruiseCount").html("View 05 Cruises");
+				if(destinationSelected == 'destinationAny'){
+				    destinationSelected = '';
+				}
+				refreshCount();
             }
 
             function durationSelector(durSel) {
                 durationSelected = durSel;
                 $("#durationWraper span").removeClass("selected");
                 $("#" + durationSelected).addClass("selected");
-				$("#cruiseCount").html("View 15 Cruises");
+				if(durationSelected == 'durationAny'){
+				    durationSelected = '';
+				}
+				refreshCount();
             }
 
             function viewList() {
@@ -250,17 +295,6 @@
 				});
 			
 			    var listUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/html/cruise/list/searchby';
-				
-				if(themeSelected == 'themeAny'){
-				    themeSelected = '';
-				}
-				if(destinationSelected == 'destinationAny'){
-				    destinationSelected = '';
-				}
-				if(durationSelected == 'durationAny'){
-				    durationSelected = '';
-				}
-				
 				listUrl+= '?lifestyle='+themeSelected;
 				
  			    if(listUrl.indexOf('?') < 0 ){
@@ -275,7 +309,6 @@
 				     listUrl += '&duration='+durationSelected; 
                 }  				   
 				
-				alert(listUrl);
 
                 $.ajax({
                     type: "GET",
