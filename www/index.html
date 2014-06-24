@@ -6,27 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-		
+
         <link href='css/google-css.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/jquery.mobile.theme.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery-mobile-i.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jquery-mobile-i.css"/>
         <link rel="stylesheet" href="css/listings.css">
-		
-		
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/jquery.mobile-1.4.2.min.js"></script>
-		
+
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+
         <title>Bliss Sailing</title>
         <script type="text/javascript">
-          WebFont.load({
-            google: {
-              families: ['Open Sans']
-            }
-          });
-        document.addEventListener("touchstart", function() {},false);
-       </script>
+            WebFont.load({
+                google: {
+                    families: ['Open Sans']
+                }
+            });
+            document.addEventListener("touchstart", function() {
+            }, false);
+        </script>
         <style>
-                element:hover, element:active {
+            element:hover, element:active {
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
                 -webkit-user-select: none;
                 -webkit-touch-callout: none
@@ -34,172 +35,208 @@
         </style>	   
     </head>
     <body>
- 
-      <!-- Home Page - 1 STARTS HERE -->
-	  
-       <div data-role="page" id="main-page" data-theme="i" class="fix-header">
+
+        <!-- Home Page - 1 STARTS HERE -->
+
+        <div data-role="page" id="main-page" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
-                   <div></div>
-                   <div class="header"><img src="img/logo.png" width="53" height="32" alt="Logo"/></div>
+                <div></div>
+                <div class="header"><img src="img/logo.png" width="53" height="32" alt="Logo"/></div>
             </div>
 
-           <div class="pagerapper" data-theme="i" >
-              <div data-role="main" class="ui-content" data-theme="i" class="pagerapper">
-                  <div class="category-header">Theme</div>
-                  <div id="themeWraper" class="wrapper">
-                    <span id="family" class="thumbimg" onclick="javascript:themeSelector('family');">
-                        <img src="img/theme/family.png" width="116" height="100" />
-                        <span class="imgname">Family</span>
-                    </span>
-                    <span id="romantic" class="thumbimg" onclick="javascript:themeSelector('romantic');">
-                        <img src="img/theme/romantic.png" width="116" height="100" />
-                        <span class="imgname">Romantic</span>
-                    </span>
-                    <span id="single" class="thumbimg" onclick="javascript:themeSelector('single');">
-                        <img src="img/theme/single.png" width="116" height="100" />
-                        <span class="imgname">Single</span>
-                    </span>
-                    <span id="beach" class="thumbimg" onclick="javascript:themeSelector('beach');">
-                        <img src="img/theme/beaches.png" width="116" height="100" />
-                        <span class="imgname">Beach</span>
-                    </span>
-                    <span id="shopping" class="thumbimg" onclick="javascript:themeSelector('shopping');">
-                        <img src="img/theme/shopping.png" width="116" height="100" />
-                        <span class="imgname">Shopping</span>
-                    </span>
-                    <span id="senior" class="thumbimg" onclick="javascript:themeSelector('senior');">
-                        <img src="img/theme/senior.png" width="116" height="100" />
-                        <span class="imgname">Senior</span>
-                    </span>
-                    <span id="cultural" class="thumbimg" onclick="javascript:themeSelector('cultural');">
-                        <img src="img/theme/cultural.png" width="116" height="100" />
-                        <span class="imgname">Cultural</span>
-                    </span>
-                    <span id="sports" class="thumbimg" onclick="javascript:themeSelector('sports');">
-                        <img src="img/theme/sports.png" width="116" height="100" />
-                        <span class="imgname">Sports</span>
-                    </span>
-                    <span id="nature" class="thumbimg" onclick="javascript:themeSelector('nature');">
-                        <img src="img/theme/nature.png" width="116" height="100" />
-                        <span class="imgname">Nature</span>
-                    </span>
-                    <span id="winter" class="thumbimg" onclick="javascript:themeSelector('winter');">
-                        <img src="img/theme/winter.png" width="116" height="100" />
-                        <span class="imgname">Winter</span>
-                    </span>
-                    <span id="summer" class="thumbimg" onclick="javascript:themeSelector('summer');">
-                        <img src="img/theme/summer.png" width="116" height="100" />
-                        <span class="imgname">Summer</span>
-                    </span>
+            <div class="pagerapper" data-theme="i" >
+                <div data-role="main" class="ui-content" data-theme="i" class="pagerapper">
+                    <div class="category-header">Theme</div>
+                    <div id="themeWraper" class="wrapper">
+                        <span id="family" class="thumbimg" onclick="javascript:themeSelector('family');">
+                            <img src="img/theme/family.png" width="116" height="100" />
+                            <span class="imgname">Family</span>
+                        </span>
+                        <span id="romantic" class="thumbimg" onclick="javascript:themeSelector('romantic');">
+                            <img src="img/theme/romantic.png" width="116" height="100" />
+                            <span class="imgname">Romantic</span>
+                        </span>
+                        <span id="single" class="thumbimg" onclick="javascript:themeSelector('single');">
+                            <img src="img/theme/single.png" width="116" height="100" />
+                            <span class="imgname">Single</span>
+                        </span>
+                        <span id="beach" class="thumbimg" onclick="javascript:themeSelector('beach');">
+                            <img src="img/theme/beaches.png" width="116" height="100" />
+                            <span class="imgname">Beach</span>
+                        </span>
+                        <span id="shopping" class="thumbimg" onclick="javascript:themeSelector('shopping');">
+                            <img src="img/theme/shopping.png" width="116" height="100" />
+                            <span class="imgname">Shopping</span>
+                        </span>
+                        <span id="senior" class="thumbimg" onclick="javascript:themeSelector('senior');">
+                            <img src="img/theme/senior.png" width="116" height="100" />
+                            <span class="imgname">Senior</span>
+                        </span>
+                        <span id="cultural" class="thumbimg" onclick="javascript:themeSelector('cultural');">
+                            <img src="img/theme/cultural.png" width="116" height="100" />
+                            <span class="imgname">Cultural</span>
+                        </span>
+                        <span id="sports" class="thumbimg" onclick="javascript:themeSelector('sports');">
+                            <img src="img/theme/sports.png" width="116" height="100" />
+                            <span class="imgname">Sports</span>
+                        </span>
+                        <span id="nature" class="thumbimg" onclick="javascript:themeSelector('nature');">
+                            <img src="img/theme/nature.png" width="116" height="100" />
+                            <span class="imgname">Nature</span>
+                        </span>
+                        <span id="winter" class="thumbimg" onclick="javascript:themeSelector('winter');">
+                            <img src="img/theme/winter.png" width="116" height="100" />
+                            <span class="imgname">Winter</span>
+                        </span>
+                        <span id="summer" class="thumbimg" onclick="javascript:themeSelector('summer');">
+                            <img src="img/theme/summer.png" width="116" height="100" />
+                            <span class="imgname">Summer</span>
+                        </span>
 
-                  </div>
-                  <div class="line"></div>  
+                    </div>
+                    <div class="line"></div>  
 
-                  <div class="category-header">Destinations</div>
-   
-                  <div id="destinationWraper" class="wrapper">
-                    <span id="alaska" class="thumbimg" onclick="javascript:destinationSelector('alaska');">
-                        <img src="img/destination/alaska.png" width="119" height="61" />
-                        <span class="destimg-name">Alaska</span>
-                    </span>
-                    <span id="florida" class="thumbimg" onclick="javascript:destinationSelector('florida');">
-                        <img src="img/destination/florida.png" width="119" height="61"  />
-                        <span class="destimg-name">Bahamas & Florida</span>
-                    </span>
-                    <span id="bermuda" class="thumbimg" onclick="javascript:destinationSelector('bermuda');">
-                        <img src="img/destination/bermuda.png" width="119" height="61"  />
-                        <span class="destimg-name ">Bermuda</span>
-                    </span>
-                    <span id="canada" class="thumbimg" onclick="javascript:destinationSelector('canada');">
-                        <img src="img/destination/canada.png" width="119" height="61"  />
-                        <span class="destimg-name">Canada</span>
-                    </span>
-                    <span id="carabbian" class="thumbimg" onclick="javascript:destinationSelector('carabbian');">
-                        <img src="img/destination/carabbian.png" width="119" height="61"  />
-                        <span class="destimg-name ">Caribbean</span>
-                    </span>
-                     <span id="europe" class="thumbimg" onclick="javascript:destinationSelector('europe');">
-                        <img src="img/destination/europe.png" width="119" height="61"  />
-                        <span class="destimg-name">Europe</span>
-                    </span>
-                    <span id="hawaii" class="thumbimg" onclick="javascript:destinationSelector('hawaii');">
-                        <img src="img/destination/hawaii.png" width="119" height="61"  />
-                        <span class="destimg-name">Hawaii</span>
-                    </span>
-                     <span id="mexicanriviera" class="thumbimg" onclick="javascript:destinationSelector('mexicanriviera');">
-                        <img src="img/destination/carabbian.png" width="119" height="61"  />
-                        <span class="destimg-name">Mexican Riviera</span>
-                    </span>
-                    <span id="pacificcanal" class="thumbimg" onclick="javascript:destinationSelector('pacificcanal');">
-                        <img src="img/destination/pasificcanal.png" width="119" height="61"  />
-                        <span class="destimg-name">Pacific Canal</span>
-                    </span>
-                    <span id="southamerica" class="thumbimg" onclick="javascript:destinationSelector('southamerica');">
-                        <img src="img/destination/southamerica.png" width="119" height="61"  />
-                        <span class="destimg-name">South America</span>
-                    </span>
-                    <span id="transatlantic" class="thumbimg" onclick="javascript:destinationSelector('transatlantic');">
-                        <img src="img/destination/transatlantic.png" width="119" height="61"  />
-                        <span class="destimg-name">Transatlantic</span>
-                    </span>
+                    <div class="category-header">Destinations</div>
 
-                  </div>
-                  
-                  <div class="line"></div>  
+                    <div id="destinationWraper" class="wrapper">
+                        <span id="alaska" class="thumbimg" onclick="javascript:destinationSelector('alaska');">
+                            <img src="img/destination/alaska.png" width="119" height="61" />
+                            <span class="destimg-name">Alaska</span>
+                        </span>
+                        <span id="florida" class="thumbimg" onclick="javascript:destinationSelector('florida');">
+                            <img src="img/destination/florida.png" width="119" height="61"  />
+                            <span class="destimg-name">Bahamas & Florida</span>
+                        </span>
+                        <span id="bermuda" class="thumbimg" onclick="javascript:destinationSelector('bermuda');">
+                            <img src="img/destination/bermuda.png" width="119" height="61"  />
+                            <span class="destimg-name ">Bermuda</span>
+                        </span>
+                        <span id="canada" class="thumbimg" onclick="javascript:destinationSelector('canada');">
+                            <img src="img/destination/canada.png" width="119" height="61"  />
+                            <span class="destimg-name">Canada</span>
+                        </span>
+                        <span id="carabbian" class="thumbimg" onclick="javascript:destinationSelector('carabbian');">
+                            <img src="img/destination/carabbian.png" width="119" height="61"  />
+                            <span class="destimg-name ">Caribbean</span>
+                        </span>
+                        <span id="europe" class="thumbimg" onclick="javascript:destinationSelector('europe');">
+                            <img src="img/destination/europe.png" width="119" height="61"  />
+                            <span class="destimg-name">Europe</span>
+                        </span>
+                        <span id="hawaii" class="thumbimg" onclick="javascript:destinationSelector('hawaii');">
+                            <img src="img/destination/hawaii.png" width="119" height="61"  />
+                            <span class="destimg-name">Hawaii</span>
+                        </span>
+                        <span id="mexicanriviera" class="thumbimg" onclick="javascript:destinationSelector('mexicanriviera');">
+                            <img src="img/destination/carabbian.png" width="119" height="61"  />
+                            <span class="destimg-name">Mexican Riviera</span>
+                        </span>
+                        <span id="pacificcanal" class="thumbimg" onclick="javascript:destinationSelector('pacificcanal');">
+                            <img src="img/destination/pasificcanal.png" width="119" height="61"  />
+                            <span class="destimg-name">Pacific Canal</span>
+                        </span>
+                        <span id="southamerica" class="thumbimg" onclick="javascript:destinationSelector('southamerica');">
+                            <img src="img/destination/southamerica.png" width="119" height="61"  />
+                            <span class="destimg-name">South America</span>
+                        </span>
+                        <span id="transatlantic" class="thumbimg" onclick="javascript:destinationSelector('transatlantic');">
+                            <img src="img/destination/transatlantic.png" width="119" height="61"  />
+                            <span class="destimg-name">Transatlantic</span>
+                        </span>
 
-                  <div class="category-header">Durations</div>
-                  <div class="wrapper">
-                    <span class="thumbimg">
-                        <span class="duration-name">Weekend</span>
-                    </span>
-                      
-                    <span class="thumbimg">
-                     <span class="duration-name">Few Days</span>
-                    </span>
-                      
-                    <span class="thumbimg">
-                        <span class="duration-name">One Week</span>
-                    </span>
-                      
-                    <span class="thumbimg">
-                        <span class="duration-name">Two Weeks</span>
-                    </span>
-                      
-                    <span class="thumbimg">
-                        <span class="duration-name">15+ Days</span>
-                    </span>
+                    </div>
 
-                  </div>
-                  <div class="line"></div>  
-                  
-                  <div class="results-btn" data-theme="i">
-                      <a href="#" data-role="button" data-transition="slide" data-theme="i">
-					  View Cruises
-					  </a> 
-                  </div>
+                    <div class="line"></div>  
 
+                    <div class="category-header">Durations</div>
+                    <div id="durationWraper" class="wrapper">
+                        <span id="weekend" class="thumbimg" onclick="javascript:durationSelector('weekend');">
+                            <span class="duration-name">Weekend</span>
+                        </span>
+
+                        <span id="fewdays" class="thumbimg" onclick="javascript:durationSelector('fewdays');">
+                            <span class="duration-name">Few Days</span>
+                        </span>
+
+                        <span id="oneweek" class="thumbimg" onclick="javascript:durationSelector('oneweek');">
+                            <span class="duration-name">One Week</span>
+                        </span>
+
+                        <span id="twoweek" class="thumbimg" onclick="javascript:durationSelector('twoweek');">
+                            <span class="duration-name">Two Weeks</span>
+                        </span>
+
+                        <span id="15days" class="thumbimg" onclick="javascript:durationSelector('15days');">
+                            <span class="duration-name">15+ Days</span>
+                        </span>
+
+                    </div>
+                    <div class="line"></div>  
+
+                    <div class="results-btn" data-theme="i">
+                        <a href="javascript:viewList();" data-role="button" data-theme="i">
+                            View Cruises
+                        </a> 
+                    </div>
+
+                </div>
             </div>
-           </div>
         </div>
+        <script>
+            var themeSelected = 'any';
+            var destinationSelected = 'any';
+            var durationSelected = 'any';
 
-	  <!-- Home Page - 1 ENDS HERE -->
-      <script>
-	     var themeSelected       = 'any';
-		 var destinationSelected = 'any';
-		 
-	     function themeSelector(themSel){
-		   themeSelected = themSel;
-		   $("#themeWraper span").removeClass("selected");
-		   $("#"+themeSelected).addClass("selected");
-		 }
-		 
-		 function destinationSelector(destSel){
-		   destinationSelected = destSel;
-		   $("#destinationWraper span").removeClass("selected");
-		   $("#"+destinationSelected).addClass("selected");		 
-		 }
-		 
-		 
-	  </script>	  
+            function themeSelector(themSel) {
+                themeSelected = themSel;
+                $("#themeWraper span").removeClass("selected");
+                $("#" + themeSelected).addClass("selected");
+            }
+
+            function destinationSelector(destSel) {
+                destinationSelected = destSel;
+                $("#destinationWraper span").removeClass("selected");
+                $("#" + destinationSelected).addClass("selected");
+            }
+
+            function durationSelector(durSel) {
+                durationSelected = durSel;
+                $("#durationWraper span").removeClass("selected");
+                $("#" + durationSelected).addClass("selected");
+            }
+
+            function viewList() {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8084/webtest/server.jsp",
+                    cache: false,
+                    dataType: "html",
+                    success: onSuccess,
+                    error: fatalErrorGot
+                });
+
+                function onSuccess(data) {
+                    $("#listPageWrapper").html(data);
+                    $.mobile.navigate( "#list-view" );
+                }
+                
+                function fatalErrorGot(request, error){
+                    alert('Error Occurred '+error);
+                }
+            }
+        </script>	  
+        <!-- Home Page - 1 ENDS HERE -->
+
+        <!-- Property List Page two Starts Here -->
+
+        <div data-role="page" id="list-view" data-theme="i" class="fix-header">
+            <div data-role="header"  data-theme="i">
+                <a href="#main-page" data-role="button" data-transition="reverse slide "></a>
+                <div class="header secondary-title">576 Cruises Found</div>
+            </div>
+            <div id="listPageWrapper" class="pagerapper" data-theme="i">  </div>   
+        </div>
+        <!-- Proporty List Page Ends Here -->
+
     </body>
 </html>
