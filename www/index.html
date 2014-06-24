@@ -18,6 +18,12 @@
 
         <title>Bliss Sailing</title>
         <script type="text/javascript">
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				navigator.splashscreen.show();
+			}
+			
+	
             WebFont.load({
                 google: {
                     families: ['Open Sans']
@@ -207,7 +213,18 @@
 
             function viewList() {
 			
+				$.mobile.loading( 'show', {
+						text: 'Loading',
+						textVisible: true,
+						theme: 'd',
+						textonly: false,
+						html: ''
+				});
+			
 			    
+			    //alert($.mobile.loader.prototype.options.theme);
+				
+				
                 $.ajax({
                     type: "GET",
                     url: "http://107.161.124.98/server.html",
@@ -217,15 +234,6 @@
                     error: fatalErrorGot
                 });
 				
-				
-				/*
-				$.jsonp({
-					dataType: 'json',
-					url: 'http://localhost:9000/menu',
-					success: onSuccess,
-					error: fatalErrorGot
-				}); //end ajax
-		        */
 				
             }
 			
