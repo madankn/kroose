@@ -215,9 +215,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     text-align: center;
 }
 
-.in, .out {
+.slide.in, .slide.out {
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 350ms !important;
+    -webkit-animation-duration: 50ms !important;
+}
+.reverse.slide.in, .reverse.slide.out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 50ms !important;
 }
 
 
