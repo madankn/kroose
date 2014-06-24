@@ -62,6 +62,12 @@
                 <div data-role="main" class="ui-content" data-theme="i" class="pagerapper">
                     <div class="category-header">Theme</div>
                     <div id="themeWraper" class="wrapper">
+
+                        <span id="themeAny" class="thumbimg" onclick="javascript:themeSelector('themeAny');">
+                            <img src="img/theme/family.png" width="116" height="100" />
+                            <span class="imgname">Any</span>
+                        </span>
+					
                         <span id="family" class="thumbimg" onclick="javascript:themeSelector('family');">
                             <img src="img/theme/family.png" width="116" height="100" />
                             <span class="imgname">Family</span>
@@ -113,6 +119,12 @@
                     <div class="category-header">Destinations</div>
 
                     <div id="destinationWraper" class="wrapper">
+					
+                        <span id="destinationAny" class="thumbimg" onclick="javascript:destinationSelector('destinationAny');">
+                            <img src="img/destination/alaska.png" width="119" height="61" />
+                            <span class="destimg-name">Any</span>
+                        </span>
+					
                         <span id="alaska" class="thumbimg" onclick="javascript:destinationSelector('alaska');">
                             <img src="img/destination/alaska.png" width="119" height="61" />
                             <span class="destimg-name">Alaska</span>
@@ -164,6 +176,11 @@
 
                     <div class="category-header">Durations</div>
                     <div id="durationWraper" class="wrapper">
+
+                        <span id="durantionAny" class="thumbimg" onclick="javascript:durationSelector('durantionAny');">
+                            <span class="duration-name">Any</span>
+                        </span>
+					
                         <span id="weekend" class="thumbimg" onclick="javascript:durationSelector('weekend');">
                             <span class="duration-name">Weekend</span>
                         </span>
@@ -197,9 +214,9 @@
             </div>
         </div>
         <script>
-            var themeSelected = 'any';
-            var destinationSelected = 'any';
-            var durationSelected = 'any';
+            var themeSelected = '';
+            var destinationSelected = '';
+            var durationSelected = '';
 
             function themeSelector(themSel) {
                 themeSelected = themSel;
@@ -229,10 +246,36 @@
 						html: ''
 				});
 			
-			    
+			    var listUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/html/cruise/list/searchby';
+				
+				if(themeSelected == 'themeAny'){
+				    themeSelected = '';
+				}
+				if(destinationSelected == 'destinationAny'){
+				    destinationSelected = '';
+				}
+				if(durationSelected == 'durationAny'){
+				    durationSelected = '';
+				}
+				
+				listUrl+= '?lifestyle='+themeSelected;
+				
+ 			    if(listUrl.indexOf('?') < 0 ){
+  				     listUrl += '?destination='+destinationSelected;
+				 }else{
+				     listUrl += '&destination='+destinationSelected; 
+                }  				   
+				
+ 			    if(listUrl.indexOf('?') < 0 ){
+  				     listUrl += '?duration='+durationSelected;
+				 }else{
+				     listUrl += '&duration='+durationSelected; 
+                }  				   
+				
+
                 $.ajax({
                     type: "GET",
-                    url: "http://107.161.124.98/server.html",
+                    url: listUrl,
                     cache: false,
                     dataType: "html",
                     success: onSuccess,
@@ -259,7 +302,7 @@
 
         <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
-                <a href="#main-page" data-role="button" data-transition="reverse slide"></a>
+                <a href="#main-page" data-role="button" data-transition="fade"></a>
                 <div class="header secondary-title">576 Cruises Found</div>
             </div>
             <div id="listPageWrapper" class="pagerapper" data-theme="i">  </div>   

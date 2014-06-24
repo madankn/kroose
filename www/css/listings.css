@@ -59,14 +59,25 @@ img {
     overflow-x: scroll;
     overflow-y: hidden;
     padding-left:5px;
+    padding-bottom:5px;
     white-space: nowrap;
-    width: 320px;
+    /*width: 320px; */
+    width:99%;
    -webkit-overflow-scrolling: touch;
 
 
             
 }
-.wrapper span{ /*width:115px;*/display: inline-block; }
+.wrapper span{ 
+    /*width:115px;*/
+    display: inline-block; 
+       box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+     /*border-bottom:2px solid #074375;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
+}
 
 
 
@@ -147,24 +158,35 @@ img {
 .ratings {
     background: url("../img/iconsprite.png") repeat scroll 0 -2px rgba(0, 0, 0, 0);
     height: 15px;
-    width: 66px;
+    width: 80px;
     margin-bottom: 0px;
 }
 .one{
-   background-position: -2px -56px;
+   background-position: -7px -215px;
+}
+.onehalf{
+   background-position: -7px -189px;
 }
 .two{
-    background-position: -2px -42px;
+    background-position: -7px -164px;
+}
+.twohalf{
+    background-position: -7px -139px;
 }
 .three{
-     background-position: -2px -29px;
+     background-position: -7px -112px;
+}
+.threehalf{
+     background-position: -7px -86px;
 }
 .four{
-    background-position: -2px -15px;
+    background-position: -7px -59px;
 }
-
+.fourhalf{
+    background-position: -7px -32px;
+}
 .five {
-    background-position: -2px -2px;
+    background-position: -7px -7px;
 }
 
 
@@ -196,37 +218,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     padding: 6px 0;
     text-align: center;
     width: 116px;
-   /* border-bottom:2px solid #007dbd;*/
+
     font-family: 'Open Sans', sans-serif; font-weight:bold;
     font-size: 11px;
     color: #074375;
     text-transform:uppercase;
 }
+
+.wrapper span:hover{
+   /* border:2px solid #FF8A0C;*/
+}
+.wrapper span:visited{
+      /* border:2px solid #FF8A0C;*/
+}
+
 /* append touch selected class */
 .wrapper span.selected {
-    border-bottom:2px solid #FF8A0C;
-}
+   /*border:2px solid #FF8A0C; 
+        border: 2px solid #FF8A0C;
+    box-sizing: border-box;*/
+    
+        border-radius: 0px;
+     box-shadow: 0 2px #FF8A0C, 0 0 0 3px #FF8A0C;
 
-.ui-loader-verbose h1 {
-    font-size: 1.5em !important;
-    margin: 0;
-	color: #f1f1f1 !important;
-	font-weight: bold;
-    text-align: center;
-}
-
-.slide.in, .slide.out {
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 50ms !important;
-}
-.reverse.slide.in, .reverse.slide.out {
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 50ms !important;
-}
-
-
-.selected {
-    border-bottom:2px solid #FF8A0C;
+ 
+    box-sizing: border-box;
+    margin: 2px 5px 2px 0;
+    padding: 1px;
 }
 
 .wrapper span.destimg-name {
@@ -257,4 +275,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     text-align: center;
     text-transform: uppercase;
     width: 120px;
+}
+
+.selected {
+    border-bottom:2px solid #FF8A0C;
+}
+
+.ui-loader-verbose h1 {
+    font-size: 1.5em !important;
+    margin: 0;
+	color: #f1f1f1 !important;
+	font-weight: bold;
+    text-align: center;
 }
