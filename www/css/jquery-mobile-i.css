@@ -47,13 +47,22 @@ ui-page-theme-i{
 }
 
 .thumbimg {
-    margin: 0 0px 10px 0;
-    border-bottom: 2px solid #007DBD;
+    /*border-bottom: 2px solid;
+    box-shadow: 0 1px 0 0 #FF0000 inset; */
+    margin: 2px;
+    
+    border-radius: 3px;
+    box-shadow: 0 8px 6px -8px #000000;
+   
+    box-sizing: border-box;
+    margin: 2px 5px 2px 0;
+    padding:1px;
 }
-.thumbimg:hover {
-    border-bottom: 2px solid #FF8A0C;
+  /*.thumbimg:hover {
+ 
+  outline:2px solid #FF8A0C;
 }
-.thumbimg:active { border-bottom: 2px solid #FF8A0C; outline: 0; }
+.thumbimg:active { outline:2px solid #FF8A0C; outline: 0; }*/
 
 .ui-btn-i {
     background-color: #00739B;
@@ -78,7 +87,7 @@ ui-page-theme-i{
 }
 
 .secondary-title{
-    width: 300px; 
+    width: 370px; 
 }
 .ui-bar-i a {
     background: url("../img/backbtn.png") no-repeat scroll 0 -2px rgba(0, 0, 0, 0);
