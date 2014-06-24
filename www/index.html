@@ -272,10 +272,11 @@
 				     listUrl += '&duration='+durationSelected; 
                 }  				   
 				
+				//alert(listUrl);
 
                 $.ajax({
                     type: "GET",
-                    url: listUrl,
+                    url: 'http://107.161.124.98/server.html',
                     cache: false,
                     dataType: "html",
                     success: onSuccess,
