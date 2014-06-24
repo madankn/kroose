@@ -217,6 +217,7 @@
             var themeSelected = '';
             var destinationSelected = '';
             var durationSelected = '';
+			var cruisesFound = 0;
 
 			function refreshCount(){
 			
@@ -243,7 +244,9 @@
                     dataType: "html",
                     success: function (data){
 					   var obj = jQuery.parseJSON( data );
-				       $("#cruiseCount").html("View "+obj.cruiseCount+" Cruises"); 	   
+					   cruisesFound = obj.cruiseCount;
+				       $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	   
+					   $("#listCruisesCount").html(cruisesFound+" Cruises Found"); 	   
 					   
 					},
                     error: fatalErrorGot
@@ -338,7 +341,7 @@
         <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                 <a href="#main-page" data-role="button" data-transition="reverse slide"></a>
-                <div class="header secondary-title">Your Cruises</div>
+                <div id="listCruisesCount" class="header secondary-title">Your Cruises</div>
             </div>
             <div id="listPageWrapper" class="pagerapper" data-theme="i">  </div>   
         </div>
