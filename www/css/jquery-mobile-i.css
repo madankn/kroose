@@ -1,5 +1,10 @@
 
-
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
 
 /* JQM Custom Style */
 
@@ -20,6 +25,7 @@ ui-page-theme-i{
     margin: 0;
     padding: 26px 0 0;
 }
+
 
 .ui-bar-i h1.ui-title{
     color:#fff;
@@ -90,17 +96,19 @@ ui-page-theme-i{
     width: 370px; 
 }
 .ui-bar-i a {
-    background: url("../img/backbtn.png") no-repeat scroll 0 -2px rgba(0, 0, 0, 0);
+    background: url("../img/caret01.svg") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0);
     box-shadow: none; border:none;
     color: #FFFFFF;
     height: 22px; width:20px;
     top:16px;
+     height: 40px;
+
 }
 
 .ui-bar-i.ui-header {
     background-color: #1295C2;
     border: 1px solid #1E82A8;
-    height: 36px;
+    height: 64px;
     margin: 0;
     padding: 26px 0 0;
     position: fixed;
@@ -111,9 +119,23 @@ ui-page-theme-i{
 .ui-page-theme-i .pagerapper{
     margin-top:64px;
 }
+.results-btn{
+     margin: auto;
+    position: relative;
+    width: 312px
+}
 .results-btn a:hover{
     background-color:#058ab8;
 }
 .results-btn a:active{
      background-color:#058ab8;
+}
+.results-btn > span {
+
+    display: block;
+    float: right;
+    position: absolute;
+    right: 22px;
+    top: 12px;
+    width: 24px;
 }

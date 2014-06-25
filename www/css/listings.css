@@ -1,34 +1,39 @@
+      *, :after, :before {
+  box-sizing: border-box;
+}
+
 html {
-    background-color: #80d5ee;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
 
 
 body {
-    margin:0;
-    max-width: 100%;
-    font-family: 'Open Sans', sans-serif; font-weight:bold;
-    font-size: 100%
-    line-height: 1.5em;
-    color: #545454;
+      background: #80d5ee ;
+  font-family: 'Open Sans', sans-serif;
 
-    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    -webkit-font-smoothing: antialiased;
+
+
 }
 
-h1, h2, h3, h4, h5, h6 {
+/*h1, h2, h3, h4, h5, h6 {
     color: #222;
     font-weight: 600;
-    line-height: 1.3em;
+    line-height: 1.3em; */
 }
 
-h2 {
-    margin-top: 1.3em;
-}
+/*h2 {
+  
+}*/
 
 a {
     color: #0083e8; 
@@ -87,23 +92,42 @@ img {
      background-color: #000000;
 }
 .details {
-    bottom: 0;
+    /*bottom: 0;
     color: #FFFFFF;
     height: 50px;
     padding: 10px 10px 10px;
     position: absolute;
     width: 94.5%;
-    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    font-family: 'Open Sans', sans-serif; font-weight:bold; */
+     background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), #000000);
+    bottom: 0;
+    
+    padding: 30px 10px 10px;
+    position: absolute;
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    
+
 }
 .wrap1{  
-    float: left;
-
+    /*float: left;
     margin-top:0px;
+    position:relative;
+    padding: 10px 10px 10px;
+     bottom: 70px;
+    font-family: 'Open Sans', sans-serif; font-weight:bold; */
+    
+    padding-right: 5px;
+    width: 70%;
 }
 
 .trip-name {
-   font-family: 'Open Sans', sans-serif; font-weight:bold;
+   font-family: 'Open Sans', sans-serif; 
      font-size: 1em;
+
+    margin: 0; color:#fff;
     /*letter-spacing: 0.5px;*/
 }
 .trip-type span {
@@ -125,68 +149,93 @@ img {
 
 .wrap2{  
     
-    float: right;
-    margin-top: 15px; 
+    /*float: right;
+    margin-top:0px;
+    position:relative;
+    padding: 10px 10px 10px;
+     bottom: 70px;
+    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    border:1px solid red; */
+    
+    bottom: 10px;
+    padding-left: 5px;
+    position: absolute;
+    right: 10px;
+    width: 30%;
 }
 .price {
     
     display: block;
     font-family: 'Open Sans', sans-serif;
-    font-weight:700;
+    font-weight:300;
     font-size: 20px;
+    text-align: right;
+    float:right;
+    width:30%;
     /*letter-spacing: 0.5px;*/
 }
 .onwards {
     
-    color: #FFFFFF;
+    /*color: #FFFFFF;
     display: block;
     font-family: 'Open Sans',sans-serif;
     font-size: 12px;
     font-weight: normal;
     /*letter-spacing: 0.5px;*/
     line-height: 12px;
-    text-align: right;
+    text-align: right; 
+    display: block;
+    font-size: 0.625em;
+
 }
 .dolar{
-    display: block;
+    /*display: block;
     float: left;
     font-family: 'Open Sans',sans-serif;
     font-size: 14px;
     margin-right: 0px;
-    margin-top: 3px;
+    margin-top: 3px; */
+    font-size: 0.75em;
+    vertical-align: top;
+}
+.amount{
+     font-size: 26px;
+    font-weight: bold;
+    line-height: 1;
+    
 }
 .ratings {
-    background: url("../img/iconsprite.png") repeat scroll 0 -2px rgba(0, 0, 0, 0);
-    height: 15px;
-    width: 80px;
+    background: url("../img/starratings.svg") no-repeat scroll 0 0 / 300px 240px rgba(0, 0, 0, 0);
+    height: 14px;
+    width: 99px;
     margin-bottom: 0px;
 }
 .one{
-   background-position: -7px -215px;
+   background-position: -96px -137px;
 }
 .onehalf{
-   background-position: -7px -189px;
+    background-position: -96px -120px
 }
 .two{
-    background-position: -7px -164px;
+   background-position: -96px -104px;
 }
 .twohalf{
-    background-position: -7px -139px;
+    background-position: -96px -87px;
 }
 .three{
-     background-position: -7px -112px;
+     background-position: -96px -72px;
 }
 .threehalf{
-     background-position: -7px -86px;
+     background-position: -96px -58px;
 }
 .four{
-    background-position: -7px -59px;
+    background-position: -96px -40px;
 }
 .fourhalf{
-    background-position: -7px -32px;
+    background-position: -96px -23px;
 }
 .five {
-    background-position: -7px -7px;
+     background-position: -96px -7px;
 }
 
 
