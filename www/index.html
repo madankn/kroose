@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/jquery-mobile-i.css"/>
         <link rel="stylesheet" href="css/listings.css">
         <link href="css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/font.css">
 		
 
 
@@ -61,7 +62,7 @@
        <div data-role="page" id="main-page" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                    <div ></div>
-                   <div class="header"><img src="img/logohead.svg" width="53" height="32" alt="Logo"/></div>
+				   <div ><span class="icon icon-logohead logo"></span></div>
             </div>
 
            <div class="pagerapper" data-theme="i" >
@@ -154,9 +155,9 @@
                   
                   <div class="results-btn" data-theme="i">
                       <a id="cruiseCount" href="javascript:viewList();" data-role="button" data-theme="i">
-					    View Cruises
+					    View 16 Cruises
 					  </a>
-                      <span><img src="img/caret02.svg" width="30" /></span>
+                      <span class="icon icon-caret02 next-caret"></span>
                   </div>
 
             </div>
@@ -305,7 +306,9 @@
         
         <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
-                   <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide"></a>
+                   <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide">
+				   <span class="icon icon-caret01 prev-caret"></span>
+				   </a>
                    <div class="header secondary-title">Cruises</div>
             </div>
             <div id="listPageWrapper"  class="pagerapper" data-theme="i" > </div>   

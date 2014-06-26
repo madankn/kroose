@@ -160,7 +160,7 @@ img {
     bottom: 10px;
     padding-left: 5px;
     position: absolute;
-    right: 10px;
+    right: 35px;
     width: 30%;
 }
 .price {
@@ -324,4 +324,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     text-align: center;
     text-transform: uppercase;
     width: 120px;
+}
+.logo{
+        color: #FFFFFF;
+    content: "s";
+    display: block;
+    font-size: 31px;
+    text-align:center;
+}
+.next-caret{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: bold;
+}
+.prev-caret {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+    left: 0px;
+    position: absolute;
 }

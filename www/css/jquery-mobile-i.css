@@ -93,15 +93,16 @@ ui-page-theme-i{
 }
 
 .secondary-title{
-    width: 370px; 
+    /*width: 370px; */
+    width:100%;
 }
 .ui-bar-i a {
-    background: url("../img/caret01.png") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0);
+    /*background: url("../img/caret01.svg") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0); */
     box-shadow: none; border:none;
     color: #FFFFFF;
-    height: 22px; width:20px;
+    width:44px;
     top:16px;
-     height: 40px;
+    height: 41px;
 
 }
 
@@ -135,7 +136,7 @@ ui-page-theme-i{
     display: block;
     float: right;
     position: absolute;
-    right: 22px;
+    right: 63px;
     top: 12px;
     width: 24px;
 }
