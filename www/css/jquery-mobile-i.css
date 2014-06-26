@@ -136,7 +136,8 @@ ui-page-theme-i{
     display: block;
     float: right;
     position: absolute;
-    right: 63px;
+    right: 40px;
     top: 12px;
     width: 24px;
+	font-weight: bold;
 }
