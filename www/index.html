@@ -223,12 +223,13 @@
 					$("#" + themeSelected).addClass("selected");
 					refreshCount();
 				}	
+				alert('final theme = ' + themeSelected); 
             }
 
             function destinationSelector(destSel) {
 				if(destinationSelected == destSel){
 				    $("#destinationWraper span").removeClass("selected");
-					themeSelected = '';
+					destinationSelected = '';
 					refreshCount();
 				}else{
 					destinationSelected = destSel;
@@ -242,7 +243,7 @@
 			
 				if(durationSelected == durSel){
 				    $("#durationWraper span").removeClass("selected");
-					themeSelected = '';
+					durationSelected = '';
 					refreshCount();
 				}else{
 					durationSelected = durSel;
@@ -277,8 +278,6 @@
 				     listUrl += '&duration='+durationSelected; 
                 }  				   
 				
-				//alert(listUrl);
-
                 $.ajax({
                     type: "GET",
                     url: listUrl,
