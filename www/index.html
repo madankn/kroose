@@ -197,15 +197,20 @@
                     success: function (data){
 					   var obj = jQuery.parseJSON( data );
 					   cruisesFound = obj.cruiseCount
+					   
 					   if( cruisesFound > 0 ){
 				         $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	
 						 $("#listHCount").html(cruisesFound+" Cruises Found"); 	
+					     						 
+					   }else if( cruisesFound == 1 ){
+				         $("#cruiseCount").html("View "+cruisesFound+" Cruise"); 	
+						 $("#listHCount").html(cruisesFound+" Cruise Found"); 	
 					     						 
 					   }else{
 					     $("#cruiseCount").html("No Cruises Found!"); 	   
 						 $("#listHCount").html("No Cruises Found"); 
 					   }
-					   //$("#listCruisesCount").html(cruisesFound+" Cruises Found"); 	   
+					   
 					   
 					},
                     error: fatalErrorGot
