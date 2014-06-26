@@ -96,7 +96,7 @@ ui-page-theme-i{
     width: 370px; 
 }
 .ui-bar-i a {
-    background: url("../img/caret01.svg") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0);
+    background: url("../img/caret01.png") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0);
     box-shadow: none; border:none;
     color: #FFFFFF;
     height: 22px; width:20px;

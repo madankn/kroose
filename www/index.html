@@ -195,8 +195,12 @@
                     dataType: "html",
                     success: function (data){
 					   var obj = jQuery.parseJSON( data );
-					   cruisesFound = obj.cruiseCount;
-				       $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	   
+					   cruisesFound = obj.cruiseCount
+					   if( cruisesFound > 0 ){
+				         $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	   
+					   }else{
+					     $("#cruiseCount").html("No Cruises Found!"); 	   
+					   }
 					   $("#listCruisesCount").html(cruisesFound+" Cruises Found"); 	   
 					   
 					},
@@ -306,7 +310,7 @@
                    <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide"></a>
                    <div class="header secondary-title">Cruises</div>
             </div>
-            <div id="listPageWrapper" class="pagerapper" data-theme="i" > </div>   
+            <div id="listPageWrapper"  class="pagerapper" data-theme="i" > </div>   
         </div>
 		
 <!-- Proporty List Page Ends Here -->
