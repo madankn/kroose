@@ -212,6 +212,7 @@
 			    if(themeSelected == themSel){
 				    $("#themeWraper span").removeClass("selected");
 					themeSelected = '';
+					refreshCount();
 				}else{
 					themeSelected = themSel;
 					$("#themeWraper span").removeClass("selected");
@@ -224,6 +225,7 @@
 				if(destinationSelected == destSel){
 				    $("#destinationWraper span").removeClass("selected");
 					themeSelected = '';
+					refreshCount();
 				}else{
 					destinationSelected = destSel;
 					$("#destinationWraper span").removeClass("selected");
@@ -237,6 +239,7 @@
 				if(durationSelected == durSel){
 				    $("#durationWraper span").removeClass("selected");
 					themeSelected = '';
+					refreshCount();
 				}else{
 					durationSelected = durSel;
 					$("#durationWraper span").removeClass("selected");
@@ -298,7 +301,7 @@
         
 <!-- Property List Page two Starts Here -->
         
-        <div data-role="page" id="Prop-card" data-theme="i" class="fix-header">
+        <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                    <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide"></a>
                    <div class="header secondary-title">Cruises</div>
