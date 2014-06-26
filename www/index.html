@@ -68,7 +68,7 @@
               <div data-role="main" class="ui-content" data-theme="i" class="pagerapper">
                   <div class="category-header">Theme</div>
                   
-                  <div class="wrapper">
+                  <div id="themeWraper" class="wrapper">
 
                       <span id="family" class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('family');">
                         <img src="img/theme/family.png" width="116" height="100" />
@@ -96,7 +96,7 @@
 
                   <div class="category-header">Destinations</div>
    
-                  <div class="wrapper">
+                  <div id="destinationWraper" class="wrapper">
                       
                      <span id="caribbean" class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('caribbean');">
                         <img src="img/destination/carabbian.png" width="119" height="61"  />
@@ -127,7 +127,7 @@
                   <div class="line"></div>  
 
                   <div class="category-header" data-contentdata="duration">Durations</div>
-                  <div class="wrapper">
+                  <div id="durationWraper" class="wrapper">
  
                     <span id="weekend" class="thumbimg" data-contentdata="duration" onclick="javascript:durationSelector('weekend');">
                         <span class="duration-name">Weekend</span>
@@ -187,6 +187,7 @@
 				     countUrl += '&duration='+durationSelected; 
                 }  		
 
+				/*
                 $.ajax({
                     type: "GET",
                     url: countUrl,
@@ -201,40 +202,47 @@
 					},
                     error: fatalErrorGot
                 });				
-			  
+			    */
 			    
 				
 				
 			}
 			
             function themeSelector(themSel) {
-                themeSelected = themSel;
-                $("#themeWraper span").removeClass("selected");
-                $("#" + themeSelected).addClass("selected");
-				if(themeSelected == 'themeAny'){
-				    themeSelected = '';
-				}
-				refreshCount();
+			    if(themeSelected == themSel){
+				    $("#themeWraper span").removeClass("selected");
+					themeSelected = '';
+				}else{
+					themeSelected = themSel;
+					$("#themeWraper span").removeClass("selected");
+					$("#" + themeSelected).addClass("selected");
+					refreshCount();
+				}	
             }
 
             function destinationSelector(destSel) {
-                destinationSelected = destSel;
-                $("#destinationWraper span").removeClass("selected");
-                $("#" + destinationSelected).addClass("selected");
-				if(destinationSelected == 'destinationAny'){
-				    destinationSelected = '';
-				}
-				refreshCount();
+				if(destinationSelected == destSel){
+				    $("#destinationWraper span").removeClass("selected");
+					themeSelected = '';
+				}else{
+					destinationSelected = destSel;
+					$("#destinationWraper span").removeClass("selected");
+					$("#" + destinationSelected).addClass("selected");
+					refreshCount();
+				}	
             }
 
             function durationSelector(durSel) {
-                durationSelected = durSel;
-                $("#durationWraper span").removeClass("selected");
-                $("#" + durationSelected).addClass("selected");
-				if(durationSelected == 'durationAny'){
-				    durationSelected = '';
-				}
-				refreshCount();
+			
+				if(durationSelected == durSel){
+				    $("#durationWraper span").removeClass("selected");
+					themeSelected = '';
+				}else{
+					durationSelected = durSel;
+					$("#durationWraper span").removeClass("selected");
+					$("#" + durationSelected).addClass("selected");
+					refreshCount();
+				}				
             }
 
             function viewList() {
@@ -262,6 +270,7 @@
 				     listUrl += '&duration='+durationSelected; 
                 }  				   
 				
+				alert(listUrl);
 
                 $.ajax({
                     type: "GET",
