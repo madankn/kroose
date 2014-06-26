@@ -198,11 +198,14 @@
 					   var obj = jQuery.parseJSON( data );
 					   cruisesFound = obj.cruiseCount
 					   if( cruisesFound > 0 ){
-				         $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	   
+				         $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	
+						 $("#listHCount").html(cruisesFound+" Cruises Found"); 	
+					     						 
 					   }else{
 					     $("#cruiseCount").html("No Cruises Found!"); 	   
+						 $("#listHCount").html("No Cruises Found"); 
 					   }
-					   $("#listCruisesCount").html(cruisesFound+" Cruises Found"); 	   
+					   //$("#listCruisesCount").html(cruisesFound+" Cruises Found"); 	   
 					   
 					},
                     error: fatalErrorGot
@@ -309,7 +312,7 @@
                    <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide">
 				   <span class="icon icon-caret01 prev-caret"></span>
 				   </a>
-                   <div class="header secondary-title">Cruises</div>
+                   <div id="listHCount" class="header secondary-title">16 Cruises Found</div>
             </div>
             <div id="listPageWrapper"  class="pagerapper" data-theme="i" > </div>   
         </div>
