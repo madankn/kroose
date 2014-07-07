@@ -20,6 +20,11 @@ If you do not want any permissions to be added to your app, add the
 following tag to your config.xml; you will still have the INTERNET
 permission on your app, which PhoneGap requires.
 -->
+
+	<preference name="SplashScreen" value="screen" />
+	<preference name="SplashScreenDelay" value="10000" />
+
+
     <preference name="permissions" value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
@@ -42,6 +47,9 @@ permission on your app, which PhoneGap requires.
     <!-- Plugins -->
 
     <!-- Core plugins -->
+	<gap:plugin name="org.apache.cordova.splashscreen" />
+	
+	<!--
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
@@ -58,8 +66,8 @@ permission on your app, which PhoneGap requires.
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+	-->
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
@@ -77,9 +85,53 @@ src in the following setting to "res/icon.png" -->
 	<icon src="res/icon/android/xhdpi.png"  gap:platform="android" gap:density="xhdpi" />
 	<icon src="res/icon/android/xxhdpi.png" gap:platform="android" gap:density="xxhdpi" />
 
+	<!-- iOS 7.0+ -->
+	<!-- iPhone / iPod Touch  -->
+	<icon src="res/icon/ios/icon60.png" gap:platform="ios" width="60" height="60" />
+	<icon src="res/icon/ios/icon120.png" gap:platform="ios" width="120" height="120" />
+	<!-- iPad -->
+	<icon src="res/icon/ios/icon76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="res/icon/ios/icon152.png" gap:platform="ios" width="152" height="152" />
+	<!-- Settings Icon -->
+	<icon src="res/icon/ios/icon29.png" gap:platform="ios" width="29" height="29" />
+	<icon src="res/icon/ios/icon58.png" gap:platform="ios" width="58" height="58" />
+	<!-- Spotlight Icon -->
+	<icon src="res/icon/ios/icon40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="res/icon/ios/icon80.png" gap:platform="ios" width="80" height="80" />
+
+
+	<!-- iOS 6.1 -->
+	<!-- iPhone / iPod Touch -->
+	<icon src="res/icon/ios/icon57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="res/icon/ios/icon114.png" gap:platform="ios" width="114" height="114" />
+	<!-- iPad -->
+	<icon src="res/icon/ios/icon72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="res/icon/ios/icon144.png" gap:platform="ios" width="144" height="144" />
+	<!-- iPhone Spotlight and Settings Icon -->
+	<icon src="res/icon/ios/icon29.png" gap:platform="ios" width="29" height="29" />
+	<icon src="res/icon/ios/icon58.png" gap:platform="ios" width="58" height="58" />
+	<!-- iPad Spotlight and Settings Icon -->
+	<icon src="res/icon/ios/icon50.png" gap:platform="ios" width="50" height="50" />
+	<icon src="res/icon/ios/icon100.png" gap:platform="ios" width="100" height="100" />
+
+	
     <!-- Define app splash screen for each platform. -->
 	<gap:splash src="res/screen/splash.png" />
     <gap:splash src="res/screen/android/splash.png" gap:platform="android" width="480" height="800" />
+	
+	<!-- iPhone and iPod touch -->
+	<gap:splash src="res/screen/ios/320x480.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="res/screen/ios/640x960.png" gap:platform="ios" width="640" height="960" />
+	<!-- iPhone 5 / iPod Touch (5th Generation) -->
+	<gap:splash src="res/screen/ios/640x1136.png" gap:platform="ios" width="640" height="1136" />
+	<!-- iPad -->
+	<gap:splash src="res/screen/ios/768x1024.png" gap:platform="ios" width="768" height="1024" />
+	<gap:splash src="res/screen/ios/1024x768.png" gap:platform="ios" width="1024" height="768" />
+	<!-- Retina iPad -->
+	<gap:splash src="res/screen/ios/1536x2048.png" gap:platform="ios" width="1536" height="2048" />
+	<gap:splash src="res/screen/ios/2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+
+	
 	
     <!--
 Define access to external domains.
