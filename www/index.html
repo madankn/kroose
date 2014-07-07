@@ -2,51 +2,41 @@
 
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-        
         <link href='css/google-css.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/jquery.mobile.theme.css">
         <link rel="stylesheet" type="text/css" href="css/jquery-mobile-i.css"/>
         <link rel="stylesheet" href="css/listings.css">
         <link href="css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/font.css">
-		
-
-
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/jquery.mobile-1.4.2.min.js"></script>
-
         <title>Kool Cruise</title>
         
         <script type="text/javascript">
 			document.addEventListener("deviceready", onDeviceReady, false);
+			document.addEventListener("touchstart", function() {},false);
 			function onDeviceReady() {
-				//navigator.splashscreen.hide();
+				navigator.splashscreen.hide();
 			}
 			
 			$( document ).on( "mobileinit", function() {
-			$.mobile.loader.prototype.options.text = "loading";
-			$.mobile.loader.prototype.options.textVisible = false;
-			$.mobile.loader.prototype.options.theme = "d";
-			$.mobile.loader.prototype.options.html = "";
+				$.mobile.loader.prototype.options.text = "loading";
+				$.mobile.loader.prototype.options.textVisible = false;
+				$.mobile.loader.prototype.options.theme = "d";
+				$.mobile.loader.prototype.options.html = "";
 			});
-
 			
-          WebFont.load({
-            google: {
-              families: ['Open Sans']
-            }
-          });
-        document.addEventListener("touchstart", function() {},false);
-
-		
+			WebFont.load({
+				google: {
+				  families: ['Open Sans']
+				}
+			});
        </script>
         <style>
                 element:hover, element:active {
@@ -173,7 +163,6 @@
 			function refreshCount(){
 			
   			    var countUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/count/searchby';
-
 				countUrl+= '?lifestyle='+themeSelected;
 				
  			    if(countUrl.indexOf('?') < 0 ){
@@ -197,7 +186,6 @@
                     success: function (data){
 					   var obj = jQuery.parseJSON( data );
 					   cruisesFound = obj.cruiseCount
-					   
 					   if( cruisesFound > 1 ){
 				         $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	
 						 $("#listHCount").html(cruisesFound+" Cruises Found"); 	
@@ -210,15 +198,9 @@
 					     $("#cruiseCount").html("No Cruises Found!"); 	   
 						 $("#listHCount").html("No Cruises Found"); 
 					   }
-					   
-					   
 					},
                     error: fatalErrorGot
                 });				
-			    
-			    
-				
-				
 			}
 			
             function themeSelector(themSel) {
@@ -311,7 +293,6 @@
         
         
 <!-- Property List Page two Starts Here -->
-        
         <div data-role="page" id="list-view" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                    <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide">
@@ -326,7 +307,6 @@
         
         
 <!-- Property Details Page Starts Here -->
-        
 <!-- Property Details Page Ends Here -->
 
     <script src="cordova.js"></script>    
