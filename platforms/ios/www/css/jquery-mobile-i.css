@@ -1,0 +1,143 @@
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+/* JQM Custom Style */
+
+element:hover, element:active {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+    -webkit-touch-callout: none
+}
+
+ui-page-theme-i{
+    background:#80d5ee;
+}
+
+.ui-bar-i  {
+    background-color: #1295C2;
+    border: 1px solid #1E82A8;
+    height: 36px;
+    margin: 0;
+    padding: 26px 0 0;
+}
+
+
+.ui-bar-i h1.ui-title{
+    color:#fff;
+    text-transform:uppercase;
+    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    font-size:22px;
+
+}
+
+.ui-page-theme-i .ui-content{ border-top:1px solid #53b5de;padding:0px;}
+
+.ui-page-theme-i .category-header {
+    color: #191919;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 5px 5px;
+    text-transform:uppercase;
+}
+
+.ui-page-theme-i .line{ 
+    
+    width:665px; height:2px; 
+    background: url("../img/lineseperator.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.thumbimg {
+    /*border-bottom: 2px solid;
+    box-shadow: 0 1px 0 0 #FF0000 inset; */
+    margin: 2px;
+    
+    border-radius: 3px;
+    box-shadow: 0 8px 6px -8px #000000;
+   
+    box-sizing: border-box;
+    margin: 2px 5px 2px 0;
+    padding:1px;
+}
+  /*.thumbimg:hover {
+ 
+  outline:2px solid #FF8A0C;
+}
+.thumbimg:active { outline:2px solid #FF8A0C; outline: 0; }*/
+
+.ui-btn-i {
+    background-color: #00739B;
+    border: 1px solid #00739B;
+    border-radius: 1px;
+    color: #FFFFFF;
+    font-family: open sans;
+    font-size: 22px;
+    margin: 15px auto ;
+    padding: 10px;
+    width: 280px;
+}
+
+.header{     
+   color: #FFFFFF;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    width: 55px;
+}
+
+.secondary-title{
+    /*width: 370px; */
+    width:100%;
+}
+.ui-bar-i a {
+    /*background: url("../img/caret01.svg") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0); */
+    box-shadow: none; border:none;
+    color: #FFFFFF;
+    width:44px;
+    top:16px;
+    height: 41px;
+
+}
+
+.ui-bar-i.ui-header {
+    background-color: #1295C2;
+    border: 1px solid #1E82A8;
+    height: 64px;
+    margin: 0;
+    padding: 26px 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.ui-page-theme-i .pagerapper{
+    margin-top:64px;
+}
+.results-btn{
+     margin: auto;
+    position: relative;
+    width: 312px
+}
+.results-btn a:hover{
+    background-color:#058ab8;
+}
+.results-btn a:active{
+     background-color:#058ab8;
+}
+.results-btn > span {
+
+    display: block;
+    float: right;
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    width: 24px;
+	font-weight: bold;
+}
