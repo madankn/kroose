@@ -326,12 +326,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 120px;
 }
 .logo{
-        color: #FFFFFF;
+    color: #FFFFFF;
     content: "s";
     display: block;
     font-size: 31px;
-    text-align:center;
+    /*text-align:center;*/
+	width: 20%;
+	margin-top: -10px;
 }
+
+.headText{
+    color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: -30px;
+    text-align: center;
+    width: 100%;
+}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+
 .next-caret{
     color: #FFFFFF;
     font-size: 30px;
