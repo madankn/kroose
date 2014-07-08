@@ -162,28 +162,40 @@
             var destinationSelected = '';
             var durationSelected = '';
 			var cruisesFound = 0;
-
-			function refreshCount(){
-			
-  			    var countUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/count/searchby';
-				countUrl+= '?lifestyle='+themeSelected;
+			////////////////////////////////////////////////////////////////////////////////////
+			function getCountUrl(){
+  			    var cUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/count/searchby';
+				cUrl+= '?lifestyle='+themeSelected;
 				
- 			    if(countUrl.indexOf('?') < 0 ){
-  				     countUrl += '?destination='+destinationSelected;
-				 }else{
-				     countUrl += '&destination='+destinationSelected; 
+ 			    if(cUrl.indexOf('?') < 0 ){
+  				     cUrl += '?destination='+destinationSelected;
+				}else{
+				     cUrl += '&destination='+destinationSelected; 
                 }  				   
 				
- 			    if(countUrl.indexOf('?') < 0 ){
-  				     countUrl += '?duration='+durationSelected;
-				 }else{
-				     countUrl += '&duration='+durationSelected; 
+ 			    if(cUrl.indexOf('?') < 0 ){
+  				     cUrl += '?duration='+durationSelected;
+				}else{
+				     cUrl += '&duration='+durationSelected; 
                 }  		
-
-				
+				return cUrl;
+			}
+			////////////////////////////////////////////////////////////////////////////////////
+			function blockViewCruises(){
+			   $("#cruiseCount").addClass("disabled");
+			   $("#cruiseCount").html("<img src='css/images/ajax-loader.gif' height='29'/>");
+			}
+			
+			function unBlockViewCruises(){
+			  $("#cruiseCount").removeClass("disabled");
+			}
+			
+			////////////////////////////////////////////////////////////////////////////////////
+			function refreshCount(){
+				blockViewCruises();
                 $.ajax({
                     type: "GET",
-                    url: countUrl,
+                    url: getCountUrl(),
                     cache: false,
                     dataType: "html",
                     success: function (data){
@@ -203,9 +215,11 @@
 					   }
 					},
                     error: fatalErrorGot
-                });				
+                });		
+                unBlockViewCruises();				
 			}
 			
+			////////////////////////////////////////////////////////////////////////////////////
             function themeSelector(themSel) {
 			    if(themeSelected == themSel){
 				    $("#themeWraper span").removeClass("selected");
@@ -218,7 +232,7 @@
 					refreshCount();
 				}	
             }
-
+			////////////////////////////////////////////////////////////////////////////////////
             function destinationSelector(destSel) {
 				if(destinationSelected == destSel){
 				    $("#destinationWraper span").removeClass("selected");
@@ -231,7 +245,7 @@
 					refreshCount();
 				}	
             }
-
+            ////////////////////////////////////////////////////////////////////////////////////  
             function durationSelector(durSel) {
 			
 				if(durationSelected == durSel){
@@ -245,17 +259,8 @@
 					refreshCount();
 				}				
             }
-
-            function viewList() {
-			
-				$.mobile.loading( 'show', {
-						text: 'Loading',
-						textVisible: true,
-						theme: 'd',
-						textonly: false,
-						html: ''
-				});
-			
+			////////////////////////////////////////////////////////////////////////////////////
+			function getListUrl(){
 			    var listUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/html/cruise/list/searchby';
 				listUrl+= '?lifestyle='+themeSelected;
 				
@@ -269,28 +274,41 @@
   				     listUrl += '?duration='+durationSelected;
 				 }else{
 				     listUrl += '&duration='+durationSelected; 
-                }  				   
-				
+                } 
+                return listUrl;				
+			}
+		    ////////////////////////////////////////////////////////////////////////////////////
+			function showLoader(){
+				$.mobile.loading( 'show', {
+						text: 'Loading',
+						textVisible: true,
+						theme: 'd',
+						textonly: false,
+						html: ''
+				});			
+			}
+			////////////////////////////////////////////////////////////////////////////////////
+            function viewList() {
+				showLoader();
                 $.ajax({
                     type: "GET",
-                    url: listUrl,
+                    url: getListUrl(),
                     cache: false,
                     dataType: "html",
                     success: onSuccess,
                     error: fatalErrorGot
                 });
-				
-				
             }
-			
+			////////////////////////////////////////////////////////////////////////////////////
 			function onSuccess(data) {
 				$("#listPageWrapper").html(data);
 				$.mobile.navigate( "#list-view" );
 			}
-			
+			////////////////////////////////////////////////////////////////////////////////////
 			function fatalErrorGot(request, status , error){
 				alert('Error Occurred '+error);
-			}			
+			}		
+			////////////////////////////////////////////////////////////////////////////////////	
         </script>	  
 		
         

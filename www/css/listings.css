@@ -347,6 +347,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 a.disabled {
    pointer-events: none;
    cursor: default;
+   background: url("images/ajax-loader.gif") no-repeat scroll -100% 50% transparent;
 }
 
 
