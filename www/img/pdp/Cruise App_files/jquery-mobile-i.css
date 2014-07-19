@@ -1,0 +1,367 @@
+
+/* JQM Custom Style */
+.clearfix { display:inline-block;overflow:hidden; }
+/* IE mac \*/
+.clearfix { display:block; }
+
+element:hover, element:active {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+    -webkit-touch-callout: none
+}
+
+ui-page-theme-i{
+    background:#80d5ee;
+}
+
+.ui-bar-i  {
+    background-color: #141414;
+    border: 1px solid #373737;
+    height: 36px;
+    margin: 0;
+    padding: 26px 0 0;
+    /*box-shadow:0 0.0625em 0.1875em rgba(0, 0, 0, 0.4), 0 -1px rgba(255, 255, 255, 0.3) inset;
+    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0px, rgba(255, 255, 255, 0) 100%);*/
+}
+
+
+.ui-bar-i h1.ui-title{
+    color:#fff;
+    text-transform:uppercase;
+    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    font-size:22px;
+
+}
+
+.ui-page-theme-i .ui-content{ border-top:1px solid #53b5de;padding:0px;}
+
+.ui-page-theme-i .category-header {
+    color: #191919;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 5px 5px;
+    text-transform:uppercase;
+}
+
+.ui-page-theme-i .line{ 
+    
+    width:665px; height:2px; 
+    background: url("../img/lineseperator.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.thumbimg {
+    /*border-bottom: 2px solid;
+    box-shadow: 0 1px 0 0 #FF0000 inset; */
+    margin: 2px;
+    
+    border-radius: 3px;
+    box-shadow: 0 8px 6px -8px #000000;
+   
+    box-sizing: border-box;
+    margin: 2px 5px 2px 0;
+    padding:1px;
+    
+}
+  /*.thumbimg:hover {
+ 
+  outline:2px solid #FF8A0C;
+}
+.thumbimg:active { outline:2px solid #FF8A0C; outline: 0; }*/
+
+.ui-btn-i {
+    background-color: #00739B;
+    border-right:none;
+     border-left:none;
+    border-bottom: 1px solid #00739B;
+    border-radius: 1px;
+    color: #FFFFFF;
+    font-family: open sans;
+    font-size: 22px;
+    margin: 15px auto ;
+    padding: 10px;
+    width: 280px;
+}
+
+.header{     
+   color: #FFFFFF;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    width: 55px;
+}
+
+.secondary-title{
+    /*width: 370px; */
+    width:100%;
+}
+.ui-bar-i a {
+    /*background: url("../img/caret01.svg") no-repeat scroll 0 8px / 46px 30px rgba(0, 0, 0, 0); */
+    box-shadow: none; border:none;
+    color: #FFFFFF;
+    /*width:44px; */
+    top:16px;
+    height: 41px;
+
+}
+
+.ui-bar-i.ui-header {
+    background-color: #141414;
+    border: 1px solid #373737;
+    height: 64px;
+    margin: 0;
+    padding: 26px 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.ui-page-theme-i .pagerapper{
+    margin-top:64px;
+}
+.results-btn{
+     margin: auto;
+    position: relative;
+    width: 312px
+}
+.results-btn a:hover{
+    background-color:#058ab8;
+}
+.results-btn a:active{
+     background-color:#058ab8;
+}
+.results-btn > span {
+
+    display: block;
+    float: right;
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    width: 24px;
+    font-weight:bold;
+    
+}
+
+.back {
+    display: block;
+    font-family: 'Open Sans',sans-serif;
+    margin: 3px 5px 3px 15px;
+    font-weight:normal;
+    font-size:1.5em;
+}
+
+
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}		
+                
+.wrapper2 {
+    left: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left:0px;
+    padding-bottom:5px;
+    white-space: nowrap;
+    /*width: 320px; */
+    width:100%;
+   -webkit-overflow-scrolling: touch;
+   
+}
+.wrapper2 span{ 
+    display: inline-block; 
+       box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+}
+
+
+
+
+.wrapper2 span.date {
+    background-color: #4c4c4c;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 70px;
+    padding: 5px 10px 10px;
+    width: 100px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+
+.wrapper span.pdp-img{
+    max-width:92%; max-height:100%;
+}
+
+.wrapper{
+    margin-top:65px; 
+}
+span.pdp-img{
+    margin-right:5px;
+}
+
+
+/* .pdp-carousel {
+ 
+    left: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    white-space: nowrap;
+    width: 99%;
+    position:absolute;
+        top:65px;
+     -webkit-overflow-scrolling: touch;
+}
+.pdp-carousel span{
+    display:inline-block; 
+    margin-right:10px; padding:0;
+    width: 615px;
+    box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+}
+.pdp-carousel span img{
+max-width:100%; max-height:100%;
+}
+*/
+
+.booking-btn{
+    background-color:#0293fc;
+    width:100%; 
+    height:50px;
+    position:fixed;
+    bottom:0;
+    z-index:15;
+}
+.booknow {
+  color: #fff;
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 11px auto;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+.body-content{ 
+    margin:20px; 
+    color:#fff;
+}
+.trip-detail {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 5px 0;
+}
+.cruise-liner {
+    font-size: 18px;
+}
+
+
+
+
+
+.ddmm {
+    clear: both;
+    color: #fff;
+    display: block;
+    float: left;
+    font-weight: bold;
+    font-size: 1em;
+}
+.year {
+    clear: both;
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 0.8em;
+}
+
+.deck-wrapper {
+    height: 120px;
+}
+
+.deck-select {
+
+    float: left;
+    /*height: 120px;
+    padding: 5px 0px 10px;*/
+    border-right: 1px solid #000;
+    width: 25%;
+}
+.deck-type {
+
+    height:32px;
+    padding: 5px 0 0 5px;
+    color:#fff;
+    font-size: 0.8em;
+    border-bottom:1px solid #000;
+
+}
+.deck-price {
+ 
+    height:85px;
+    padding: 5px 0 0 10px;
+    color:#fff;
+    font-weight:bold;
+}
+.price-val {
+    font-size: 1.2em;
+}
+
+/* Css Gradiant */
+
+.deck-select{
+background: #4c4c4c; /* Old browsers */
+background: -moz-linear-gradient(top,  #4c4c4c 0%, #4c4c4c 25%, #4c4c4c 25%, #3f3f3f 25%, #3f3f3f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(25%,#4c4c4c), color-stop(25%,#4c4c4c), color-stop(25%,#3f3f3f), color-stop(100%,#3f3f3f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4c4c4c 0%,#4c4c4c 18%,#4c4c4c 18%,#3f3f3f 19%,#3f3f3f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4c4c4c 0%,#4c4c4c 25%,#4c4c4c 25%,#3f3f3f 25%,#3f3f3f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4c4c4c 0%,#4c4c4c 25%,#4c4c4c 25%,#3f3f3f 25%,#3f3f3f 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #4c4c4c 0%,#4c4c4c 25%,#4c4c4c 25%,#3f3f3f 25%,#3f3f3f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#3f3f3f',GradientType=0 ); /* IE6-9 */
+
+}
+
+.selected{
+background: #0974c1; /* Old browsers */
+background: -moz-linear-gradient(top,  #0974c1 0%, #0974c1 25%, #0974c1 25%, #0974c1 25%, #0974c1 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0974c1), color-stop(25%,#0974c1), color-stop(25%,#0974c1), color-stop(25%,#0f578a), color-stop(100%,#0f578a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #0974c1 0%,#0974c1 18%,#0974c1 18%,#0f578a 19%,#0f578a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #0974c1 0%,#0974c1 25%,#0974c1 25%,#0f578a 25%,#0f578a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #0974c1 0%,#0974c1 25%,#0974c1 25%,#0f578a 25%,#0f578a 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #0974c1 0%,#0974c1 25%,#0974c1 25%,#0f578a 25%,#0f578a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0974c1', endColorstr='#0f578a',GradientType=0 ); /* IE6-9 */
+
+}
+
+.portof-call{color:#fff; position:relative;}
+.portof-call a{
+    display: block;
+    height: 160px;
+}
+.journey {
+    float:left; margin-left:20px; font-size:24px; 
+}
+
+.caret{ float:right; margin-right:20px;
+    
+}
+
+.ports{
+    clear:both;
+}
+.journey-detail {
+    background: none repeat scroll 0 0 red;
+    border: 1px solid;
+    height: 130px;
+    position: absolute;
+    top: 13px;
+    width: 100%;
+    z-index: 18;
+}
