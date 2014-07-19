@@ -30,14 +30,26 @@
         
         
         <!-- Home screen icons -->
-        
         <script type="text/javascript">
-          WebFont.load({
+		document.addEventListener("touchstart", function() {},false);
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+		   navigator.splashscreen.hide();
+	    }
+		
+		$( document ).on( "mobileinit", function() {
+			$.mobile.loader.prototype.options.text = "loading";
+			$.mobile.loader.prototype.options.textVisible = false;
+			$.mobile.loader.prototype.options.theme = "d";
+			$.mobile.loader.prototype.options.html = "";
+		});		
+		
+        WebFont.load({
             google: {
               families: ['Open Sans']
             }
-          });
-        document.addEventListener("touchstart", function() {},false);
+        });
+         
         
 
        </script>
@@ -712,7 +724,6 @@ ewly release Hollywood movies on board, with wine form Italy.
     <script type="text/javascript">
         $(document).ready(function(){
             var _heightBody = $(window).height() - $(".booking-btn").height() -60;
-            //alert(_heightBody);
             $(".wrapper").css({"height":(_heightBody)+"px", "overflow-y":"scroll;"});
            
            
