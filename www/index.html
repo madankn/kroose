@@ -68,59 +68,63 @@
        <div data-role="page" id="main-page" data-theme="i" >
            
             <div data-role="header"  data-theme="i" class="fix-header"> 
-
                    <div class="header secondary-title">Kool Cruise</div>
-  
             </div>
 
 
  
                   
-                  <div class="wrapper theme-col touch">
+                  <div id="themeWraper" class="wrapper theme-col touch">
 
-                    <span class="thumbimg" data-contentdata="theme">
-                        
+                    <span id="family"  class="thumbimg" data-contentdata="theme"  onclick="javascript:themeSelector('family');" >
                         <img src="img/theme/family.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Family</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="theme">
+					
+                    <span id="romantic"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('romantic');">
                         <img src="img/theme/romantic.png" width="" height="" />
-                        <span class="mask selected"></span>
+                        <span class="mask"></span>
                         <span class="text">Romantic</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="theme">
+					
+                    <span id="single"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('single');">
                         <img src="img/theme/single.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Single</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="theme">
+					
+                    <span id="beach"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('beach');">
                         <img src="img/theme/beach.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Beach</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="theme">
+					
+                    <span id="summer"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('summer');">
                         <img src="img/theme/shopping.png" width="" height="" />
                         <span class="mask"></span>
                        <span class="text">Shopping</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="theme">
+					
+                    <span id="senior"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('senior');">
                         <img src="img/theme/senior.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Senior</span>
                     </span>
-                     <span class="thumbimg" data-contentdata="theme">
+					
+                     <span id="cultural"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('cultural');">
                         <img src="img/theme/cultural.png" width="" height="" />
                          <span class="mask"></span>
                         <span class="text">Cultural</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="theme">
+					
+                    <span id="sports"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('sports');">
                         <img src="img/theme/sports.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Sports</span>
                     </span>
 
-                    <span class="thumbimg" data-contentdata="theme">
+                    <span id="summer"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('summer');">
                         <img src="img/theme/summer.png" width="116" height="100" />
                         <span class="text">Summer</span>
                     </span>
@@ -130,57 +134,57 @@
 
 
    
-                  <div class="wrapper dest-col touch">                      
-                     <span class="thumbimg" data-contentdata="destination">
+                  <div id="destinationWraper" class="wrapper dest-col touch">                      
+                     <span id="alaska"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('alaska');">
                         <img src="img/destination/alaska.png" width="" height=""  />
                          <span class="mask"></span>
                         <span class="text">Alaska</span>
                     </span>
                       
-                    <span class="thumbimg" data-contentdata="destination">
+                    <span id="bahamas"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('bahamas');">
                         <img src="img/destination/florida.png" width="" height=""  />
                         <span class="mask selected"></span>
                         <span class="text">Bahamas <br /> & </>Florida</span>
                     </span>
                       
-                    <span class="thumbimg" data-contentdata="destination">
+                    <span id="bermuda"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('bermuda');">
                         <img src="img/destination/bermuda.png" width="" height=""  />
                         <span class="mask"></span>
                         <span class="text">Bermuda</span>
-                    </span>                     
-                    <span class="thumbimg" data-contentdata="destination">
+                    </span>      
+					
+                    <span id="caribbean"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('caribbean');">
                         <img src="img/destination/caribbean.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Caribbean</span>
                     </span>
                       
-                    <span class="thumbimg" data-contentdata="destination">
+                    <span id="canada"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('canada');">
                         <img src="img/destination/canada-newengland.png" width="" height=""  />
                         <span class="mask"></span>
                        <span class="text">Canada <br />& New England</span>
                     </span>
-                    <span class="thumbimg" data-contentdata="destination">
+					
+                    <span id="europe"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('europe');">
                         <img src="img/destination/europe.png" width="" height=""  />
                         <span class="mask"></span>
                         <span class="text">Europe</span>
                     </span>
 
-                    <span class="thumbimg" data-contentdata="destination">
+                    <span id="southamerica"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('southamerica');">
                         <img src="img/destination/southamerica.png" width="" height=""  />
                         <span class="mask"></span>
                         <span class="text">South America</span>
                     </span>
-
-
+					
                   </div>
                   
                   <div class="clearfix"></div>
 
             <div  class="booking-btn" data-theme="i">
-
-                <a href="#Prop-card" data-role="none" data-transition="slide" data-theme="i" class="booknow">Show All Cruises</a>
-
+                <a id="cruiseCount"  href="javascript:viewList();" data-role="none" data-transition="slide" data-theme="i" class="booknow">Show All Cruises</a>
             </div>
+			
         </div>
         
         
@@ -189,217 +193,38 @@
         <div data-role="page" id="Prop-card" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                    <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
-                   <div class="header secondary-title">576 Cruises</div>
+                   <div  id="listHCount" class="header secondary-title">Cruises</div>
             </div>
 
-      <div class="wrapper pagewrapper" data-theme="i" >  
-          
-          
-       <div class="container">
-            <div class="img">
-                <a href="#pro-details" data-role="none" data-transition="slide">
-                    <img src="img/cruise/001.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                              <div class="icon icon-twohalf"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean </h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div></a>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">599</span>
-                                  <span class="onwards">Onwards</span>
-                              </span>                                   
-                          </div>
-                    </div>                       
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="img">
-                    <img src="img/cruise/002.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-threehalf"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">599</span>
-                                  <span class="onwards">Onwards</span>  
-                              </span>
-                                
-                          </div>
-                    </div>                      
-            </div>
-        </div>
-        
-                <div class="container">
-            <div class="img">
-                    <img src="img/cruise/003.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-three"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">599</span>
-                                  <span class="onwards">Onwards</span>  
-                              </span>
-                
-             
-                          </div>
-                    </div>  
-                      
-            </div>
-        </div>
-                <div class="container">
-            <div class="img">
-                    <img src="img/cruise/004.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-onestarhalf"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                 <span class="dolar">$</span><span class="amount">599</span>
-                                  <span class="onwards">Onwards</span>  
-                              </span>
-    
-      
-                          </div>
-                    </div>  
-                      
-            </div>
-        </div>
-                <div class="container">
-            <div class="img">
-                    <img src="img/cruise/005.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-onestar"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">599</span>
-                                  <span class="onwards">Onwards</span>  
-                
-                              </span>
-                              
-
-                          </div>
-                    </div>  
-                      
-            </div>
-        </div>
-                <div class="container">
-            <div class="img">
-                    <img src="img/cruise/006.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-fourhalf"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">599</span>
-                                  <span class="onwards">Onwards</span>  
-                             
-                              </span>
-                              
-                          </div>
-                    </div>  
-                      
-            </div>
-        </div>
-                <div class="container">
-            <div class="img">
-                    <img src="img/cruise/007.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-five"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">990</span>
-                                   <span class="onwards">Onwards</span>
-                              </span>
-                             
-                  
-                          </div>
-                    </div> 
-                
-            </div>
-        </div>
-                <div class="container">
-            <div class="img">
-                    <img src="img/cruise/008.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                             <div class="icon icon-four"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                  <span class="dolar">$</span><span class="amount">990</span>
-                                  <span class="onwards">onwards</span>
-                              </span>
-                              
-            
-                          </div>
-                  
-                    </div>  
-               
-            </div>
-        </div>        <div class="container">
-            <div class="img">
-                    <img src="img/cruise/009.jpg" width="100%" height="" />
-                    <div class="list-gradiant gradiant-box"></div>
-                    <span class="mask"></span>
-                    <div class="details">
-                         <div class="wrap1">
-                              <div class="ratings five"></div>
-                             <h2 class="trip-name">7-Days Eastern Caribbean</h2>
-                             <div class="trip-type"><span>Seattle</span> <span class="dot">.</span> <span>Oct 2014</span></div>
-                         </div>
-                          <div class="wrap2">
-                              <span class="price">
-                                   <span class="dolar">$</span><span class="amount">990</span>
-                                   <span class="onwards">Onwards</span>
-                              </span>
-                              
-                          
-                          </div>
-                    </div>  
-            </div>
-        </div>           
-         </div>   
+			<!--  List Page Item Card Template [Starts Here] -->
+			<div id="listTemplate" style="display:none;">
+				   <div class="container">
+						<div class="img">
+							<a href="#pro-details" data-role="none" data-transition="slide">
+								<img src="#img#" width="100%" height="" />
+								<div class="list-gradiant gradiant-box"></div>
+								<span class="mask"></span>
+								<div class="details">
+									 <div class="wrap1">
+										  <div class="icon icon-twohalf"></div>
+										 <h2 class="trip-name">#name#</h2>
+										 <div class="trip-type"><span>#dfrom#</span> <span class="dot">.</span> <span>#ndate#</span></div></a>
+									 </div>
+									  <div class="wrap2">
+										  <span class="price">
+											  <span class="dolar">$</span><span class="amount">#price#</span>
+											  <span class="onwards">Onwards</span>
+										  </span>                                   
+									  </div>
+								</div>                       
+						</div>
+					</div>			
+			</div>
+			<!--  List Page Item Card Template [Ends Here] -->
+			
+			<div id="listPageWrapper" class="wrapper pagewrapper"  data-theme="i" >  
+			</div>   
+		 
             
             <div class="footer">
                 <div class="filtermask"></div>
@@ -722,12 +547,141 @@ ewly release Hollywood movies on board, with wine form Italy.
     <script src="cordova.js"></script>     
     </body>
     <script type="text/javascript">
+	
+	   refreshCount();
+	
         $(document).ready(function(){
             var _heightBody = $(window).height() - $(".booking-btn").height() -60;
             $(".wrapper").css({"height":(_heightBody)+"px", "overflow-y":"scroll;"});
            
            
         });
-    </script>
     
+		var themeSelected       = '';
+		var destinationSelected = '';
+		var durationSelected    = '';
+		var cruisesFound        = 0;	
+		var cruiseList          = '';
+        var listHtml            = '';
+		////////////////////////////////////////////////////////////////////////////////////
+		function themeSelector(themSel) {
+		    			
+			if(themeSelected == themSel){
+				$("#themeWraper span span").removeClass("selected");
+				themeSelected = '';
+				refreshCount();
+			}else{
+				themeSelected = themSel;
+				$("#themeWraper span span").removeClass("selected");
+				$("#" + themeSelected + " span").addClass("selected");
+				refreshCount();
+			}
+			
+		} 
+		////////////////////////////////////////////////////////////////////////////////////
+		function destinationSelector(destSel) {
+			if(destinationSelected == destSel){
+				$("#destinationWraper span span").removeClass("selected");
+				destinationSelected = '';
+				refreshCount();
+			}else{
+				destinationSelected = destSel;
+				$("#destinationWraper span span").removeClass("selected");
+				$("#" + destinationSelected+ " span").addClass("selected");
+				refreshCount();
+			}	
+		}		
+		////////////////////////////////////////////////////////////////////////////////////
+		function refreshCount(){
+		
+		    blockViewCruises();
+		    if(jQuery.isEmptyObject(cruiseList) || cruiseList == '' ){
+			   initJsonObject();  
+			}else{
+			   calculateCount();
+			}
+			unBlockViewCruises();
+			
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function calculateCount(){
+		    listHtml     = '';
+		    cruisesFound = 0;
+			if(themeSelected == '' && destinationSelected == ''){
+ 			    cruisesFound = cruiseList.length;
+				for(var i=0, len=cruiseList.length; i < len; i++) {
+				    listHtml = listHtml.concat( buildCard(cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+				}
+			}else{
+				for(var i=0, len=cruiseList.length; i < len; i++) {
+ 				   if( themeSelected != '' 
+				           && destinationSelected != ''  
+				           && cruiseList[i].filterDestination.indexOf(destinationSelected) > -1 
+					       && cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1 ){
+					       cruisesFound++;
+						   listHtml = listHtml.concat( buildCard(cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+				   }else if(themeSelected == '' && destinationSelected!='' && cruiseList[i].filterDestination.indexOf(destinationSelected) > -1  ) { 
+						     cruisesFound++; 
+						   listHtml = listHtml.concat( buildCard(cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );							 
+			       }else if(destinationSelected == '' && themeSelected!='' && cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1  ) { 
+						     cruisesFound++; 
+						   listHtml = listHtml.concat( buildCard(cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );							 
+				   }//endif
+				}//endfor		  
+			}//endif
+			
+		    if( cruisesFound > 1 ){
+			 $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	
+			 $("#listHCount").html(cruisesFound+" Cruises Found"); 	
+									 
+		    }else if( cruisesFound == 1 ){
+			 $("#cruiseCount").html("View "+cruisesFound+" Cruise"); 	
+			 $("#listHCount").html(cruisesFound+" Cruise Found"); 	
+									 
+		    }else{
+			 $("#cruiseCount").html("No Cruises Found!"); 	   
+			 $("#listHCount").html("No Cruises Found"); 
+		    }
+			
+		
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function initJsonObject(){
+		    var jsonUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/list';
+			
+			$.getJSON(jsonUrl, function(data){
+			    cruiseList = data.cruiseList; 
+				calculateCount();
+			});		
+			
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function blockViewCruises(){
+		   $("#cruiseCount").addClass("disabled");
+		   $("#cruiseCount").html("<img src='css/images/ajax-loader.gif' height='29'/>");
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function unBlockViewCruises(){
+		  $("#cruiseCount").removeClass("disabled");
+		}
+		////////////////////////////////////////////////////////////////////////////////////		
+		function buildCard(img, name, dfrom, ndate, price){
+		    var itemTemplate = $("#listTemplate").html();
+		    itemTemplate     = itemTemplate.replace("#img#",img);
+			itemTemplate     = itemTemplate.replace("#name#",name);
+			itemTemplate     = itemTemplate.replace("#dfrom#",dfrom);
+			itemTemplate     = itemTemplate.replace("#ndate#",ndate);
+			itemTemplate     = itemTemplate.replace("#price#",price);
+			return itemTemplate;
+		}
+		
+		function viewList(){
+		    //alert(listHtml);
+		    $("#listPageWrapper").html(listHtml);
+			//alert($("#listPageWrapper").html());
+			$.mobile.navigate( "#Prop-card" );			
+  
+		}	
+		////////////////////////////////////////////////////////////////////////////////////		
+    </script>			
 </html>
