@@ -229,13 +229,13 @@
             <div class="footer">
                 <div class="filtermask"></div>
                 <div class="filterlinks">
-                <div class="filters-text">Filters</div>
+                <!--<div class="filters-text">Filters</div>-->
                 <div class="filters">
-                    <ul>
-                        <li >Few <br />Days</li>
-                        <li >1 <br />Week</li>
-                        <li class="selected">2 <br />Weeks</li>
-                        <li >2+ <br />Weeks</li>
+                    <ul id="filterList">
+                        <li id="fewdays" onclick="filterDuration(this,'fewdays')" >Few <br />Days</li>
+                        <li id="oneweek" onclick="filterDuration(this,'oneweek')" >1 <br />Week</li>
+                        <li id="twoweek" onclick="filterDuration(this,'twoweek')" class="selected">2 <br />Weeks</li>
+                        <li id="15days"  onclick="filterDuration(this,'15days')" >2+ <br />Weeks</li>
                     </ul>
                 </div>
                 </div>
@@ -353,7 +353,7 @@ ewly release Hollywood movies on board, with wine form Italy.
     </body>
     <script type="text/javascript">
 	
-	   refreshCount();
+	    refreshCount();
 	
         $(document).ready(function(){
             var _heightBody = $(window).height() - $(".booking-btn").height() -60;
@@ -415,24 +415,35 @@ ewly release Hollywood movies on board, with wine form Italy.
 		    listHtml     = '';
 		    cruisesFound = 0;
 			if(themeSelected == '' && destinationSelected == ''){
- 			    cruisesFound = cruiseList.length;
+ 			    //alert('durationSelected = '+durationSelected);
 				for(var i=0, len=cruiseList.length; i < len; i++) {
-				    listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+				    if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
+						listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+						cruisesFound++;
+					}	
 				}
 			}else{
+			    cruisesFound = 0;
 				for(var i=0, len=cruiseList.length; i < len; i++) {
  				   if( themeSelected != '' 
 				           && destinationSelected != ''  
 				           && cruiseList[i].filterDestination.indexOf(destinationSelected) > -1 
 					       && cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1 ){
-					       cruisesFound++;
-						   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+						   
+						   if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
+							   cruisesFound++;
+							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+						   }
 				   }else if(themeSelected == '' && destinationSelected!='' && cruiseList[i].filterDestination.indexOf(destinationSelected) > -1  ) { 
-						   cruisesFound++; 
-						   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );							 
+				           if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
+							   cruisesFound++; 
+							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );
+						   }							 
 			       }else if(destinationSelected == '' && themeSelected!='' && cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1  ) { 
-						   cruisesFound++; 
-						   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );							 
+				           if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
+							   cruisesFound++; 
+							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );
+						   }							 
 				   }//endif
 				}//endfor		  
 			}//endif
@@ -449,7 +460,6 @@ ewly release Hollywood movies on board, with wine form Italy.
 			 $("#cruiseCount").html("No Cruises Found!"); 	   
 			 $("#listHCount").html("No Cruises Found"); 
 		    }
-			
 		
 		}
 		////////////////////////////////////////////////////////////////////////////////////
@@ -548,6 +558,21 @@ ewly release Hollywood movies on board, with wine form Italy.
 			   $(".active-select-date").removeClass("active-select-date");
 			   obj.className = obj.className + " active-select-date";
 			}
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function filterDuration(obj,nodays){
+		
+		    if(obj.className == 'selected'){
+			  $("#"+nodays).removeClass("selected");
+			  durationSelected = '';
+			}else{
+   			   $( "#filterList li" ).each(function( index ) {
+			       $( this ).removeClass("selected");
+			   });				
+			   $("#"+nodays).addClass("selected"); 
+			   durationSelected = nodays;
+			}
+			refreshCount();
 		}
 		////////////////////////////////////////////////////////////////////////////////////
     </script>			
