@@ -192,7 +192,7 @@
         
         <div data-role="page" id="Prop-card" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
-                   <a href="#main-page" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
+                   <a href="javascript:gotoMain();" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
                    <div  id="listHCount" class="header secondary-title">Cruises</div>
             </div>
 
@@ -497,6 +497,7 @@ ewly release Hollywood movies on board, with wine form Italy.
 		
 		function viewList(){
 		    $("#listPageWrapper").html(listHtml);
+			$("#all").addClass("selected"); 
 			$.mobile.navigate( "#Prop-card" );			
 		}	
 		
@@ -582,5 +583,14 @@ ewly release Hollywood movies on board, with wine form Italy.
 			$("#listPageWrapper").html(listHtml);
 		}
 		////////////////////////////////////////////////////////////////////////////////////
+		function gotoMain(){
+		    durationSelected = '';
+ 		    $( "#filterList li" ).each(function( index ) {
+			   $( this ).removeClass("selected");
+		    });			
+		    refreshCount();
+		    $.mobile.navigate( "#main-page" );
+		    
+		}
     </script>			
 </html>
