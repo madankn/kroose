@@ -35,6 +35,7 @@ permission on your app, which PhoneGap requires.
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+	<preference name="StatusBarOverlaysWebView" value="true" />
     
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version" value="3.4.0" /> <!-- all: current version of PhoneGap -->
@@ -57,6 +58,7 @@ permission on your app, which PhoneGap requires.
 
     <!-- Core plugins -->
 	<gap:plugin name="org.apache.cordova.splashscreen" />
+	
 	
 	<!--
     <gap:plugin name="org.apache.cordova.battery-status" />
@@ -157,10 +159,22 @@ Otherwise, you can specify specific domains:
 <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
 -->
 
-<key>UIViewControllerBasedStatusBarAppearance</key>
-<false/>
 
-<key>UIStatusBarStyle</key>
-<string>UIStatusBarStyleLightContent</string>
+
+
+
+<platform name="ios">
+<config-file target="*-Info.plist" parent="CFBundleURLTypes">
+<array>
+    <dict>
+		<key>UIViewControllerBasedStatusBarAppearance</key>
+		<false/>
+		<key>UIStatusBarStyle</key>
+		<string>UIStatusBarStyleLightContent</string>		
+    </dict>
+</array>
+</config-file>
+</platform>
+
 
 </widget>
