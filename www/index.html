@@ -232,6 +232,7 @@
                 <!--<div class="filters-text">Filters</div>-->
                 <div class="filters">
                     <ul id="filterList">
+					    <li id="all" onclick="filterDuration(this,'all')" class="selected">All <br />Days</li>
                         <li id="fewdays" onclick="filterDuration(this,'fewdays')" >Few <br />Days</li>
                         <li id="oneweek" onclick="filterDuration(this,'oneweek')" >1 <br />Week</li>
                         <li id="twoweek" onclick="filterDuration(this,'twoweek')" >2 <br />Weeks</li>
@@ -570,7 +571,12 @@ ewly release Hollywood movies on board, with wine form Italy.
 			       $( this ).removeClass("selected");
 			   });				
 			   $("#"+nodays).addClass("selected"); 
-			   durationSelected = nodays;
+			   
+			   if(nodays != 'all'){
+			     durationSelected = nodays;
+			   }else {
+			     durationSelected = '';
+               }			   
 			}
 			refreshCount();
 		}
