@@ -368,6 +368,8 @@ ewly release Hollywood movies on board, with wine form Italy.
 		var cruisesFound        = 0;	
 		var cruiseList          = '';
         var listHtml            = '';
+		var currentCID          = '';
+		var cruiseJsonDetails   = '';
 		////////////////////////////////////////////////////////////////////////////////////
 		function themeSelector(themSel) {
 		    			
@@ -499,7 +501,10 @@ ewly release Hollywood movies on board, with wine form Italy.
 		}
 			
 		function viewDetails(cid){
+		        currentCID        = cid;  
+				cruiseJsonDetails = '';
 				showLoader();
+				
 				var detailsUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/html/cruise/details/'+cid+'/cruiseid';
                 $.ajax({
                     type: "GET",
@@ -508,18 +513,42 @@ ewly release Hollywood movies on board, with wine form Italy.
                     dataType: "html",
                     success: onSuccess,
                     error: fatalErrorGot
-                });		    
+                });	
+
+				var detailsJsonUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/details/'+cid+'/cruiseid';
+				$.getJSON(detailsJsonUrl, function(data){
+					cruiseJsonDetails = data; 
+				});	
+			
 		}
-			////////////////////////////////////////////////////////////////////////////////////
-			function onSuccess(data) {
-			    alert(data);
-				$("#pro-details").html(data);
-				$.mobile.navigate( "#pro-details" );
+		////////////////////////////////////////////////////////////////////////////////////
+		function onSuccess(data) {
+			$("#pro-details").html(data);
+			$.mobile.navigate( "#pro-details" );
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function fatalErrorGot(request, status , error){
+			alert('Error Occurred '+error);
+		}				
+	    ////////////////////////////////////////////////////////////////////////////////////
+		function refreshPrice(obj, cid, pdate){
+		    if(cruiseJsonDetails!=''){
+			   var itenaryDates = cruiseJsonDetails.cruiseDetails.itineraryDates;
+			   for(var i=0, len=itenaryDates.length; i < len; i++) {
+			       if( pdate == itenaryDates[i].date){
+				      for(var j=0, jlen=itenaryDates[i].itineraryPrice.length; j < jlen; j++) {
+					      var catName  = itenaryDates[i].itineraryPrice[j].categoryName;
+						  var catPrice = itenaryDates[i].itineraryPrice[j].leadPrice;
+				          $("#"+catName+"-ds4").html(catPrice); 
+						  
+					  }//endforj
+				   }//endif
+			   }//endfori
+			   var newDate = pdate+"-dsa";
+			   $(".active-select-date").removeClass("active-select-date");
+			   obj.className = obj.className + " active-select-date";
 			}
-			////////////////////////////////////////////////////////////////////////////////////
-			function fatalErrorGot(request, status , error){
-				alert('Error Occurred '+error);
-			}				
-		////////////////////////////////////////////////////////////////////////////////////		
+		}
+		////////////////////////////////////////////////////////////////////////////////////
     </script>			
 </html>
