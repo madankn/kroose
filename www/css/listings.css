@@ -129,17 +129,15 @@ img {
     
 
 }
-.wrap1{  
-    /*float: left;
-    margin-top:0px;
-    position:relative;
-    padding: 10px 10px 10px;
-     bottom: 70px;
-    font-family: 'Open Sans', sans-serif; font-weight:bold; */
-    
-    padding-right: 5px;
-    width: 70%;
+
+.wrap1 {
+padding-right: 5px;
+white-space: normal;
+width: 70%;
 }
+
+
+
 .wrap1 > a {
     color: #fff;
     text-decoration: none;
@@ -170,32 +168,25 @@ img {
 }
 
 .wrap2{  
-    
-    /*float: right;
-    margin-top:0px;
-    position:relative;
-    padding: 10px 10px 10px;
-     bottom: 70px;
-    font-family: 'Open Sans', sans-serif; font-weight:bold;
-    border:1px solid red; */
-    
-    bottom: 10px;
-    padding-left: 5px;
-    position: absolute;
-    right: 35px;
-    width: 30%;
+
+bottom: 10px;
+padding-left: 5px;
+position: absolute;
+right: 10px;
+width: 30%;
+
 }
+
 .price {
-    
-    display: block;
-    font-family: 'Open Sans', sans-serif;
-    font-weight:300;
-    font-size: 20px;
-    text-align: right;
-    float:right;
-    width:30%;
-    /*letter-spacing: 0.5px;*/
+
+display: block;
+font-family: 'Open Sans', sans-serif;
+font-weight:300;
+font-size: 20px;
+text-align: right;
+
 }
+
 .onwards {
     
     /*color: #FFFFFF;
