@@ -513,7 +513,11 @@ ewly release Hollywood movies on board, with wine form Italy.
 					html: ''
 			});			
 		}
-			
+		////////////////////////////////////////////////////////////////////////////////////
+		function hideLoader(){
+			$.mobile.loading( 'hide');			
+		}		
+		////////////////////////////////////////////////////////////////////////////////////	
 		function viewDetails(cid){
 		        currentCID        = cid;  
 				cruiseJsonDetails = '';
@@ -533,6 +537,8 @@ ewly release Hollywood movies on board, with wine form Italy.
 				$.getJSON(detailsJsonUrl, function(data){
 					cruiseJsonDetails = data; 
 				});	
+				
+				hideLoader();
 			
 		}
 		////////////////////////////////////////////////////////////////////////////////////
