@@ -594,5 +594,36 @@ ewly release Hollywood movies on board, with wine form Italy.
 		    $.mobile.navigate( "#main-page" );
 		    
 		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function selectPrice(obj, deckSel){
+		
+		    if(obj.className == 'deck-price active-select-price'){
+			  $("#"+deckSel+"-ds1").removeClass("selected");
+			  $("#"+deckSel+"-ds2").removeClass("active-select-price");
+			  $("#"+deckSel+"-ds2").removeClass("active-select-deck");
+			  $("#"+deckSel+"-ds3").removeClass("active-select-price");
+			}else{
+			
+
+   			   $( "#deckWrapperId div" ).each(function( index ) {
+			       $( this ).removeClass("selected");
+			   });	
+
+   			   $( "#deckWrapperId div a div" ).each(function( index ) {
+			       $( this ).removeClass("active-select-deck");
+			   });	
+			   
+   			   $( "#deckWrapperId div div" ).each(function( index ) {
+			       $( this ).removeClass("active-select-price");
+			   });			   
+			   
+			   
+			   $("#"+deckSel+"-ds1").addClass("selected");
+			   $("#"+deckSel+"-ds2").addClass("active-select-deck");
+			   $("#"+deckSel+"-ds3").addClass("active-select-price");
+			   
+			}		   
+		}
+		////////////////////////////////////////////////////////////////////////////////////
     </script>			
 </html>
