@@ -202,12 +202,12 @@
 				   <div class="container">
 						<div class="img">
 							<a href="javascript:viewDetails('#cid#')" data-role="none" data-transition="slide">
-								<img src="#img#" width="100%" height="" />
+								<img src="#img#" width="100%"/>
 								<div class="list-gradiant gradiant-box"></div>
 								<span class="mask"></span>
 								<div class="details">
 									 <div class="wrap1">
-										  <div class="icon icon-twohalf"></div>
+										  <div class="icon icon-#rating#"></div>
 										 <h2 class="trip-name">#name#</h2>
 										 <div class="trip-type"><span>#dfrom#</span> <span class="dot">.</span> <span>#ndate#</span></div></a>
 									 </div>
@@ -420,7 +420,7 @@ ewly release Hollywood movies on board, with wine form Italy.
  			    //alert('durationSelected = '+durationSelected);
 				for(var i=0, len=cruiseList.length; i < len; i++) {
 				    if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
-						listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+						listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom, cruiseList[i].shipOverallRating) ); 
 						cruisesFound++;
 					}	
 				}
@@ -434,17 +434,17 @@ ewly release Hollywood movies on board, with wine form Italy.
 						   
 						   if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
 							   cruisesFound++;
-							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) ); 
+							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom, cruiseList[i].shipOverallRating) ); 
 						   }
 				   }else if(themeSelected == '' && destinationSelected!='' && cruiseList[i].filterDestination.indexOf(destinationSelected) > -1  ) { 
 				           if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
 							   cruisesFound++; 
-							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );
+							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom, cruiseList[i].shipOverallRating) );
 						   }							 
 			       }else if(destinationSelected == '' && themeSelected!='' && cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1  ) { 
 				           if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
 							   cruisesFound++; 
-							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom) );
+							   listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom, cruiseList[i].shipOverallRating) );
 						   }							 
 				   }//endif
 				}//endfor		  
@@ -484,7 +484,7 @@ ewly release Hollywood movies on board, with wine form Italy.
 		  $("#cruiseCount").removeClass("disabled");
 		}
 		////////////////////////////////////////////////////////////////////////////////////		
-		function buildCard(cid, img, name, dfrom, ndate, price){
+		function buildCard(cid, img, name, dfrom, ndate, price, rating){
 		    var itemTemplate = $("#listTemplate").html();
 			
 			itemTemplate     = itemTemplate.replace("#cid#",cid);
@@ -493,6 +493,7 @@ ewly release Hollywood movies on board, with wine form Italy.
 			itemTemplate     = itemTemplate.replace("#dfrom#",dfrom);
 			itemTemplate     = itemTemplate.replace("#ndate#",ndate);
 			itemTemplate     = itemTemplate.replace("#price#",price);
+			itemTemplate     = itemTemplate.replace("#rating#",rating);
 			return itemTemplate;
 		}
 		
