@@ -409,6 +409,7 @@ ewly release Hollywood movies on board, with wine form Italy.
 			}else{
 			   calculateCount();
 			}
+		
 			unBlockViewCruises();
 			
 		}
@@ -560,13 +561,20 @@ ewly release Hollywood movies on board, with wine form Italy.
 					      var catName  = itenaryDates[i].itineraryPrice[j].categoryName;
 						  var catPrice = itenaryDates[i].itineraryPrice[j].leadPrice;
 				          $("#"+catName+"-ds4").html(catPrice); 
-						  
+						  /////////////////////////////////////
+						  //if(catPrice.indexOf('S') > -1 || catPrice.indexOf('N') > -1){
+						  //   $(".dollar").html("");
+						  //}else{
+						  //   $(".dollar").html("$");
+						  //}
+						  /////////////////////////////////////
 					  }//endforj
 				   }//endif
 			   }//endfori
 			   var newDate = pdate+"-dsa";
 			   $(".active-select-date").removeClass("active-select-date");
 			   obj.className = obj.className + " active-select-date";
+ 			   
 			}
 		}
 		////////////////////////////////////////////////////////////////////////////////////
