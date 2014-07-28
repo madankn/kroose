@@ -24,7 +24,7 @@ html {
 body {
     background:#000;
   /*background: #80d5ee ;*/
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto',sans-serif;
     font-size:100%;
 
 }
@@ -42,7 +42,7 @@ a {
 }
 
 b, strong {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -129,25 +129,29 @@ img {
     
 
 }
-
-.wrap1 {
-padding-right: 5px;
-white-space: normal;
-width: 70%;
+.wrap1{  
+    /*float: left;
+    margin-top:0px;
+    position:relative;
+    padding: 10px 10px 10px;
+     bottom: 70px;
+    font-family: 'Open Sans', sans-serif; font-weight:bold; */
+    
+    padding-right: 5px;
+    /*width: 70%;*/
+    white-space:normal;
 }
-
-
-
 .wrap1 > a {
     color: #fff;
     text-decoration: none;
 }
 
 .trip-name {
-   font-family: 'Open Sans', sans-serif; 
+   font-family: 'Roboto',sans-serif;
      font-size: 1em;
 
     margin: 0; color:#fff;
+    font-weight:500;
     /*letter-spacing: 0.5px;*/
 }
 .trip-type span {
@@ -161,59 +165,80 @@ width: 70%;
 }
 .trip-type {
     
-    font-family: 'Open Sans', sans-serif; font-weight:400;
+    font-family: 'Roboto',sans-serif;
+    font-weight:400;
     font-size: 0.8em;
     line-height: 16px;
     /*letter-spacing:0.5px;*/
 }
 
 .wrap2{  
-
-bottom: 10px;
-padding-left: 5px;
-position: absolute;
-right: 10px;
-width: 30%;
-
+    
+    /*float: right;
+    margin-top:0px;
+    position:relative;
+    padding: 10px 10px 10px;
+     bottom: 70px;
+    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    border:1px solid red; */
+    
+    top: 10px;
+    padding-left: 5px;
+    position: absolute;
+    right: 10px;
+    color:#fff;
+    /*width: 30%;*/
 }
-
 .price {
-
-display: block;
-font-family: 'Open Sans', sans-serif;
-font-weight:300;
-font-size: 20px;
-text-align: right;
-
+    
+    display: block;
+    font-family: 'Roboto',sans-serif;
+    font-weight:500;
+    font-size: 20px;
+    text-align: right;
+    /*float:right;
+    width:30%;
+    letter-spacing: 0.5px;*/
 }
-
 .onwards {
     
     /*color: #FFFFFF;
     display: block;
     font-family: 'Open Sans',sans-serif;
-    font-size: 12px;
-    font-weight: normal;
+    font-size: 12px;    
     /*letter-spacing: 0.5px;*/
-    line-height: 12px;
-    text-align: right; 
+    line-height: 0px;
+    text-align: left; 
     display: block;
     font-size: 0.625em;
+    font-weight: 400;
 
 }
 .dolar{
-
-    font-size: 0.8em;
-    line-height:20px;
-    vertical-align:top;
+    font-size: 0.7em;
+    font-weight: 500;
+    line-height: 34px;
     position: relative;
-    right: 0px;
-    font-weight:normal;
+    right: 0;
+    vertical-align: top;
 }
+
+
+.amount-dolar{
+    font-size: 0.7em;
+    font-weight: 500;
+    line-height: 20px;
+    position: relative;
+    right: -3px;
+    vertical-align: top;
+}
+
 .amount{
      font-size: 26px;
-    font-weight: bold;
+   font-weight: 700;
     line-height: 1;
+    position:relative;
+    left:2px;
     
 }
 .ratings {
@@ -304,9 +329,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
     /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); */
     color: #fff;
-    font-family: open sans;
-    font-size: 1.6em;
-    font-weight: 600;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
     left: 15px;
     position: absolute;
     text-shadow: 0 1px 0 rgba(48, 67, 80, 0.4);
@@ -339,7 +364,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     text-align: center;
     width: 116px;
 
-    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    font-family: 'Roboto',sans-serif;
+    font-weight:bold;
     font-size: 11px;
     color: #074375;
     text-transform:uppercase;
@@ -369,7 +395,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     /*border-bottom: 2px solid #007DBD;*/
     color: #074375;
     display: inline-block;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-size: 11px;
     font-weight: bold;
     margin-bottom: 0;
@@ -384,7 +410,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     /*border-bottom: 2px solid #007DBD;*/
     color: #074375;
     display: inline-block;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 0;
@@ -402,12 +428,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 .next-caret{
     color: #FFFFFF;
-    font-size: 30px;
+    font-size: 2em;
     font-weight: bold;
 }
 .prev-caret {
     color: #ffffff;
-    font-size: 23px;
+    font-size: 2em;
     font-weight: bold;
     left: 0;
     margin-top: 4px;
@@ -420,7 +446,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     background: none repeat scroll 0 0 #374753;
     bottom: 0;
     color: #fff;
-    height: 70px;
+    height: 54px;
     opacity: 0.9;
     position: absolute;
     width: 100%;
@@ -430,7 +456,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
     bottom: 0;
     color: #fff;
-    height: 70px;
+    height: 54px;
 
     position: fixed;
     width: 100%;
@@ -442,11 +468,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     float: left;
     font-size: 1em;
     font-weight: normal;
-    height: 70px;
-    margin-right: 0.3%;
+    height: 54px;
+   /* margin-right: 0.3%;*/
     opacity: 0.5;
     padding: 5px 0 0 5px;
-    width: 19.9%;
+    width: 20%;
 }
 .filters > ul {
     list-style: none outside none;
@@ -459,14 +485,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     float: left;
     font-size: 1em;
     font-weight: normal;
-    height: 70px;
-    margin-right: 0.3%;
+    height: 54px;
+    /*margin-right: 0.3%;*/
     opacity: 1;
     padding: 5px 0 0 5px;
-    width: 19.5%;
+    width:20%;
+    border-right:2px solid #374753;
 }
 .filters li:last-child {
-    margin-right: 0%;
+    border:none;
 }
 /*.filters > ul li:hover{
     background-color:#0293FC;

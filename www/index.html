@@ -15,15 +15,11 @@
         
         <title>Kool Cruise</title>
         
-       
-        <link href="css/google.css" rel="stylesheet" type="text/css"/>
-        <link href="css/font-awesome.min.css" rel="stylesheet"  type="text/css"/>
-        <link href="css/font.css" rel="stylesheet" type="text/css">
-        <link href="css/jquery.mobile.theme.css" rel="stylesheet"  type="text/css"/>
-        <link href="css/listings.css" rel="stylesheet"  type="text/css"/>     
-        <link href="css/jquery-mobile-i.css"  rel="stylesheet" type="text/css"/>
-        
-
+        <link rel="stylesheet" href="css/jquery.mobile.theme.css">
+        <link rel="stylesheet" href="css/listings.css">     
+        <link rel="stylesheet" type="text/css" href="css/jquery-mobile-i.css"/>
+        <link rel="stylesheet" href="css/font.css"> 
+		
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/jquery.mobile-1.4.2.min.js"></script>
 
@@ -31,10 +27,10 @@
         
         <!-- Home screen icons -->
         <script type="text/javascript">
-		document.addEventListener("touchstart", function() {},false);
 		document.addEventListener("deviceready", onDeviceReady, false);
 		function onDeviceReady() {
 		   navigator.splashscreen.hide();
+		   document.addEventListener("touchstart", function() {},false);
 	    }
 		
 		$( document ).on( "mobileinit", function() {
@@ -49,9 +45,6 @@
               families: ['Open Sans']
             }
         });
-         
-        
-
        </script>
         <style>
                 element:hover, element:active {
@@ -60,13 +53,10 @@
                 -webkit-touch-callout: none
             }
         </style>
-        
     </head>
     
     <body>
-
        <div data-role="page" id="main-page" data-theme="i" >
-           
             <div data-role="header"  data-theme="i" class="fix-header"> 
                    <div class="header secondary-title">Kool Cruise</div>
             </div>
@@ -183,7 +173,7 @@
                   <div class="clearfix"></div>
 
             <div  class="booking-btn" data-theme="i">
-                <a id="cruiseCount"  href="javascript:viewList();" data-role="none" data-transition="slide" data-theme="i" class="booknow">Show All Cruises</a>
+                <a id="cruiseCount"  href="javascript:viewList();" data-role="none" data-transition="slide" data-theme="i" class="booknow  fixedfooter">Show All Cruises</a>
             </div>
 			
         </div>
@@ -199,27 +189,30 @@
 
 			<!--  List Page Item Card Template [Starts Here] -->
 			<div id="listTemplate" style="display:none;">
+
 				   <div class="container">
 						<div class="img">
-							<a href="javascript:viewDetails('#cid#')" data-role="none" data-transition="slide">
-								<img src="#img#" width="100%"/>
+							<a  href="javascript:viewDetails('#cid#')" href="#pro-details" data-role="none" data-transition="slide">
+								<img src="#img#" width="100%" height="" />
 								<div class="list-gradiant gradiant-box"></div>
 								<span class="mask"></span>
+								 <div class="wrap2">
+										  <span class="price">
+											  <span class="dolar">USD</span><span class="amount">#price#</span>
+											  <span class="onwards">Onwards</span>
+										  </span>                                   
+								 </div>
 								<div class="details">
 									 <div class="wrap1">
 										  <div class="icon icon-#rating#"></div>
-										 <h2 class="trip-name">#name#</h2>
-										 <div class="trip-type"><span>#dfrom#</span> <span class="dot">.</span> <span>#ndate#</span></div></a>
+										 <h2 class="trip-name">#name# </h2>
+										 <div class="trip-type"><span>#dfrom#</span> <span class="dot">.</span> <span>#ndate#</span></div>
 									 </div>
-									  <div class="wrap2">
-										  <span class="price">
-											  <span class="dolar">$</span><span class="amount">#price#</span>
-											  <span class="onwards">Onwards</span>
-										  </span>                                   
-									  </div>
-								</div>                       
+								</div> 
+                             </a> 								
 						</div>
-					</div>			
+					</div>
+		
 			</div>
 			<!--  List Page Item Card Template [Ends Here] -->
 			
@@ -227,7 +220,7 @@
 			</div>   
 		 
             
-            <div class="footer">
+            <div class="footer fixedfooter">
                 <div class="filtermask"></div>
                 <div class="filterlinks">
                 <!--<div class="filters-text">Filters</div>-->
@@ -252,13 +245,13 @@
 <!-- Property Details Page Starts Here -->
 
             
-        <div data-role="page" id="pro-details" data-theme="i" class="fix-header">
+        <div data-role="page" id="pro-details" data-theme="i">
               
         </div>
         
         
         <!-- Journey details -->
-        
+		<!--
          <div data-role="page" id="journey" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                    <a href="#pro-details" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
@@ -307,45 +300,35 @@ ewly release Hollywood movies on board, with wine form Italy.
              </div>
 
         </div>
+		-->
         <!--// Journey details //-->
         
         
         <!-- Deck Details -->
-        
          <div data-role="page" id="deck-detail" data-theme="i" class="fix-header">
             <div data-role="header"  data-theme="i">
                    <a href="#pro-details"  data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
                    <div class="header secondary-title">Upper Deck</div>
             </div>
-             
-             <div class="clearfix"></div>
-             
-           <div class="scrollwrapper">
+            <div class="clearfix"></div>
+            <div class="scrollwrapper">
                <div class="wrapper4">
                   <span class="pdp-img">
                     <img width="100%" height="100%" src="img/deck/JEWEL.BALCONY-modal-01_12.jpg">
                 </span>
                </div>
-               
                <div class="deck-content-wrapper">
                 <p>Relax in lively style and smart sophistication. Our modern inside state rooms are highlited with appointments like a TV, sitting area, room service and more.</p>
-                
-                   
                    <h3>What's included?</h3>
                    <ul>
-                    
                        <li><span class="amenity">TV</span></li>
                        <li><span class="amenity">Sofa</span></li>
                        <li><span class="amenity">Hair dryer</span></li>
                        <li><span class="amenity">Refrigerator</span></li>
                    </ul>
                </div>
-               
-           </div>
-             
-
-        </div>
-        
+            </div>
+         </div>
         <!--// Deck Details //-->
         
         
@@ -355,14 +338,13 @@ ewly release Hollywood movies on board, with wine form Italy.
     </body>
     <script type="text/javascript">
 	
-	    refreshCount();
-	
         $(document).ready(function(){
-            var _heightBody = $(window).height() - $(".booking-btn").height() -60;
+            var _heightBody = $(window).height() - $(".fixedfooter").height() -90;
             $(".wrapper").css({"height":(_heightBody)+"px", "overflow-y":"scroll;"});
-           
-           
+            $('.svg-inject').svgInject();
         });
+		
+	    refreshCount();
     
 		var themeSelected       = '';
 		var destinationSelected = '';
@@ -560,6 +542,7 @@ ewly release Hollywood movies on board, with wine form Italy.
 				      for(var j=0, jlen=itenaryDates[i].itineraryPrice.length; j < jlen; j++) {
 					      var catName  = itenaryDates[i].itineraryPrice[j].categoryName;
 						  var catPrice = itenaryDates[i].itineraryPrice[j].leadPrice;
+						  catName = catName.replace(/\s+/g, '-');
 				          $("#"+catName+"-ds4").html(catPrice); 
 						  /////////////////////////////////////
 						  //if(catPrice.indexOf('S') > -1 || catPrice.indexOf('N') > -1){

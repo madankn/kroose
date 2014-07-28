@@ -9,13 +9,17 @@ element:hover, element:active {
     -webkit-user-select: none;
     -webkit-touch-callout: none
 }
+* {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+}
 
 ui-page-theme-i{
     background:#80d5ee;
 }
 
 .ui-bar-i  {
-    background-color: #141414;
+    background-color: #000;
     border: 1px solid #373737;
     height: 36px;
     margin: 0;
@@ -29,7 +33,8 @@ ui-page-theme-i{
 .ui-bar-i h1.ui-title{
     color:#fff;
     text-transform:uppercase;
-    font-family: 'Open Sans', sans-serif; font-weight:bold;
+    font-family: 'Roboto',sans-serif; 
+    font-weight:bold;
     font-size:22px;
 
 }
@@ -38,7 +43,7 @@ ui-page-theme-i{
 
 .ui-page-theme-i .category-header {
     color: #191919;
-    font-family: sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-size: 14px;
     font-weight: bold;
     margin: 10px 5px 5px;
@@ -88,10 +93,10 @@ ui-page-theme-i{
 
 .header{     
    color: #FFFFFF;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Roboto',sans-serif;
     /*font-size: 22px; */
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: 500;
     margin: auto;
     text-align: center;
     width: 55px;
@@ -112,7 +117,7 @@ ui-page-theme-i{
 }
 
 .ui-bar-i.ui-header {
-    background-color: #141414;
+    background-color: #000;
     /*border: 1px solid #373737;*/
     border:none;
     height: 64px;
@@ -159,7 +164,7 @@ ui-page-theme-i{
 
 .back {
     display: block;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Roboto',sans-serif;
     margin: 3px 5px 3px 15px;
     font-weight:normal;
     font-size:1.5em;
@@ -209,7 +214,7 @@ ui-page-theme-i{
     /*width: 320px; */
     width:100%;
    -webkit-overflow-scrolling: touch;
-    margin-top:65px;
+    /*margin-top:65px;*/
    
 }
 .wrapper-productdetails  span{ 
@@ -226,7 +231,7 @@ ui-page-theme-i{
     background-color: #4c4c4c;
     box-sizing: border-box;
     display: inline-block;
-    height: 60px;
+    height: 70px;
     padding: 5px 10px 10px;
     width: 100px;
     margin-right:-4px;
@@ -282,7 +287,7 @@ max-width:100%; max-height:100%;
 .booking-btn{
     background-color:#0293fc;
     width:100%; 
-    height:120px;
+    height:65px;
     position:fixed;
     bottom:0;
     z-index:15;
@@ -297,15 +302,15 @@ max-width:100%; max-height:100%;
 .booknow {
   color: #fff;
     display: block;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-weight: normal;
-    margin: 44px auto;
+    margin: 20px auto;
     text-align: center;
     text-decoration: none;
     width: 100%;
 }
 .body-content{ 
-    margin:10px; 
+    margin:20px; 
     color:#fff;
 }
 .trip-detail {
@@ -339,30 +344,50 @@ max-width:100%; max-height:100%;
 }
 
 .deck-wrapper {
-   /* height: 120px; */
+   /* height: 120px; 
     height:85px;
-    margin-top:-3px;
+    margin-top:-3px;*/
+    
+    left: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 1px;
+    padding-left: 0;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.deck-wrapper span.deck {
+    background-color: #4c4c4c;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+    display: inline-block;
+    /*height: 70px;
+    padding: 5px 10px 10px;*/
+    margin-right: -4px;    
+    width: 130px;
 }
 
 .deck-select {
 
-    float: left;
-    /*height: 120px;
-    padding: 5px 0px 10px;*/
+    /*float: left;
+    height: 120px;
+    padding: 5px 0px 10px;
     border-right: 1px solid #000;
-    width: 25%;
+    width: 25%;*/
 }
 .deck-select a{
     text-decoration:none;
 }
 .deck-type {
 
-    height:32px;
-    padding: 5px 0 0 5px;
+    height:40px;
+    padding: 5px 0 0 10px;
     color:#fff;
-    font-size: 0.8em;
+    font-size: 1em;
     border-bottom:1px solid #000;
     background-color:#4c4c4c;
+    position:relative;
 
 }
 .deck-selected{
@@ -382,7 +407,7 @@ max-width:100%; max-height:100%;
 
 .deck-price {
  
-    height:55px;
+    height:50px;
     padding: 5px 0 0 10px;
     color:#fff;
     font-weight:bold;
@@ -397,7 +422,8 @@ max-width:100%; max-height:100%;
 }
 
 .price-val {
-    font-size: 0.8em;
+    font-size: 1em;
+    font-weight:700;
 }
 .journey-map{
      /*border-top:1px solid #323232;
@@ -405,6 +431,7 @@ max-width:100%; max-height:100%;
     margin-top:65px; */
     position:relative;
     clear:both;
+    top:5px;
     
 }
 .journey-map a{
@@ -478,23 +505,26 @@ max-width:100%; max-height:100%;
 
 /* journey style */
 .journeydetails-wrapper{
-    margin-top:20px;
+    margin-top:30px;
 }
-.tree-box {
-    border-left: 2px solid #0293fc;
-    clear: both;
-    color: #fff;
-    margin-left: 25px;
-    margin-right: 15px;
-    padding-bottom: 20px;
-    padding-left: 25px;
-    position: relative;
+.tree-box{
+    /*width:80%; */
+    border-left:2px solid #0293fc;
+    clear:both; 
+    margin-left:25px; 
+    color:#fff; 
+    position:relative; 
+    padding-left:25px; 
+    padding-bottom:20px;
+    margin-right:15px;
+    
 }
-
 .tree-box p {
-    margin: 0;
+   
+    margin: 0 ;
     padding-bottom: 10px;
     white-space:normal;
+     white-space: normal;
 }
 .tree {
     background: none repeat scroll 0 0 #0293fc;
@@ -660,45 +690,18 @@ span.pdp-img {
 .active-select-price{
     background-color:#0f578a;
 }
+
+.svg-inject {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 16px;
+}
+
 /* Media Query For iphone4/4S */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3)
 {
 
-    .body-content{
-        margin: 10px 10px 40px;
-    }
-    .deck-price{
-        height:50px;
-    }
-
-.thumbimg .text{
-    color: #fff;
-    font-family: open sans;
-    font-size: 1em;
-    left: 5px;
-    position: absolute;
-    top: 5px;
-    font-weight:600;
-}
-
-.booking-btn {
-
-    height: 65px;
-    position: fixed;
-    z-index: 15;
-}
-.booknow {
-    color: #fff;
-    font-weight:normal;
-    margin: 16px auto;
-    width: 100%;
-}
-.theme-col {
-    margin-top: 65px !important;
-}
-.dest-col {
-    margin-top: 65px !important; 
-}
 
 }
 
@@ -706,7 +709,160 @@ span.pdp-img {
 @media screen and (device-aspect-ratio: 40/71) {
     
 
-    .body-content{
+ 
+
+
+}
+
+/* Media Query For iPad*/
+
+
+
+/* iPad */
+@media screen and (min-device-width: 768px) {
+    /* ipad-portrait */
+    @media screen and (max-width: 896px) {
+        .theme-col {
+            margin-top: 65px !important;
+        }
+        .dest-col {
+            margin-top: 65px !important; 
+        }
+        .booknow {
+            color: #fff;
+            font-size: 1.6em;
+            margin: 20px auto;
+
+        }
+        .booking-btn {
+            height: 65px;
+            position: fixed;
+            z-index: 15;
+        }
+        .thumbimg img {
+            margin-bottom:3px;
+        }
+
+        .deck-wrapper {
+        /* height: 120px; */
+        height:110px;
+        /*margin-top:-6px;*/    
+        }
+        .journeydetails-wrapper {
+            /*margin-bottom: 120px;*/
+            margin-top: 20px;
+        }
+
+        .filters > ul li {
+            width:20%;
+            /* margin-right: 0.3%;*/
+            height: 75px;
+            border-right:2px solid #374753;
+        }
+        .filters-text {
+            width: 19.9%;
+             margin-right: 0.3%;
+            height: 53px;
+        }
+        .footer {
+            height: 54px;
+        }
+        .filtermask {
+             height: 77px;
+        }
+
+        .thumbimg .text {
+            font-size: 1.6em;
+            font-weight: 500;
+        }
+
+        
+    }
+    /* ipad-landscape */
+    @media screen and (min-width: 897px) { 
+
+    }
+}
+
+
+@media screen and (device-aspect-ratio: 3/4) {
+
+
+}
+
+
+
+
+/* All Smartphones in portrait and landscape ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    
+    
+        .body-content{
+            margin: 10px 10px 40px;
+        }
+        .deck-price{
+            height:42px;
+        }
+    
+    .thumbimg .text{
+        color: #fff;
+        font-family: 'Roboto',sans-serif;
+        font-size: 1em;
+        left: 5px;
+        position: absolute;
+        top: 5px;
+        font-weight:500;
+    }
+    
+    .booking-btn {
+    
+        height: 65px;
+        position: fixed;
+        z-index: 15;
+    }
+    .booknow {
+        color: #fff;
+        font-weight:normal;
+        margin: 20px auto;
+        width: 100%;
+    }
+    .theme-col {
+        margin-top: 65px !important;
+    }
+    .dest-col {
+        margin-top: 65px !important; 
+    }
+
+}
+
+/* All Smartphones in landscape ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* YOUR STYLE GOES HERE */
+}
+
+/* All Smartphones in portrait ----------- */
+@media only screen 
+and (max-width : 479px) {
+/* YOUR STYLE GOES HERE */
+}
+
+/***** ANDROID DEVICES *****/
+
+/* Android 240 X 320 ----------- */
+@media only screen
+and (max-width: 241px){
+/* YOUR STYLE GOES HERE */
+}
+
+/* Android(Samsung Galaxy) in portrait 380 X 685 ----------- */
+@media only screen
+and (min-width: 375px)
+and (max-width: 385px){
+
+       .body-content{
         margin: 10px 10px 40px;
     }
     .deck-price{
@@ -715,12 +871,12 @@ span.pdp-img {
 
 .thumbimg .text{
     color: #fff;
-    font-family: open sans;
+    font-family: 'Roboto',sans-serif;
     font-size: 1em;
     left: 5px;
     position: absolute;
     top: 5px;
-    font-weight:600;
+    font-weight:500;
 }
 
 .booking-btn {
@@ -744,8 +900,9 @@ span.pdp-img {
 
 .filters > ul li {
 
-   width: 19.5%;
-   margin-right:.7%;
+   width: 20%;
+   /*margin-right:.7%;*/
+   border-right:2px solid #374753;
 }
 
 .filters-text {
@@ -754,81 +911,150 @@ span.pdp-img {
     margin-right: .7%;
 }
 
-
-
-}
-
-/* Media Query For iPad*/
-
-
-
-/* iPad */
-@media screen and (min-device-width: 768px) {
-    /* ipad-portrait */
-    @media screen and (max-width: 896px) {
-        .theme-col {
-            margin-top: 65px !important;
-        }
-        .dest-col {
-            margin-top: 65px !important; 
-        }
-        .booknow {
-            color: #fff;
-            font-size: 1.6em;
-    20px
-        }
-        .booking-btn {
-            height: 120px;
-            position: fixed;
-            z-index: 15;
-        }
-.thumbimg img {
-
-    margin-bottom:3px;
-}
-
-        .deck-wrapper {
-        /* height: 120px; */
-        height:90px;
-        /*margin-top:-6px;*/
     
-        }
-        .journeydetails-wrapper {
-            margin-bottom: 120px;
-            margin-top: 20px;
-        }
-
-.filters > ul li {
-     width: 19.9%;
-    margin-right: 0.3%;
-    height: 112px;
-}
-.filters-text {
-    width: 19.9%;
-     margin-right: 0.3%;
-    height: 112px;
-}
-.footer {
-    height: 112px;
-}
-.filtermask {
-     height: 112px;
+    
 }
 
+/* Android(Nexus) in Landscape 685 X  380 ----------- */
 
-
+@media only screen and (width : 603px) and (orientation: portrait) {
+    #device:after {
+        content: "Nexus 7 - portrait - chrome";
         
     }
-    /* ipad-landscape */
-    @media screen and (min-width: 897px) { 
+          .thumbimg .text {
+                color: #fff;
+                font-family: 'Roboto',sans-serif;
+                font-size:1em !important;
+                left: 5px;
+                position: absolute;
+                top: 5px;
+                font-weight:500;
+        }
+}
+@media screen and (device-width: 601px) and (device-height: 880px) {  
+    
 
-    }
+
 }
 
 
-@media screen and (device-aspect-ratio: 3/4) {
+/*@media only screen and (min-device-width : 603px) and (max-device-width : 966px) {
+    ul.top-menu { background: yellow; }
 
 
+}*/
+
+/* Android(Samsung Galaxy) in Landscape 685 X  380 ----------- */
+@media only screen
+and (min-width: 680px)
+and (max-width: 690px){
+
+}
+
+/* Kindle Portrait 600 X 1024 ----------- */
+@media only screen
+and (min-width: 595px)
+and (max-width: 610px){
+/* YOUR STYLE GOES HERE */
+}
+
+/* Kindle Landscape 1024 X s ----------- */
+@media only screen
+and (min-width: 1000px)
+and (max-width: 1030px){
+/* YOUR STYLE GOES HERE */
+}
+
+/***** ALL GENERATION IPADS *****/
+
+/* iPads in portrait and landscape----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* YOUR STYLE GOES HERE */  
+}
+
+/* iPad in landscape----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* YOUR STYLE GOES HERE */
+}
+
+/* iPad in portrait----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait){
+/* YOUR STYLE GOES HERE */
+}
+
+
+
+/***** Retina IPAD 3 & 4*****/
+
+/* Retina iPad 3 & 4 in portrait and landscape----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+
+    
+    
+    
+}
+
+/* Retina iPad 3 & 4 in landscape----------- */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2){
+/* YOUR STYLE GOES HERE */
+}
+
+/* Retina iPad 3 & 4 in landscape----------- */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2){
+/* YOUR STYLE GOES HERE */
+}
+
+
+
+
+/***** IPAD 1 & 2 (ALSO IPAD MINI)*****/
+
+/* iPad 1 & 2 in portrait and landscape ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 1){
+/* YOUR STYLE GOES HERE */
+}
+
+/* iPad 1 & 2 in landscape ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {
+/* YOUR STYLE GOES HERE */
+}
+
+/* iPad 1 & 2 in portrait ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) 
+and (-webkit-min-device-pixel-ratio: 1){
+/* YOUR STYLE GOES HERE */
 }
 
 

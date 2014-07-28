@@ -1,3 +1,7 @@
+
+
+
+
 @font-face {
 	font-family: 'pravaticon';
 	src: url('fonts/pravaticon.eot');
@@ -18,7 +22,7 @@
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-    font-size:1em;
+    /*font-size:1em;*/
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -75,58 +79,58 @@
 }
 
 
-/* Icons for Aminity */
+@font-face {
+	font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto'), local('Roboto-Bold'), url(../fonts/Roboto-Bold.woff) format('woff');
+    
+	/*src: url('../fonts/Roboto-Bold.eot');
+	src: local('☺'), url('../fonts/Roboto-Bold.woff') format('woff'), url('../fonts/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal; */
+}
 
 @font-face {
-	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?8enudx');
-	src:url('../fonts/icomoon.eot?#iefix8enudx') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?8enudx') format('woff'),
-		url('../fonts/icomoon.ttf?8enudx') format('truetype'),
-		url('../fonts/icomoon.svg?8enudx#icomoon') format('svg');
-	font-weight: normal;
+    
+    font-family: 'Roboto';
 	font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-	
-	speak: none;
-	font-style: normal;
+    font-weight: 500;
+    src: local('Roboto'), local('Roboto-Medium'), url(../fonts/Roboto-Medium.woff) format('woff');
+    
+	/*src: url('../fonts/Roboto-Medium.eot');
+	src: local('☺'), url('../fonts/Roboto-Medium.woff') format('woff'), url('../fonts/Roboto-Medium.ttf') format('truetype'), url('../fonts/Roboto-Medium.svg') format('svg');
 	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-    color:#0293fc;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;*/
 }
 
-.icon-uniE606:before {
-	content: "\e606";
-    font-size:20px;
-    font-family: 'icomoon';
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(../fonts/Roboto-Regular.woff) format('woff');
+	/*src: url('../fonts/Roboto-Regular.eot');
+	src: local('☺'), url('../fonts/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto-Regular.svg') format('svg');
+    */
+      
+    
+
 }
-.icon-dryer1:before {
-	content: "\e600";
-     font-size:20px;
-    font-family: 'icomoon';
+
+
+@font-face {
+	font-family: 'Roboto';    
+    font-style: italic;
+    font-weight: normal;
+    src: local('Roboto'), local('Roboto-Italic'), url(../fonts/Roboto-Italic.woff) format('woff');
+    
+	/*src: url('../fonts/Roboto-Italic.eot');
+	src: local('☺'), url('../fonts/Roboto-Italic.woff') format('woff'), url('../fonts/Roboto-Italic.ttf') format('truetype'), url('../fonts/Roboto-Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: italic; */
 }
-.icon-livingroom8:before {
-	content: "\e601";
-     font-size:20px;
-    font-family: 'icomoon';
-}
-.icon-television4:before {
-	content: "\e603";
-     font-size:20px;
-    font-family: 'icomoon';
-}
-.icon-wifi33:before {
-	content: "\e604";
-     font-size:20px;
-    font-family: 'icomoon';
-}
+
+
+
 
 
