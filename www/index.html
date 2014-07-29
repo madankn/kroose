@@ -439,7 +439,10 @@
 		function onSuccess(data) {
 			//$("#pro-details").html(data);
 			$("#pro-details").remove();
-			$("#pro-detail").remove();
+		    $("div[id$=-detail]").each(function( index ) {
+			   $( this ).remove();
+		    });
+			   
 			$("body").append(data);
 			$.mobile.navigate( "#pro-details" );
 		}
