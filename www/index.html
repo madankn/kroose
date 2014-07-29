@@ -243,97 +243,8 @@
         
         
 <!-- Property Details Page Starts Here -->
-
-            
-        <div data-role="page" id="pro-details" data-theme="i">
-              
-        </div>
-        
-        
-        <!-- Journey details -->
-		<!--
-         <div data-role="page" id="journey" data-theme="i" class="fix-header">
-            <div data-role="header"  data-theme="i">
-                   <a href="#pro-details" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
-                   <div class="header secondary-title">Journey</div>
-            </div>
-             
-             <div class="clearfix"></div>
-             
-             <div class="scrollwrapper">
-                 
-                 <div class="journey-map">
-                    <img src="img/journey-map.png" width="100%" />
-                 </div>
-                 
-                 <div class="journeydetails-wrapper">
-                    <div class="tree-box">
-                        <div class="tree"></div>
-                        <div class="days"> Day 1</div>
-                        <h2>Miami 4pm</h2>
-                        <p>Embarks to cruise into sunset with on deck welcome dinner by our world renowned Chef James May.</p>
-                        <p>Favorite Cruise Line - Readers Choice Award, Cruise Critic</p>
-                    </div>
-                    <div class="tree-box">
-                        <div class="tree"></div>
-                        <div class="days"> Day 2</div>
-                        <h2>At Sea</h2>
-                        <p>Special screening of the n
-ewly release Hollywood movies on board, with wine form Italy.
-
-</p>
-                    </div>
-                    <div class="tree-box">
-                        <div class="tree"></div>
-                        <div class="days"> Day 3</div>
-                        <h2>Phillisburg</h2>
-                        <p>Dismbark at Phillispurg</p>
-                    </div>
-                    <div class="tree-box noborder">
-                        <div class="tree"></div>
-                        <div class="days">Last day</div>
-                        <h2>Miami 4pm</h2>
-                        <p>Embarks to cruise into sunset with on deck welcome dinner by our world renowned Chef James May.</p>
-                    </div>
-                 </div>
-             
-             </div>
-
-        </div>
-		-->
-        <!--// Journey details //-->
-        
-        
-        <!-- Deck Details -->
-         <div data-role="page" id="deck-detail" data-theme="i" class="fix-header">
-            <div data-role="header"  data-theme="i">
-                   <a href="#pro-details"  data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
-                   <div class="header secondary-title">Upper Deck</div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="scrollwrapper">
-               <div class="wrapper4">
-                  <span class="pdp-img">
-                    <img width="100%" height="100%" src="img/deck/JEWEL.BALCONY-modal-01_12.jpg">
-                </span>
-               </div>
-               <div class="deck-content-wrapper">
-                <p>Relax in lively style and smart sophistication. Our modern inside state rooms are highlited with appointments like a TV, sitting area, room service and more.</p>
-                   <h3>What's included?</h3>
-                   <ul>
-                       <li><span class="amenity">TV</span></li>
-                       <li><span class="amenity">Sofa</span></li>
-                       <li><span class="amenity">Hair dryer</span></li>
-                       <li><span class="amenity">Refrigerator</span></li>
-                   </ul>
-               </div>
-            </div>
-         </div>
-        <!--// Deck Details //-->
-        
-        
-        
 <!-- Property Details Page Ends Here -->
+
     <script src="cordova.js"></script>     
     </body>
     <script type="text/javascript">
@@ -526,7 +437,10 @@ ewly release Hollywood movies on board, with wine form Italy.
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function onSuccess(data) {
-			$("#pro-details").html(data);
+			//$("#pro-details").html(data);
+			$("#pro-details").remove();
+			$("#pro-detail").remove();
+			$("body").append(data);
 			$.mobile.navigate( "#pro-details" );
 		}
 		////////////////////////////////////////////////////////////////////////////////////
