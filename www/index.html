@@ -311,7 +311,6 @@
 		    listHtml     = '';
 		    cruisesFound = 0;
 			if(themeSelected == '' && destinationSelected == ''){
- 			    //alert('durationSelected = '+durationSelected);
 				for(var i=0, len=cruiseList.length; i < len; i++) {
 				    if( durationSelected == '' || cruiseList[i].filterDuration == durationSelected){
 						listHtml = listHtml.concat( buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom , cruiseList[i].priceFrom, cruiseList[i].shipOverallRating) ); 
@@ -392,6 +391,8 @@
 		}
 		
 		function viewList(){
+		    showLoader();
+		    //$("#listPageWrapper").html("<img src='css/images/ajax-loader.gif' height='29'/>");
 		    $("#listPageWrapper").html(listHtml);
 			$("#all").addClass("selected"); 
 			$.mobile.navigate( "#Prop-card" );			
@@ -409,13 +410,25 @@
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function hideLoader(){
-			$.mobile.loading( 'hide');			
+			$.mobile.loading( 'hide', {
+					text: 'Loading',
+					textVisible: true,
+					theme: 'd',
+					textonly: false,
+					html: ''
+			});			
 		}		
 		////////////////////////////////////////////////////////////////////////////////////	
 		function viewDetails(cid){
 		        currentCID        = cid;  
 				cruiseJsonDetails = '';
 				showLoader();
+				//$("body").append("<div id='pro-details'><img src='css/images/ajax-loader.gif' height='29'/></div>");
+
+				var detailsJsonUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/details/'+cid+'/cruiseid';
+				$.getJSON(detailsJsonUrl, function(data){
+					cruiseJsonDetails = data; 
+				});	
 				
 				var detailsUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/html/cruise/details/'+cid+'/cruiseid';
                 $.ajax({
@@ -427,19 +440,16 @@
                     error: fatalErrorGot
                 });	
 
-				var detailsJsonUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/details/'+cid+'/cruiseid';
-				$.getJSON(detailsJsonUrl, function(data){
-					cruiseJsonDetails = data; 
-				});	
 				
-				hideLoader();
+				//hideLoader();
 			
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function onSuccess(data) {
-			//$("#pro-details").html(data);
+		    
 			$("#pro-details").remove();
-		    $("div[id$=-detail]").each(function( index ) {
+			
+		    $("div[id$=detail]").each(function( index ) {
 			   $( this ).remove();
 		    });
 			   
