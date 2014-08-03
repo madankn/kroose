@@ -22,7 +22,7 @@
 		
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/jquery.mobile-1.4.2.min.js"></script>
-
+	    <script src="js/jquery.animateNumber.min.js"></script>
         
         
         <!-- Home screen icons -->
@@ -95,12 +95,13 @@
                         <span class="mask"></span>
                        <span class="text">Shopping</span>
                     </span>
-					
+					<!--
                     <span id="senior"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('senior');">
                         <img src="img/theme/senior.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Senior</span>
                     </span>
+					-->
 					
                      <span id="cultural"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('cultural');">
                         <img src="img/theme/cultural.png" width="" height="" />
@@ -150,11 +151,13 @@
                         <span class="text">Caribbean</span>
                     </span>
                       
+					<!--  
                     <span id="canada"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('canada');">
                         <img src="img/destination/canada-newengland.png" width="" height=""  />
                         <span class="mask"></span>
                        <span class="text">Canada <br />& New England</span>
                     </span>
+					-->
 					
                     <span id="europe"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('europe');">
                         <img src="img/destination/europe.png" width="" height=""  />
@@ -162,18 +165,20 @@
                         <span class="text">Europe</span>
                     </span>
 
+					<!--
                     <span id="southamerica"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('southamerica');">
                         <img src="img/destination/southamerica.png" width="" height=""  />
                         <span class="mask"></span>
                         <span class="text">South America</span>
                     </span>
+					-->
 					
                   </div>
                   
                   <div class="clearfix"></div>
 
             <div  class="booking-btn" data-theme="i">
-                <a id="cruiseCount"  href="javascript:viewList();" data-role="none" data-transition="slide" data-theme="i" class="booknow  fixedfooter">Show All Cruises</a>
+                <a id="cruiseCount"  href="javascript:viewList();" data-role="none" data-transition="slide" data-theme="i" class="booknow  fixedfooter">Show <span id="cruiseSpanCount">16</span> Cruises </a>
             </div>
 			
         </div>
@@ -255,7 +260,7 @@
             $('.svg-inject').svgInject();
         });
 		
-	    refreshCount();
+	    //refreshCount();
     
 		var themeSelected       = '';
 		var destinationSelected = '';
@@ -295,16 +300,13 @@
 		}		
 		////////////////////////////////////////////////////////////////////////////////////
 		function refreshCount(){
-		
 		    blockViewCruises();
 		    if(jQuery.isEmptyObject(cruiseList) || cruiseList == '' ){
 			   initJsonObject();  
 			}else{
 			   calculateCount();
 			}
-		
 			unBlockViewCruises();
-			
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function calculateCount(){
@@ -344,16 +346,15 @@
 			}//endif
 			
 		    if( cruisesFound > 1 ){
-			 $("#cruiseCount").html("View "+cruisesFound+" Cruises"); 	
-			 $("#listHCount").html(cruisesFound+" Cruises Found"); 	
-									 
+				 $('#cruiseSpanCount').animateNumber({ number: cruisesFound });
+				 //$("#cruiseCount").html("Show <span id='cruiseSpanCount'> "+cruisesFound+" </span> Cruises"); 
+				 //$("#listHCount").html(cruisesFound+" Cruises Found"); 	
 		    }else if( cruisesFound == 1 ){
-			 $("#cruiseCount").html("View "+cruisesFound+" Cruise"); 	
-			 $("#listHCount").html(cruisesFound+" Cruise Found"); 	
-									 
+				 $('#cruiseSpanCount').animateNumber({ number: cruisesFound });
+				 //$("#cruiseCount").html("View "+cruisesFound+" Cruise"); 	
+				 //$("#listHCount").html(cruisesFound+" Cruise Found"); 	
 		    }else{
-			 $("#cruiseCount").html("No Cruises Found!"); 	   
-			 $("#listHCount").html("No Cruises Found"); 
+				 $("#cruiseCount").html("<span id='cruiseSpanCount'> No </span> Cruises Found"); 	   
 		    }
 		
 		}
@@ -369,12 +370,12 @@
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function blockViewCruises(){
-		   $("#cruiseCount").addClass("disabled");
-		   $("#cruiseCount").html("<img src='css/images/ajax-loader.gif' height='29'/>");
+		   //$("#cruiseCount").addClass("disabled");
+		   //$("#cruiseCount").html("<img src='css/images/ajax-loader.gif' height='29'/>");
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function unBlockViewCruises(){
-		  $("#cruiseCount").removeClass("disabled");
+		  //$("#cruiseCount").removeClass("disabled");
 		}
 		////////////////////////////////////////////////////////////////////////////////////		
 		function buildCard(cid, img, name, dfrom, ndate, price, rating){
@@ -392,7 +393,6 @@
 		
 		function viewList(){
 		    showLoader();
-		    //$("#listPageWrapper").html("<img src='css/images/ajax-loader.gif' height='29'/>");
 		    $("#listPageWrapper").html(listHtml);
 			$("#all").addClass("selected"); 
 			$.mobile.navigate( "#Prop-card" );			
