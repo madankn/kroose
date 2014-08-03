@@ -108,13 +108,13 @@
                          <span class="mask"></span>
                         <span class="text">Cultural</span>
                     </span>
-					
+					<!--
                     <span id="sports"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('sports');">
                         <img src="img/theme/sports.png" width="" height="" />
                         <span class="mask"></span>
                         <span class="text">Sports</span>
                     </span>
-
+					-->
                     <span id="summer"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('summer');">
                         <img src="img/theme/summer.png" width="" height="" />
 						<span class="mask"></span>
@@ -307,7 +307,7 @@
 
  		 $('#cruiseSpanCount').prop('number', currentCount).animateNumber({  number: maxCount },
 			{
-			  complete: function (e) {
+			  complete: function (e) { 
 				currentCount = updateCount()
 			}
  		  });
@@ -316,13 +316,15 @@
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function updateCount(){
-		    blockViewCruises();
+		    //blockViewCruises();
 		    if(jQuery.isEmptyObject(cruiseList) || cruiseList == '' ){
+			   showLoader();
 			   initJsonObject();  
+			   //hideLoader();
 			}else{
 			   calculateCount();
 			}
-			unBlockViewCruises();
+			//unBlockViewCruises();
             return cruisesFound;			
 		}
 		////////////////////////////////////////////////////////////////////////////////////
