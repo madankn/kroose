@@ -130,16 +130,9 @@ img {
 
 }
 .wrap1{  
-    /*float: left;
-    margin-top:0px;
-    position:relative;
-    padding: 10px 10px 10px;
-     bottom: 70px;
-    font-family: 'Open Sans', sans-serif; font-weight:bold; */
-    
     padding-right: 5px;
-    /*width: 70%;*/
-    white-space:normal;
+    white-space: normal;
+    width: 70%;
 }
 .wrap1 > a {
     color: #fff;
@@ -173,46 +166,28 @@ img {
 }
 
 .wrap2{  
-    
-    /*float: right;
-    margin-top:0px;
-    position:relative;
-    padding: 10px 10px 10px;
-     bottom: 70px;
-    font-family: 'Open Sans', sans-serif; font-weight:bold;
-    border:1px solid red; */
-    
-    top: 10px;
+    bottom: 20px;
+    color: #fff;
     padding-left: 5px;
     position: absolute;
-    right: 10px;
-    color:#fff;
-    /*width: 30%;*/
+    right: 20px;
+
 }
 .price {
-    
     display: block;
     font-family: 'Roboto',sans-serif;
-    font-weight:500;
     font-size: 20px;
+    font-weight: 500;
     text-align: right;
-    /*float:right;
-    width:30%;
-    letter-spacing: 0.5px;*/
 }
 .onwards {
-    
-    /*color: #FFFFFF;
-    display: block;
-    font-family: 'Open Sans',sans-serif;
-    font-size: 12px;    
-    /*letter-spacing: 0.5px;*/
-    line-height: 0px;
-    text-align: left; 
     display: block;
     font-size: 0.625em;
     font-weight: 400;
-
+    left: 11px;
+    line-height: 0;
+    position: relative;
+    text-align: left;
 }
 .dolar{
     font-size: 0.7em;
@@ -220,6 +195,7 @@ img {
     line-height: 34px;
     position: relative;
     right: 0;
+    top: -7px;
     vertical-align: top;
 }
 
@@ -443,10 +419,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .filtermask{
+    height: 54px;
     background: none repeat scroll 0 0 #374753;
     bottom: 0;
     color: #fff;
-    height: 54px;
     opacity: 0.9;
     position: absolute;
     width: 100%;

@@ -231,7 +231,7 @@
                 <!--<div class="filters-text">Filters</div>-->
                 <div class="filters">
                     <ul id="filterList">
-					    <li id="all" onclick="filterDuration(this,'all')" class="selected">All <br />Days</li>
+					    <li id="all" onclick="filterDuration(this,'all')" class="selected">Any <br /></li>
                         <li id="fewdays" onclick="filterDuration(this,'fewdays')" >Few <br />Days</li>
                         <li id="oneweek" onclick="filterDuration(this,'oneweek')" >1 <br />Week</li>
                         <li id="twoweek" onclick="filterDuration(this,'twoweek')" >2 <br />Weeks</li>
@@ -260,7 +260,7 @@
             $('.svg-inject').svgInject();
         });
 		
-	    //refreshCount();
+	    refreshCount();
     
 		var themeSelected       = '';
 		var destinationSelected = '';
@@ -316,11 +316,10 @@
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function updateCount(){
-		    //blockViewCruises();
 		    if(jQuery.isEmptyObject(cruiseList) || cruiseList == '' ){
 			   showLoader();
 			   initJsonObject();  
-			   //hideLoader();
+			   hideLoader();
 			}else{
 			   calculateCount();
 			}
@@ -377,7 +376,8 @@
 				 //$("#cruiseCount").html("View "+cruisesFound+" Cruise"); 	
 				 //$("#listHCount").html(cruisesFound+" Cruise Found"); 	
 		    }else{
-				 $("#cruiseCount").html("<span id='cruiseSpanCount'> No </span> Cruises Found"); 	   
+				 $("#cruiseCount").html("<span id='cruiseSpanCount'> No </span> Cruises Found"); 
+				 $("#listHCount").html("No Cruises Found!"); 					 
 		    }
 		
 		}
