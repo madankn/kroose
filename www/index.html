@@ -299,7 +299,23 @@
 			}	
 		}		
 		////////////////////////////////////////////////////////////////////////////////////
+		var maxCount = 16;
+		var textOnMax = $('#cruiseSpanCount').text();
+		var currentCount = maxCount;
+		
 		function refreshCount(){
+
+ 		 $('#cruiseSpanCount').prop('number', currentCount).animateNumber({  number: maxCount },
+			{
+			  complete: function (e) {
+				currentCount = updateCount()
+			}
+ 		  });
+	  
+
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function updateCount(){
 		    blockViewCruises();
 		    if(jQuery.isEmptyObject(cruiseList) || cruiseList == '' ){
 			   initJsonObject();  
@@ -307,6 +323,11 @@
 			   calculateCount();
 			}
 			unBlockViewCruises();
+            return cruisesFound;			
+		}
+		////////////////////////////////////////////////////////////////////////////////////
+		function getRandomInt(min, max) {
+		  return Math.floor(Math.random() * (max - min)) + min;
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function calculateCount(){
