@@ -1397,6 +1397,8 @@ div.ui-mobile-viewport {
 	margin-left: -6.875em;
 	margin-top: -2.6875em;
 	padding: .625em;
+	border: 1px solid #242424;
+	background: none repeat scroll 0 0 #ccc;
 }
 .ui-loader-default h1 {
 	font-size: 0;
