@@ -19,7 +19,8 @@ function gotoHomePage(){
 
    jQuery('.mobileNav').css('display', 'none');
    
-   $.mobile.navigate("#main-page");
+   //$.mobile.navigate("#main-page");
+   $.mobile.changePage( "#main-page", { transition: "slide", changeHash: false, reverse: true });
    
    jQuery('#'+currentPageId).unbind('touchmove');
    
@@ -43,7 +44,7 @@ function showMenu(pageid){
 	jQuery('.mobileNav').css('display', 'block');
    	
 	//set margin for the whole container with a jquery UI animation
-	jQuery('#'+pageid).animate({"marginLeft": ["-90%", 'easeOutExpo']}, {
+	jQuery('#'+pageid).animate({"marginLeft": ["-80%", 'easeOutExpo']}, {
 		duration: 500
 	});
 	

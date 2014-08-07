@@ -135,14 +135,14 @@
 	<span class="mask"></span>
 	<span class="text">Senior</span>
 	</span>
-					-->
+					
 
-					<span id="cultural"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('cultural');">
-						<img src="img/theme/cultural.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Cultural</span>
-					</span>
-					<!--
+	<span id="cultural"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('cultural');">
+		<img src="img/theme/cultural.png" width="" height="" />
+		<span class="mask"></span>
+		<span class="text">Cultural</span>
+	</span>
+					
 	<span id="sports"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('sports');">
 	<img src="img/theme/sports.png" width="" height="" />
 	<span class="mask"></span>
@@ -423,7 +423,7 @@
 				//$("#listHCount").html(cruisesFound+" Cruise Found"); 	
 			} else {
 				$("#cruiseCount").html("<span id='cruiseSpanCount'> No </span> Cruises Found");
-				$("#listHCount").html("No Cruises Found!");
+				//$("#listHCount").html("No Cruises Found!");
 			}
 
 		}
@@ -464,7 +464,8 @@
 			showLoader();
 			$("#listPageWrapper").html(listHtml);
 			$("#all").addClass("selected");
-			$.mobile.navigate("#Prop-card");
+			//$.mobile.navigate("#Prop-card");
+			$.mobile.changePage( "#Prop-card", { transition: "slide", changeHash: false});
 		}
 
 		////////////////////////////////////////////////////////////////////////////////////
@@ -523,7 +524,8 @@
 			});
 
 			$("body").append(data);
-			$.mobile.navigate("#pro-details");
+			//$.mobile.navigate("#pro-details");
+			$.mobile.changePage( "#pro-details", { transition: "slide", changeHash: false});
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function fatalErrorGot(request, status, error) {
@@ -539,13 +541,14 @@
 							var catName = itenaryDates[i].itineraryPrice[j].categoryName;
 							var catPrice = itenaryDates[i].itineraryPrice[j].leadPrice;
 							catName = catName.replace(/\s+/g, '-');
+							//console.log('catName='+catName);
 							$("#" + catName + "-ds4").html(catPrice);
 							/////////////////////////////////////
-							//if(catPrice.indexOf('S') > -1 || catPrice.indexOf('N') > -1){
-							//   $(".dollar").html("");
-							//}else{
-							//   $(".dollar").html("$");
-							//}
+							if(catPrice.indexOf('S') > -1 || catPrice.indexOf('N') > -1){
+							   $("#ad-"+catName).html("");
+							}else{
+							   $("#ad-"+catName).html("USD");
+							}
 							/////////////////////////////////////
 						}//endforj
 					}//endif
@@ -575,7 +578,8 @@
 				}
 			}
 			
-			refreshCount();
+			updateCount();
+			console.log('cruisesFound = '+cruisesFound);
 			$("#listPageWrapper").html(listHtml);
 		}
 		////////////////////////////////////////////////////////////////////////////////////
@@ -585,7 +589,7 @@
 				$(this).removeClass("selected");
 			});
 			refreshCount();
-			$.mobile.navigate("#main-page");
+			$.mobile.changePage( "#main-page", { transition: "slide", changeHash: false, reverse: true });
 
 		}
 		////////////////////////////////////////////////////////////////////////////////////

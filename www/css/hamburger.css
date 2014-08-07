@@ -15,14 +15,14 @@ Header is relative so z-index: 1 guarantees always displayed on top
 header {
     margin-top: -25px;
 	margin-right: 10px;
-    background-color: #3b5998;
+    background-color: #4569b2;
     text-decoration: none;
     position: relative;
     /*width: 100%;*/
 	float:right;
     z-index: 1;
     -webkit-box-shadow:  0px 3px 7px 0px rgba(0, 0, 0, 0.4);
-    box-shadow:  0px 3px 7px 0px rgba(0, 0, 0, 0.4);
+    /*box-shadow:  0px 3px 7px 0px rgba(0, 0, 0, 0.4);*/
 }
 
 /*
@@ -43,7 +43,7 @@ position absolute isset to cover the whole viewport
 the hamburger button with a little gradient effekt
 */
 #hamburger {
-    border: 1px solid #374C77;
+    /*border: 1px solid #374C77;*/
     border-radius: 3px 3px 3px 3px;
     cursor: pointer;
     display: block;
@@ -84,7 +84,7 @@ nav {
     z-index: 0;
     width: 90%;
 	float:right;
-	margin-top:10px;
+	margin-top:0px;
     height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
