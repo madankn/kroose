@@ -74,7 +74,7 @@
 	
 		
 			<!--The mobile navigation Markup hidden via css-->
-			<nav class="mobileNav">
+			<nav class="mobileNav" onclick="gotoHomePage();">
 				<ul>
 					<li><a href="javascript:gotoHomePage();" data-direction="reverse" data-transition="slide">Home</a></li>
 					<li><a href="#" data-direction="reverse" data-transition="slide">My Favourites</a></li>
@@ -579,8 +579,12 @@
 			}
 			
 			updateCount();
-			console.log('cruisesFound = '+cruisesFound);
-			$("#listPageWrapper").html(listHtml);
+			
+			if(cruisesFound > 0){
+			   $("#listPageWrapper").html(listHtml);
+			}else{
+			   $("#listPageWrapper").html("<div class='notfound'>No Cruises matching the selected duration. <br/>Try picking other durations</div>");
+            }  			
 		}
 		////////////////////////////////////////////////////////////////////////////////////
 		function gotoMain() {

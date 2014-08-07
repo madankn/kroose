@@ -480,3 +480,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .filters > ul li.selected{
     background-color:#0293FC;
 }
+
+.notfound{
+    color: #fff;
+    height: 90%;
+    padding-top: 40%;
+    text-align: center;
+    vertical-align: middle;  
+}

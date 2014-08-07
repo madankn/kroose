@@ -5,7 +5,6 @@ body {
     margin: 0;
     padding: 0;
     overflow-x:hidden;
-    font-family: Arial;
     font-size: 18px;
 }
 
@@ -15,7 +14,7 @@ Header is relative so z-index: 1 guarantees always displayed on top
 header {
     margin-top: -25px;
 	margin-right: 10px;
-    background-color: #4569b2;
+    /*background-color: #4569b2;*/
     text-decoration: none;
     position: relative;
     /*width: 100%;*/
@@ -51,6 +50,7 @@ the hamburger button with a little gradient effekt
     padding: 3px 4px 3px;
     position: relative;
     width: 25px;
+	/*
     background: #4569b2;
     background: -moz-linear-gradient(top,  #4569b2 0%, #4062a5 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4569b2), color-stop(100%,#4062a5));
@@ -59,6 +59,7 @@ the hamburger button with a little gradient effekt
     background: -ms-linear-gradient(top,  #4569b2 0%,#4062a5 100%);
     background: linear-gradient(to bottom,  #4569b2 0%,#4062a5 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4569b2', endColorstr='#4062a5',GradientType=0 );
+	*/
 }
 
 /*
@@ -77,12 +78,12 @@ The white stripes in the hamburger button
 The navigation container in the background
 */
 nav {
-    left: 10%;
+    left: 20%;
     top: 0px;
 	float:right;
     position: fixed;
     z-index: 0;
-    width: 90%;
+    width: 80%;
 	float:right;
 	margin-top:0px;
     height: 100%;
@@ -123,9 +124,9 @@ nav li a {
     color: #fff;
     text-decoration: none;
     float: right;
-    text-align: right;
+    text-align: left;
     vertical-align: middle;
-    width: 100%;	
+    width: 88%;	
 }
 
 /*
