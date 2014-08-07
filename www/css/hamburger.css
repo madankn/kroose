@@ -20,7 +20,7 @@ header {
     /*width: 100%;*/
 	float:right;
     z-index: 1;
-    -webkit-box-shadow:  0px 3px 7px 0px rgba(0, 0, 0, 0.4);
+    /*-webkit-box-shadow:  0px 3px 7px 0px rgba(0, 0, 0, 0.4);*/
     /*box-shadow:  0px 3px 7px 0px rgba(0, 0, 0, 0.4);*/
 }
 
