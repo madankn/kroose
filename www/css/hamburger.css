@@ -34,8 +34,10 @@ position absolute isset to cover the whole viewport
     position: relative;
     width: auto;
     min-height: 1000px;
+	/*
     -webkit-box-shadow:  -10px 0px 9px 0px rgba(0, 0, 0, 0.4);
     box-shadow:  -10px 0px 9px 0px rgba(0, 0, 0, 0.4);
+	*/
 }
 
 /*
@@ -113,20 +115,22 @@ nav ul {
 }
 
 nav li {
-    position: relative;
-    font-size: 1em;
-    font-weight: bold;
-    border-bottom: 1px solid #222222;
-    border-top: 1px solid #444444;
-    padding: 25px;
+	position: relative;
+	font-size: 1em;
+	font-weight: bold;
+	border-bottom: 1px solid #222222;
+	border-top: 1px solid #444444;
+	overflow: hidden;
+	
 }
 nav li a {
-    color: #fff;
-    text-decoration: none;
-    float: right;
-    text-align: left;
-    vertical-align: middle;
-    width: 100%;	
+	color: #fff;
+	text-decoration: none;
+	float: right;
+	text-align: left;
+	vertical-align: middle;
+	width: 100%;
+	padding: 10px;	
 }
 
 /*
