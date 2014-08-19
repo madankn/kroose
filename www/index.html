@@ -124,7 +124,8 @@
   </div>   
   <div  class="jq_page" data-role="page" id="room-detail" data-theme="i" >
       <div data-role="header" data-theme="i">
-          <a href="#detailed_page" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span>  <span class="back"></span>
+          <a href="#detailed_page" data-role="button" data-direction="reverse" data-transition="slide">
+             <span class="icon icon-caret01 prev-caret"></span>  <span class="back"></span>
           </a>
           <div class="header secondary-title" id="room_detail_title"></div>
           <header>
@@ -223,23 +224,26 @@
 
             <div class="deck-wrapper" id="deckWrapperId"> 
               {{ var selectedItePrices= cruiseDetails.itineraryDates[0].itineraryPrice;
-                for(idx=0;idx<selectedItePrices.length;idx++){ 
-                  var categoryName=selectedItePrices[idx]['categoryName'];
-                  var leadPrice=selectedItePrices[idx]['leadPrice'];
+                for(idx=0;idx < selectedItePrices.length;idx++){ 
+                  var categoryName = selectedItePrices[idx]['categoryName'];
+                  var leadPrice = selectedItePrices[idx]['leadPrice'];
                   var cls='';
+                  var categoryId =  categoryName.replace(/[^a-zA-z0-9]/g, "").toLowerCase();
                   if(idx == 0){
                     cls='selected';
                   }
+                  var dollarClass = '';
+                  if(leadPrice == 'Sold Out') { 
+                    dollarClass = 'hidden';
+                  }
               }}
-                 <div class="deck  {{= cls}} "> 
+                 <div class="deck  {{= cls}} " id="room_{{=categoryId}}" > 
                       <div data-cat="{{=categoryName}}"  class="deck-type room_selector">
                         {{= categoryName }} <i class="glyphicon glyphicon-info-sign" ></i>
                       </div> 
-                      <div class="deck-price" > 
-                        {{if(leadPrice !== 'Sold Out'){ }}
-                          <span class="amount-dolar"  id="ad-{{= categoryName }}">$</span>  
-                          {{ } }}
-                          <span   class="price-val">{{= leadPrice }}</span> 
+                      <div class="deck-price" >  
+                          <span class="amount-dolar {{= dollarClass}}" >$</span> 
+                          <span class="price-val">{{= leadPrice }}</span> 
                       </div> 
                   </div> 
               {{ } }}
@@ -284,6 +288,17 @@
             <div class="blank"></div>
         </div>
   </script> 
+
+                   
+
+  <script type="text/template" id="tmpl_detail_price_item">  
+    <div class="deck-price" > 
+      {{if(leadPrice !== 'Sold Out'){ }}
+        <span class="amount-dolar"  id="ad-{{= categoryName }}">$</span>  
+        {{ } }}
+        <span   class="price-val">{{= leadPrice }}</span> 
+    </div> 
+  </script>
   <script type="text/template" id="tmpl_room_details">
     <div class="clearfix"></div>
       <div class="scrollwrapper">
