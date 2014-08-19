@@ -10,11 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/> 
-    <link rel="apple-touch-icon" href="img/icon-152.png"/>     
+         
     <title>Kool Cruise</title> 
-    <link rel="stylesheet" href="css/combined.min.css">   
-    <script type="text/javascript" src="combined.min.js"></script> 
-  </head>
+    
+      
+      
+      
+    
+    
+     
+     
+    
+     
+       
+   <link rel="stylesheet" href="css/combined.min.css">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="combined.min.js"></script>
+</head>
   <body>  
   <div id="main_screen_overlay_hider" >
   </div>
@@ -128,8 +140,7 @@
   </div>   
   <!-- Proporty List Page Ends Here --> 
   <!-- Property Details Page Starts Here -->
-  <!-- Property Details Page Ends Here -->  
-  <script src="cordova.js"></script>    
+  <!-- Property Details Page Ends Here -->   
   <script type="text/template" id="tmpl_main_theme">
     <div id="{{= id }}" data-id="{{=id}}" class="thumbimg" data-contentdata="theme"  >
       <img src="{{= image}}" width="" height="" />
@@ -201,7 +212,7 @@
                     cls='active-select-date';
                   }
               }}
-                  <span  id="{{=dat}}-dsa" class="price_change_date date {{=cls}}" 
+                  <span class="price_change_date date {{=cls}}" 
                     data-date="{{=dat}}" > 
                       <span class="ddmm">{{=mmyy[0]}}</span>  
                       <span class="year">{{=mmyy[1]}}</span> 
@@ -216,26 +227,20 @@
                   var categoryName=selectedItePrices[idx]['categoryName'];
                   var leadPrice=selectedItePrices[idx]['leadPrice'];
                   var cls='';
-                  var deckCls='';
-                  var priceCls='';
                   if(idx == 0){
                     cls='selected';
-                    deckCls='active-select-deck';
-                    priceCls='active-select-price';
                   }
               }}
-                 <div class="deck">
-                      <div id="{{=categoryName}}-ds" class="deck-select {{= cls}}"> 
-                          <div    data-cat="{{=categoryName}}"  class="deck-type room_selector {{= deckCls }}">
-                            {{= categoryName }} <i class="glyphicon glyphicon-info-sign" ></i>
-                          </div> 
-                          <div class="deck-price {{= priceCls }}" > 
-                            {{if(leadPrice !== 'Sold Out'){ }}
-                              <span class="amount-dolar"  id="ad-{{= categoryName }}">$</span>  
-                              {{ } }}
-                              <span   class="price-val">{{= leadPrice }}</span> 
-                          </div>
-                      </div>
+                 <div class="deck  {{= cls}} "> 
+                      <div data-cat="{{=categoryName}}"  class="deck-type room_selector">
+                        {{= categoryName }} <i class="glyphicon glyphicon-info-sign" ></i>
+                      </div> 
+                      <div class="deck-price" > 
+                        {{if(leadPrice !== 'Sold Out'){ }}
+                          <span class="amount-dolar"  id="ad-{{= categoryName }}">$</span>  
+                          {{ } }}
+                          <span   class="price-val">{{= leadPrice }}</span> 
+                      </div> 
                   </div> 
               {{ } }}
             </div>
