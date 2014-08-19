@@ -1,631 +1,302 @@
 <!DOCTYPE html>
-<html>
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-		<!--
+<html manifest="kroose.appcache">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-		-->
-		
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/> 
+    <link rel="apple-touch-icon" href="img/icon-152.png"/>     
+    <title>Kool Cruise</title> 
+    <link rel="stylesheet" href="css/jquery.mobile.theme.css">   
+    <link rel="stylesheet" href="css/jquery-mobile-i.css"/>  
+    <link rel="stylesheet" href="css/listings.css">  
+    <link rel="stylesheet" href="css/swipebox.css">   
+    <script type="text/javascript" src="combined.min.js"></script> 
+  </head>
+  <body>  
+  <div id="main_screen_overlay_hider" >
+  </div>
+  <!--The mobile navigation Markup hidden via css-->
+  <nav class="mobileNav">  
+    <div style="padding:20px 10px 10px 10px"> 
+      <div class="header secondary-title"></div> 
+      <!--The Hamburger Button in the Header [Ends Here]-->             
+    </div>    
+    <ul>
+      <li><a href="#" id="settings_home" data-direction="reverse" data-transition="slide">Home</a></li>
+      <li><a href="#" data-direction="reverse" data-transition="slide">My Favourites</a></li>
+    </ul>
+  </nav>
+  <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
+    <div data-role="header"  data-theme="i" > 
+      <div class="header secondary-title">Kool Cruise</div>
+      <!--The Hamburger Button in the Header [Starts Here]-->
+      <header>
+        <div class="hamburger" >
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </header> 
+      <!--The Hamburger Button in the Header [Ends Here]-->             
+    </div>       
+    <div id="themeWraper" class="theme-col touch wrapper"> 
+    </div> 
+    <div id="destinationWraper" class="dest-col touch wrapper">         
+    </div>   
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <div class="clearfix"></div> 
+    <div  class="booking-btn" data-theme="i">
+      <a id="cruiseCount"  href="#listing_page" data-role="none" 
+      data-transition="slide" data-theme="i"  
+      class="booknow  fixedfooter">
+        Show All Cruises  <i class="glyphicon glyphicon-chevron-right"  ></i>
+      </a>
+    </div> 
+  </div> 
+  <div  class="jq_page" data-role="page" id="listing_page" data-theme="i" >
+    <div data-role="header"  data-theme="i">
+      <a href="#main-page" data-role="button" class="filter_btn" data-direction="reverse" data-transition="slide"> 
+        <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span>
+      </a>
+      <div  id="listPageHeader" class="header secondary-title">Cruises</div>  
+      <header>
+        <div class="hamburger"  >
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </header>      
+    </div>  
+    <div class="page_wrapper">
+    <div id="listPageWrapper" class="wrapper"  data-theme="i" >  
+      <div class='notfound'>No Cruises matches the selection. <br/>Try picking other durations</div>
+    </div>    
+    </div>
+    <div class="footer fixedfooter"> 
+      <div class="filterlinks">
+        <!--<div class="filters-text">Filters</div>-->
+        <div class="filters">
+          <ul id="filterList">
+            <li id="all" class="selected">Any <br /></li>
+            <li id="fewdays">Few <br />Days</li>
+            <li id="oneweek">1 <br />Week</li>
+            <li id="twoweek">2 <br />Weeks</li>
+            <li id="15days">2+ <br />Weeks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div  class="jq_page" data-role="page" id="detailed_page" data-theme="i" >
+    <div data-role="header"  data-theme="i">
+      <a href="#listing_page" data-role="button"  data-direction="reverse" data-transition="slide"> 
+        <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span>
+      </a>
+      <div  id="listHCount" class="header secondary-title">Cruises</div>  
+      <header>
+        <div class="hamburger"  >
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </header>      
+    </div> 
+    <div id="detailed_page_content" class="wrapper">
+    </div> 
+      <div class="booking-btn" data-theme="i"> 
+          <a href="#" data-theme="i" class="booknow">Buy Now</a> 
+      </div>
+  </div>   
+  <div  class="jq_page" data-role="page" id="room-detail" data-theme="i" >
+      <div data-role="header" data-theme="i">
+          <a href="#detailed_page" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span>  <span class="back"></span>
+          </a>
+          <div class="header secondary-title" id="room_detail_title"></div>
+          <header>
+              <div class="hamburger">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+              </div>
+          </header>
+      </div>
+      <div id="room-detail-content" class="wrapper">
+      </div> 
+  </div>   
+  <!-- Proporty List Page Ends Here --> 
+  <!-- Property Details Page Starts Here -->
+  <!-- Property Details Page Ends Here -->  
+  <script src="cordova.js"></script>    
+  <script type="text/template" id="tmpl_main_theme">
+    <div id="{{= id }}" data-id="{{=id}}" class="thumbimg" data-contentdata="theme"  >
+      <img src="{{= image}}" width="" height="" />
+      <div class="mask"  >
+         <div class="icon_holder">
+          <i  class="glyphicon  glyphicon-ok-circle"></i>
+         </div>
+       </div>
+      <span class="text">{{= title }}</span>
+    </div>
+  </script> 
+  <script type="text/template" id="tmpl_list_card_item">
+    <div class="container" data-status="not_loaded" data-id="{{=cruiseId}}" id="cruise_list_item_{{=cruiseId}}"> 
+      <div class="img">
+        <a   href="#pro-details" data-role="none" data-transition="slide">
+          <img class="original_image" src="http://107.161.124.98:8080/zap-capi-1.0/{{= destinationImages[0] }}" 
+            width="100%" height="" class="hidden" />
+          <div class="preload_image" align="center">
+            <img  src="css/images/ajax-loader.gif" style="height:100px" />
+          </div>
+          <div class="list-gradiant gradiant-box"></div>
+          <span class="mask"></span>
+          <div class="wrap2">
+            <span class="price">
+              <span class="dolar">$</span><span class="amount">{{=priceFrom}}</span>
+              <span class="onwards">Onwards</span>
+            </span>                                   
+          </div>
+          <div class="details">
+            <div class="wrap1">
+              <div class="icon icon-{{=shipOverallRating}}"></div>
+              <h2 class="trip-name">{{=cruiseName}} </h2>
+              <div class="trip-type"><span>{{=destinationFrom}}</span> <span class="dot">.</span> <span>{{=startingFrom}}</span></div>
+            </div>
+          </div> 
+        </a>                
+      </div>
+    </div>
+  </script>
+  <script type="text/template" id="tmpl_detailed_view">
+      <div class="clearfix">
+        </div>
+        <div class=" scrollwrapper " data-theme="i">
+            <div class="wrapper-productdetails "> 
+                {{ var destImages= cruiseDetails.destinationImages;
+                  for(idx=0;idx<destImages.length;idx++){ 
+                    var curImage="http://107.161.124.98:8080/zap-capi-1.0/"+destImages[idx];
+                }}
+               <span class="pdp-img"> 
+                         <img src={{=curImage }} width="100%" />
+                     </span> 
+            {{ } }} 
+              </div>
 
-        <title>Kool Cruise</title>
+              <div class="body-content">
+                <div class="icon icon-{{=cruiseDetails['shipOverallRating']}}"></div>
+                <div class="trip-detail">{{=cruiseDetails['cruiseName']}}</div>
+                <div class="cruise-liner">
+                    <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
+                </div>
+            </div>
+            <div class="wrapper2"> 
+              {{ var itenaryDates= cruiseDetails.itineraryDates;
+                for(idx=0;idx<itenaryDates.length;idx++){ 
+                  var dat=itenaryDates[idx]['date'];
+                  var mmyy=dat.split(',');
+                  var cls='';
+                  if(idx == 0){
+                    cls='active-select-date';
+                  }
+              }}
+                  <span  id="{{=dat}}-dsa" class="price_change_date date {{=cls}}" 
+                    data-date="{{=dat}}" > 
+                      <span class="ddmm">{{=mmyy[0]}}</span>  
+                      <span class="year">{{=mmyy[1]}}</span> 
+                  </span> 
 
-		
-        <link rel="stylesheet" href="css/jquery.mobile.theme.css">
-		
-		
-        <link rel="stylesheet" href="css/listings.css">     
-		
-		
-        <link rel="stylesheet" type="text/css" href="css/jquery-mobile-i.css"/>
-		
-		
-        <link rel="stylesheet" href="css/font.css"> 
-        <link rel="stylesheet" href="css/hamburger.css">
+              {{ } }}
+            </div>
 
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/jquery.mobile-1.4.2.min.js"></script>
-        <script src="js/jquery.animateNumber.min.js"></script>
-		<script src="js/jquery-ui.js"></script>
-        <script src="js/hamburger.js"></script>
+            <div class="deck-wrapper" id="deckWrapperId"> 
+              {{ var selectedItePrices= cruiseDetails.itineraryDates[0].itineraryPrice;
+                for(idx=0;idx<selectedItePrices.length;idx++){ 
+                  var categoryName=selectedItePrices[idx]['categoryName'];
+                  var leadPrice=selectedItePrices[idx]['leadPrice'];
+                  var cls='';
+                  var deckCls='';
+                  var priceCls='';
+                  if(idx == 0){
+                    cls='selected';
+                    deckCls='active-select-deck';
+                    priceCls='active-select-price';
+                  }
+              }}
+                 <div class="deck">
+                      <div id="{{=categoryName}}-ds" class="deck-select {{= cls}}"> 
+                          <div    data-cat="{{=categoryName}}"  class="deck-type room_selector {{= deckCls }}">
+                            {{= categoryName }} <i class="glyphicon glyphicon-info-sign" ></i>
+                          </div> 
+                          <div class="deck-price {{= priceCls }}" > 
+                            {{if(leadPrice !== 'Sold Out'){ }}
+                              <span class="amount-dolar"  id="ad-{{= categoryName }}">$</span>  
+                              {{ } }}
+                              <span   class="price-val">{{= leadPrice }}</span> 
+                          </div>
+                      </div>
+                  </div> 
+              {{ } }}
+            </div>
 
-
-        <!-- Home screen icons -->
-        <script type="text/javascript">
-            document.addEventListener("deviceready", onDeviceReady, false);
-            function onDeviceReady() {
-                navigator.splashscreen.hide();
-                document.addEventListener("touchstart", function() {
-                }, false);
-            }
-
-            $(document).on("mobileinit", function() {
-                $.mobile.loader.prototype.options.text = "loading";
-                $.mobile.loader.prototype.options.textVisible = false;
-                $.mobile.loader.prototype.options.theme = "d";
-                $.mobile.loader.prototype.options.html = "";
-            });
-
-            WebFont.load({
-                google: {
-                    families: ['Open Sans']
+            <div class="journey-map">
+                <a href="#">
+                    <img src=http://107.161.124.98:8080/zap-capi-1.0/{{= cruiseDetails.itineraryImage }} width="100%" />
+                    <div class="gradiant"></div>
+                </a>
+            </div> 
+            <div class="journeydetails-wrapper">
+            {{
+              var itenary=cruiseDetails.itinerary;
+              for(idx=0;idx<itenary.length;idx++){
+                var treeheading=itenary[idx]['portName'];
+                var deptTime=itenary[idx]['departure'];
+                var arrTime=itenary[idx]['arrival'];
+                var portDesc=itenary[idx]['portDesc'];
+                var itenaryDay=itenary[idx]['day'];
+                var timings=''
+                if(arrTime !== '---' && deptTime !== '---'){
+                  timings = arrTime+" - "+deptTime;
+                }else{
+                  if(arrTime !== '---'){
+                    timings = arrTime;
+                  }else if(deptTime !== '---' ){
+                    timings = deptTime;
+                  }
                 }
-            });
-        </script>
-        <style>
-            element:hover, element:active {
-                -webkit-tap-highlight-color: rgba(0,0,0,0);
-                -webkit-user-select: none;
-                -webkit-touch-callout: none
-            }
-        </style>
-    </head>
-
-    <body>
-	
-	
-	
-		
-			<!--The mobile navigation Markup hidden via css-->
-			<nav class="mobileNav" onclick="gotoHomePage();">
-				<ul>
-					<li><a href="javascript:gotoHomePage();" data-direction="reverse" data-transition="slide">Home</a></li>
-					<li><a href="#" data-direction="reverse" data-transition="slide">My Favourites</a></li>
-				</ul>
-			</nav>
-			<!--The mobile navigation Markup hidden via css-->
-		
-			<div data-role="page" id="main-page" data-theme="i" >
-				<div data-role="header"  data-theme="i" class="fix-header"> 
-					<div class="header secondary-title">Kool Cruise</div>
-					<!--The Hamburger Button in the Header [Starts Here]-->
-					<header>
-						<div id="hamburger" onclick="toggleHB('main-page')">
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
-					</header>	
-					<!--The Hamburger Button in the Header [Ends Here]-->							
-				</div>			
-
-				<div id="themeWraper" class="wrapper theme-col touch">
-
-					<span id="family"  class="thumbimg" data-contentdata="theme"  onclick="javascript:themeSelector('family');" >
-						<img src="img/theme/family.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Family</span>
-					</span>
-
-					<span id="romantic"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('romantic');">
-						<img src="img/theme/romantic.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Romantic</span>
-					</span>
-
-					<span id="single"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('single');">
-						<img src="img/theme/single.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Single</span>
-					</span>
-
-					<span id="beach"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('beach');">
-						<img src="img/theme/beach.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Beach</span>
-					</span>
-
-					<!--
-	<span id="shopping"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('shopping');">
-	<img src="img/theme/shopping.png" width="" height="" />
-	<span class="mask"></span>
-	<span class="text">Shopping</span>
-	</span>
-					-->
-					<!--
-	<span id="senior"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('senior');">
-	<img src="img/theme/senior.png" width="" height="" />
-	<span class="mask"></span>
-	<span class="text">Senior</span>
-	</span>
-					
-
-	<span id="cultural"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('cultural');">
-		<img src="img/theme/cultural.png" width="" height="" />
-		<span class="mask"></span>
-		<span class="text">Cultural</span>
-	</span>
-					
-	<span id="sports"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('sports');">
-	<img src="img/theme/sports.png" width="" height="" />
-	<span class="mask"></span>
-	<span class="text">Sports</span>
-	</span>
-					-->
-					<span id="summer"  class="thumbimg" data-contentdata="theme" onclick="javascript:themeSelector('summer');">
-						<img src="img/theme/summer.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Summer</span>
-					</span>
-
-				</div>
-
-
-				<div id="destinationWraper" class="wrapper dest-col touch">                      
-					<span id="alaska"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('alaska');">
-						<img src="img/destination/alaska.png" width="" height=""  />
-						<span class="mask"></span>
-						<span class="text">Alaska</span>
-					</span>
-
-					<span id="bahamas"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('bahamas');">
-						<img src="img/destination/florida.png" width="" height=""  />
-						<span class="mask"></span>
-						<span class="text">Bahamas <br /> & </>Florida</span>
-					</span>
-
-					<span id="bermuda"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('bermuda');">
-						<img src="img/destination/bermuda.png" width="" height=""  />
-						<span class="mask"></span>
-						<span class="text">Bermuda</span>
-					</span>      
-
-					<span id="caribbean"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('caribbean');">
-						<img src="img/destination/caribbean.png" width="" height="" />
-						<span class="mask"></span>
-						<span class="text">Caribbean</span>
-					</span>
-
-					<!--  
-	<span id="canada"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('canada');">
-	<img src="img/destination/canada-newengland.png" width="" height=""  />
-	<span class="mask"></span>
-	<span class="text">Canada <br />& New England</span>
-	</span>
-					-->
-
-					<span id="europe"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('europe');">
-						<img src="img/destination/europe.png" width="" height=""  />
-						<span class="mask"></span>
-						<span class="text">Europe</span>
-					</span>
-
-					<!--
-	<span id="southamerica"  class="thumbimg" data-contentdata="destination" onclick="javascript:destinationSelector('southamerica');">
-	<img src="img/destination/southamerica.png" width="" height=""  />
-	<span class="mask"></span>
-	<span class="text">South America</span>
-	</span>
-					-->
-
-				</div>
-
-				<div class="clearfix"></div>
-
-				<div  class="booking-btn" data-theme="i">
-					<a id="cruiseCount"  href="javascript:viewList();" data-role="none" data-transition="slide" data-theme="i" class="booknow  fixedfooter">Show <span id="cruiseSpanCount">16</span> Cruises </a>
-				</div>
-
-			</div>
-
-
-			<!-- Property List Page two Starts Here -->
-
-			<div data-role="page" id="Prop-card" data-theme="i" class="fix-header">
-				<div data-role="header"  data-theme="i">
-					<a href="javascript:gotoMain();" data-role="button" data-direction="reverse" data-transition="slide"> <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span></a>
-					<div  id="listHCount" class="header secondary-title">Cruises</div>
-					
-					<!--The Hamburger Button in the Header [Starts Here]-->
-					<header>
-						<div id="hamburger" onclick="toggleHB('Prop-card')">
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
-					</header>	
-					<!--The Hamburger Button in the Header [Ends Here]-->				
-					
-				</div>
-
-				<!--  List Page Item Card Template [Starts Here] -->
-				<div id="listTemplate" style="display:none;">
-
-					<div class="container">
-						<div class="img">
-							<a  href="javascript:viewDetails('#cid#')" href="#pro-details" data-role="none" data-transition="slide">
-								<img src="#img#" width="100%" height="" />
-								<div class="list-gradiant gradiant-box"></div>
-								<span class="mask"></span>
-								<div class="wrap2">
-									<span class="price">
-										<span class="dolar">$</span><span class="amount">#price#</span>
-										<span class="onwards">Onwards</span>
-									</span>                                   
-								</div>
-								<div class="details">
-									<div class="wrap1">
-										<div class="icon icon-#rating#"></div>
-										<h2 class="trip-name">#name# </h2>
-										<div class="trip-type"><span>#dfrom#</span> <span class="dot">.</span> <span>#ndate#</span></div>
-									</div>
-								</div> 
-							</a> 								
-						</div>
-					</div>
-
-				</div>
-				<!--  List Page Item Card Template [Ends Here] -->
-
-				<div id="listPageWrapper" class="wrapper pagewrapper"  data-theme="i" >  
-				</div>   
-
-
-				<div class="footer fixedfooter">
-					<div class="filtermask"></div>
-					<div class="filterlinks">
-						<!--<div class="filters-text">Filters</div>-->
-						<div class="filters">
-							<ul id="filterList">
-								<li id="all" onclick="filterDuration(this, 'all')" class="selected">Any <br /></li>
-								<li id="fewdays" onclick="filterDuration(this, 'fewdays')" >Few <br />Days</li>
-								<li id="oneweek" onclick="filterDuration(this, 'oneweek')" >1 <br />Week</li>
-								<li id="twoweek" onclick="filterDuration(this, 'twoweek')" >2 <br />Weeks</li>
-								<li id="15days"  onclick="filterDuration(this, '15days')" >2+ <br />Weeks</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-
-			<!-- Proporty List Page Ends Here -->
-
-
-			<!-- Property Details Page Starts Here -->
-			<!-- Property Details Page Ends Here -->
-
-
-
-		
-        <script src="cordova.js"></script>     
-    </body>
-    <script type="text/javascript">
-
-		$(document).ready(function() {
-			var _heightBody = $(window).height() - $(".fixedfooter").height() - 90;
-			$(".wrapper").css({"height": (_heightBody) + "px", "overflow-y": "scroll;"});
-			$('.svg-inject').svgInject();
-		});
-
-		refreshCount();
-
-		var themeSelected = '';
-		var destinationSelected = '';
-		var durationSelected = '';
-		var cruisesFound = 0;
-		var cruiseList = '';
-		var listHtml = '';
-		var currentCID = '';
-		var cruiseJsonDetails = '';
-		////////////////////////////////////////////////////////////////////////////////////
-		function themeSelector(themSel) {
-
-			if (themeSelected == themSel) {
-				$("#themeWraper span span").removeClass("selected");
-				themeSelected = '';
-				refreshCount();
-			} else {
-				themeSelected = themSel;
-				$("#themeWraper span span").removeClass("selected");
-				$("#" + themeSelected + " span").addClass("selected");
-				refreshCount();
-			}
-
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function destinationSelector(destSel) {
-			if (destinationSelected == destSel) {
-				$("#destinationWraper span span").removeClass("selected");
-				destinationSelected = '';
-				refreshCount();
-			} else {
-				destinationSelected = destSel;
-				$("#destinationWraper span span").removeClass("selected");
-				$("#" + destinationSelected + " span").addClass("selected");
-				refreshCount();
-			}
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		var maxCount = 16;
-		var textOnMax = $('#cruiseSpanCount').text();
-		var currentCount = maxCount;
-
-		function refreshCount() {
-
-			$('#cruiseSpanCount').prop('number', currentCount).animateNumber({number: maxCount},
-			{
-				complete: function(e) {
-					currentCount = updateCount()
-				}
-			});
-
-
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function updateCount() {
-			if (jQuery.isEmptyObject(cruiseList) || cruiseList == '') {
-				showLoader();
-				initJsonObject();
-				hideLoader();
-			} else {
-				calculateCount();
-			}
-			//unBlockViewCruises();
-			return cruisesFound;
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function getRandomInt(min, max) {
-			return Math.floor(Math.random() * (max - min)) + min;
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function calculateCount() {
-			listHtml = '';
-			cruisesFound = 0;
-			if (themeSelected == '' && destinationSelected == '') {
-				for (var i = 0, len = cruiseList.length; i < len; i++) {
-					if (durationSelected == '' || cruiseList[i].filterDuration == durationSelected) {
-						listHtml = listHtml.concat(buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom, cruiseList[i].priceFrom, cruiseList[i].shipOverallRating));
-						cruisesFound++;
-					}
-				}
-			} else {
-				cruisesFound = 0;
-				for (var i = 0, len = cruiseList.length; i < len; i++) {
-					if (themeSelected != ''
-							&& destinationSelected != ''
-							&& cruiseList[i].filterDestination.indexOf(destinationSelected) > -1
-							&& cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1) {
-
-						if (durationSelected == '' || cruiseList[i].filterDuration == durationSelected) {
-							cruisesFound++;
-							listHtml = listHtml.concat(buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom, cruiseList[i].priceFrom, cruiseList[i].shipOverallRating));
-						}
-					} else if (themeSelected == '' && destinationSelected != '' && cruiseList[i].filterDestination.indexOf(destinationSelected) > -1) {
-						if (durationSelected == '' || cruiseList[i].filterDuration == durationSelected) {
-							cruisesFound++;
-							listHtml = listHtml.concat(buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom, cruiseList[i].priceFrom, cruiseList[i].shipOverallRating));
-						}
-					} else if (destinationSelected == '' && themeSelected != '' && cruiseList[i].filterLifestyle.indexOf(themeSelected) > -1) {
-						if (durationSelected == '' || cruiseList[i].filterDuration == durationSelected) {
-							cruisesFound++;
-							listHtml = listHtml.concat(buildCard(cruiseList[i].cruiseId, cruiseList[i].destinationImages[0], cruiseList[i].cruiseName, cruiseList[i].destinationFrom, cruiseList[i].startingFrom, cruiseList[i].priceFrom, cruiseList[i].shipOverallRating));
-						}
-					}//endif
-				}//endfor		  
-			}//endif
-
-			if (cruisesFound > 1) {
-				$('#cruiseSpanCount').animateNumber({number: cruisesFound});
-				//$("#cruiseCount").html("Show <span id='cruiseSpanCount'> "+cruisesFound+" </span> Cruises"); 
-				//$("#listHCount").html(cruisesFound+" Cruises Found"); 	
-			} else if (cruisesFound == 1) {
-				$('#cruiseSpanCount').animateNumber({number: cruisesFound});
-				//$("#cruiseCount").html("View "+cruisesFound+" Cruise"); 	
-				//$("#listHCount").html(cruisesFound+" Cruise Found"); 	
-			} else {
-				$("#cruiseCount").html("<span id='cruiseSpanCount'> No </span> Cruises Found");
-				//$("#listHCount").html("No Cruises Found!");
-			}
-
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function initJsonObject() {
-			var jsonUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/list';
-
-			$.getJSON(jsonUrl, function(data) {
-				cruiseList = data.cruiseList;
-				calculateCount();
-			});
-
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function blockViewCruises() {
-			//$("#cruiseCount").addClass("disabled");
-			//$("#cruiseCount").html("<img src='css/images/ajax-loader.gif' height='29'/>");
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function unBlockViewCruises() {
-			//$("#cruiseCount").removeClass("disabled");
-		}
-		////////////////////////////////////////////////////////////////////////////////////		
-		function buildCard(cid, img, name, dfrom, ndate, price, rating) {
-			var itemTemplate = $("#listTemplate").html();
-
-			itemTemplate = itemTemplate.replace("#cid#", cid);
-			itemTemplate = itemTemplate.replace("#img#", img);
-			itemTemplate = itemTemplate.replace("#name#", name);
-			itemTemplate = itemTemplate.replace("#dfrom#", dfrom);
-			itemTemplate = itemTemplate.replace("#ndate#", ndate);
-			itemTemplate = itemTemplate.replace("#price#", price);
-			itemTemplate = itemTemplate.replace("#rating#", rating);
-			return itemTemplate;
-		}
-
-		function viewList() {
-			showLoader();
-			$("#listPageWrapper").html(listHtml);
-			$("#all").addClass("selected");
-			//$.mobile.navigate("#Prop-card");
-			$.mobile.changePage( "#Prop-card", { transition: "slide", changeHash: false});
-		}
-
-		////////////////////////////////////////////////////////////////////////////////////
-		function showLoader() {
-			$.mobile.loading('show', {
-				text: 'Loading',
-				textVisible: true,
-				theme: 'd',
-				textonly: false,
-				html: ''
-			});
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function hideLoader() {
-			$.mobile.loading('hide', {
-				text: 'Loading',
-				textVisible: true,
-				theme: 'd',
-				textonly: false,
-				html: ''
-			});
-		}
-		////////////////////////////////////////////////////////////////////////////////////	
-		function viewDetails(cid) {
-			currentCID = cid;
-			cruiseJsonDetails = '';
-			showLoader();
-			//$("body").append("<div id='pro-details'><img src='css/images/ajax-loader.gif' height='29'/></div>");
-
-			var detailsJsonUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/cruise/details/' + cid + '/cruiseid';
-			$.getJSON(detailsJsonUrl, function(data) {
-				cruiseJsonDetails = data;
-			});
-
-			var detailsUrl = 'http://107.161.124.98:8080/zap-capi-1.0/rest/html/cruise/details/' + cid + '/cruiseid';
-			$.ajax({
-				type: "GET",
-				url: detailsUrl,
-				cache: false,
-				dataType: "html",
-				success: onSuccess,
-				error: fatalErrorGot
-			});
-
-
-			//hideLoader();
-
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function onSuccess(data) {
-
-			$("#pro-details").remove();
-
-			$("div[id$=detail]").each(function(index) {
-				$(this).remove();
-			});
-
-			$("body").append(data);
-			//$.mobile.navigate("#pro-details");
-			$.mobile.changePage( "#pro-details", { transition: "slide", changeHash: false});
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function fatalErrorGot(request, status, error) {
-			alert('Error Occurred ' + error);
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function refreshPrice(obj, cid, pdate) {
-			if (cruiseJsonDetails != '') {
-				var itenaryDates = cruiseJsonDetails.cruiseDetails.itineraryDates;
-				for (var i = 0, len = itenaryDates.length; i < len; i++) {
-					if (pdate == itenaryDates[i].date) {
-						for (var j = 0, jlen = itenaryDates[i].itineraryPrice.length; j < jlen; j++) {
-							var catName = itenaryDates[i].itineraryPrice[j].categoryName;
-							var catPrice = itenaryDates[i].itineraryPrice[j].leadPrice;
-							catName = catName.replace(/\s+/g, '-');
-							//console.log('catName='+catName);
-							$("#" + catName + "-ds4").html(catPrice);
-							/////////////////////////////////////
-							if(catPrice.indexOf('S') > -1 || catPrice.indexOf('N') > -1){
-							   $("#ad-"+catName).html("");
-							}else{
-							   $("#ad-"+catName).html("$");
-							}
-							/////////////////////////////////////
-						}//endforj
-					}//endif
-				}//endfori
-				var newDate = pdate + "-dsa";
-				$(".active-select-date").removeClass("active-select-date");
-				obj.className = obj.className + " active-select-date";
-
-			}
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function filterDuration(obj, nodays) {
-
-			if (obj.className == 'selected') {
-				$("#" + nodays).removeClass("selected");
-				durationSelected = '';
-			} else {
-				$("#filterList li").each(function(index) {
-					$(this).removeClass("selected");
-				});
-				$("#" + nodays).addClass("selected");
-
-				if (nodays != 'all') {
-					durationSelected = nodays;
-				} else {
-					durationSelected = '';
-				}
-			}
-			
-			updateCount();
-			
-			if(cruisesFound > 0){
-			   $("#listPageWrapper").html(listHtml);
-			}else{
-			   $("#listPageWrapper").html("<div class='notfound'>No Cruises matching the selected duration. <br/>Try picking other durations</div>");
-            }  			
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function gotoMain() {
-			durationSelected = '';
-			$("#filterList li").each(function(index) {
-				$(this).removeClass("selected");
-			});
-			refreshCount();
-			$.mobile.changePage( "#main-page", { transition: "slide", changeHash: false, reverse: true });
-
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-		function selectPrice(obj, deckSel) {
-
-			if (obj.className == 'deck-price active-select-price') {
-				$("#" + deckSel + "-ds1").removeClass("selected");
-				$("#" + deckSel + "-ds2").removeClass("active-select-price");
-				$("#" + deckSel + "-ds2").removeClass("active-select-deck");
-				$("#" + deckSel + "-ds3").removeClass("active-select-price");
-			} else {
-
-
-				$("#deckWrapperId div").each(function(index) {
-					$(this).removeClass("selected");
-				});
-
-				$("#deckWrapperId div a div").each(function(index) {
-					$(this).removeClass("active-select-deck");
-				});
-
-				$("#deckWrapperId div div").each(function(index) {
-					$(this).removeClass("active-select-price");
-				});
-
-
-				$("#" + deckSel + "-ds1").addClass("selected");
-				$("#" + deckSel + "-ds2").addClass("active-select-deck");
-				$("#" + deckSel + "-ds3").addClass("active-select-price");
-
-			}
-		}
-		////////////////////////////////////////////////////////////////////////////////////
-    </script>			
-</html>
+                treeheading += " "+timings;
+            }}
+              <div class="tree-box">
+                  <div class="tree"></div>
+                  <div class="days">{{= itenaryDay}}</div>
+                  <h2>{{= treeheading }}</h2> 
+                  <p>{{= portDesc }}</p>
+              </div>
+
+            {{ } }}
+            </div>
+            <div class="blank"></div>
+        </div>
+  </script> 
+  <script type="text/template" id="tmpl_room_details">
+    <div class="clearfix"></div>
+      <div class="scrollwrapper">
+          <div > <span class="pdp-img"> <img width="100%" src="http://107.161.124.98:8080/zap-capi-1.0/{{= roomImg}}"> </span> 
+          </div>
+          <div class="deck-content-wrapper">
+              <p>{{= roomDesc }}</p>
+              <h3>What&rsquo;s included?</h3>
+              <ul id="amenList">
+                {{ for(idx=0;idx<roomInc.length;idx++){ }}
+                <li><span class="amenity">{{= roomInc[idx] }}</span></li>
+                {{ } }}
+              </ul>
+          </div>
+      </div>
+  </script> 
+  </body>
+</html> 
