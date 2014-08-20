@@ -39,7 +39,9 @@
     <ul>
       <li><a href="#" id="settings_home" data-direction="reverse" data-transition="slide">Home</a></li>
       <li><a href="#" data-direction="reverse" data-transition="slide">My Favourites</a></li>
+
     </ul>
+    <div class="version_div">1.0.3</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -204,24 +206,7 @@
                     <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
                 </div>
             </div>
-            <div class="wrapper2"> 
-              {{ var itenaryDates= cruiseDetails.itineraryDates;
-                for(idx=0;idx<itenaryDates.length;idx++){ 
-                  var dat=itenaryDates[idx]['date'];
-                  var mmyy=dat.split(',');
-                  var cls='';
-                  if(idx == 0){
-                    cls='active-select-date';
-                  }
-              }}
-                  <span class="price_change_date date {{=cls}}" 
-                    data-date="{{=dat}}" > 
-                      <span class="ddmm">{{=mmyy[0]}}</span>  
-                      <span class="year">{{=mmyy[1]}}</span> 
-                  </span> 
-
-              {{ } }}
-            </div>
+         
 
             <div class="deck-wrapper" id="deckWrapperId"> 
               {{ var selectedItePrices= cruiseDetails.itineraryDates[0].itineraryPrice;
@@ -249,7 +234,24 @@
                   </div> 
               {{ } }}
             </div>
+            <div class="wrapper2"> 
+              {{ var itenaryDates= cruiseDetails.itineraryDates;
+                for(idx=0;idx<itenaryDates.length;idx++){ 
+                  var dat=itenaryDates[idx]['date'];
+                  var mmyy=dat.split(',');
+                  var cls='';
+                  if(idx == 0){
+                    cls='active-select-date';
+                  }
+              }}
+                  <div class="price_change_date date {{=cls}}" 
+                    data-date="{{=dat}}" > 
+                      <span class="ddmm">{{=mmyy[0]}}</span>  
+                      <span class="year">{{=mmyy[1]}}</span> 
+                  </div> 
 
+              {{ } }}
+            </div>
             <div class="journey-map">
                 <a href="#">
                     <img src=http://107.161.124.98:8080/zap-capi-1.0/{{= cruiseDetails.itineraryImage }} width="100%" />
@@ -259,13 +261,21 @@
             <div class="journeydetails-wrapper">
             {{
               var itenary=cruiseDetails.itinerary;
+              var selectedDate=itenaryDates[0]['date'];
+              var dt=new Date(selectedDate);
               for(idx=0;idx<itenary.length;idx++){
                 var treeheading=itenary[idx]['portName'];
                 var deptTime=itenary[idx]['departure'];
                 var arrTime=itenary[idx]['arrival'];
                 var portDesc=itenary[idx]['portDesc'];
                 var itenaryDay=itenary[idx]['day'];
-                var timings=''
+                var timings='';
+                var curDate=dt.getDate();
+                if(idx > 0){
+                  curDate++;
+                }
+                var tripDate=dt.setDate(curDate);
+                tripDate=formattedDate(tripDate);
                 if(arrTime !== '---' && deptTime !== '---'){
                   timings = arrTime+" - "+deptTime;
                 }else{
@@ -279,7 +289,7 @@
             }}
               <div class="tree-box">
                   <div class="tree"></div>
-                  <div class="days">{{= itenaryDay}}</div>
+                  <div class="days"><span>{{= itenaryDay}} - </span><span class="tripdate">{{= tripDate }}</span></div>
                   <h2>{{= treeheading }}</h2> 
                   <p>{{= portDesc }}</p>
               </div>
