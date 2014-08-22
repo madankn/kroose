@@ -45,8 +45,7 @@
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
-      <div class="header secondary-title">Cruise Bliss</div>
-      <!--The Hamburger Button in the Header [Starts Here]-->
+      <div class="header secondary-title">Cruise Bliss</div> 
       <header>
         <div class="hamburger" >
           <div></div>
@@ -188,14 +187,14 @@
       <div class="clearfix">
         </div>
         <div class=" scrollwrapper " data-theme="i">
-            <div class="wrapper-productdetails "> 
+            <div class="wrapper-productdetails image-gallery item_number_{{=cruiseDetails.destinationImages.length}}"> 
                 {{ var destImages= cruiseDetails.destinationImages;
                   for(idx=0;idx<destImages.length;idx++){ 
                     var curImage="http://107.161.124.98:8080/zap-capi-1.0/"+destImages[idx];
                 }}
-               <span class="pdp-img"> 
-                     <img src={{=curImage }} width="100%" />
-                 </span> 
+                 <span class="pdp-img"> 
+                       <a href="{{=curImage }}" class="swipebox"><img src={{=curImage }} width="100%" /></a>
+                  </span> 
             {{ } }} 
               </div>
 
