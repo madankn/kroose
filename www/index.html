@@ -61,10 +61,9 @@
     </div>   
 
     <div class="clearfix"></div> 
-    <div  class="booking-btn" data-theme="i">
+    <div class="fixedfooter"  data-theme="i">
       <a id="cruiseCount"  href="#"   data-role="none" 
-      data-transition="slide" data-theme="i"  
-      class="booknow  fixedfooter">
+      data-transition="slide" data-theme="i"  class="footer_btn"      >
         Show All Cruises  <span class="icon icon-caret02 show_listings"></span>
       </a>
     </div> 
@@ -89,16 +88,15 @@
       <div class='notfound'>No Cruises matches the selection. <br/>Try picking other durations</div>
     </div>    
     </div>
-    <div class="footer fixedfooter"> 
-      <div class="filterlinks">
-        <!--<div class="filters-text">Filters</div>-->
+    <div class="fixedfooter"> 
+      <div class="filterlinks"> 
         <div class="filters">
           <ul id="filterList">
-            <li id="all" class="selected">Any <br /></li>
-            <li id="fewdays">Few <br />Days</li>
-            <li id="oneweek">1 <br />Week</li>
-            <li id="twoweek">2 <br />Weeks</li>
-            <li id="15days">2+ <br />Weeks</li>
+            <li id="all" class="cruise_btn selected">Any <br /></li><li 
+            id="fewdays" class="cruise_btn">Few <br />Days</li><li 
+            id="oneweek" class="cruise_btn">1 <br />Week</li><li 
+            id="twoweek" class="cruise_btn">2 <br />Weeks</li><li 
+            id="15days"  class="cruise_btn">2+ <br />Weeks</li>
           </ul>
         </div>
       </div>
@@ -120,8 +118,8 @@
     </div> 
     <div id="detailed_page_content" class="wrapper">
     </div> 
-      <div class="booking-btn" data-theme="i"> 
-          <a href="#" data-theme="i" class="booknow">Buy Now</a> 
+      <div class="fixedfooter" data-theme="i"> 
+          <a class="footer_btn" href="#" data-theme="i"  >Buy Now</a> 
       </div>
   </div>   
   <div  class="jq_page" data-role="page" id="room-detail" data-theme="i" >
@@ -156,7 +154,7 @@
     </div>
   </script> 
   <script type="text/template" id="tmpl_list_card_item">
-    <div class="container" data-status="not_loaded" data-id="{{=cruiseId}}" id="cruise_list_item_{{=cruiseId}}"> 
+    <div class="container"   data-id="{{=cruiseId}}" id="cruise_list_item_{{=cruiseId}}"> 
       <div class="img">
         <a   href="#pro-details" data-role="none" data-transition="slide">
           <img class="original_image" src="http://107.161.124.98:8080/zap-capi-1.0/{{= destinationImages[0] }}" 
@@ -204,10 +202,9 @@
                 <div class="cruise-liner">
                     <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
                 </div>
-            </div>
-         
+            </div> 
 
-            <div class="deck-wrapper item_cls_{{=cruiseDetails.itineraryDates[0].itineraryPrice.length}}" id="deckWrapperId"> 
+            <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates[0].itineraryPrice.length}}" id="deckWrapperId"> 
               {{ var selectedItePrices= cruiseDetails.itineraryDates[0].itineraryPrice;
                 for(idx=0;idx < selectedItePrices.length;idx++){ 
                   var categoryName = selectedItePrices[idx]['categoryName'];
@@ -221,22 +218,18 @@
                   if(leadPrice == 'Sold Out') { 
                     dollarClass = 'hidden';
                   }
-              }}
-                 <div class="deck  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" > 
-                      <div  class="deck-type">
-                        <span class="name">{{= categoryName }}</span><br/>
-                        <span class="amount-dolar {{= dollarClass}}" >$</span> 
-                        <span class="price-val">{{= leadPrice }}</span> 
-                      </div>  
-                  </div> 
-              {{ } }}
+              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" >  
+                      <span class="name">{{= categoryName }}</span><br/>
+                      <span class="amount-dolar {{= dollarClass}}" >$</span> 
+                      <span class="price-val">{{= leadPrice }}</span>  
+                  </div>{{ } }}
             </div>
 
             <div align="center"><a class="item_select_button" data-id="" data-date="" >
               <span class="selection_info"></span>
-             <span class="icon icon-caret02 show_listings"></span>
+              <span class="icon icon-caret02 show_listings"></span>
              </a></div>
-            <div class="wrapper2 item_cls_{{=cruiseDetails.itineraryDates.length}}"> 
+            <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates.length}}"> 
               {{ var itenaryDates= cruiseDetails.itineraryDates;
                 for(idx=0;idx<itenaryDates.length;idx++){ 
                   var dat=itenaryDates[idx]['date'];
@@ -245,14 +238,11 @@
                   if(idx == 0){
                     cls='selected';
                   }
-              }}
-                  <div class="price_change_date date {{=cls}}" 
+              }}<div class="price_change_date cruise_btn {{=cls}}" 
                     data-date="{{=dat}}" > 
-                      <span class="ddmm">{{=mmyy[0]}}</span>  
-                      <span class="year">{{=mmyy[1]}}</span> 
-                  </div> 
-
-              {{ } }}
+                      <div class="ddmm">{{=mmyy[0]}}</div>  
+                      <div class="year">{{=mmyy[1]}}</div> 
+                  </div>{{ } }}
             </div>
             <div class="journey-map">
                 <a href="#">
