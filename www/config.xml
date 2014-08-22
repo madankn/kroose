@@ -3,14 +3,11 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.zapcg.kroose"
-        version="1.0.4">
-
-    <name>Cruise Bliss</name>
-
+        version="1.0.4"> 
+    <name>Cruising Bliss</name> 
     <description>
-        Cruise Bliss
-    </description>
-
+        Cruising Bliss
+    </description> 
     <author href="http://zapcg.com" email="support@zapcg.com">
         ZapCG Team
     </author>
