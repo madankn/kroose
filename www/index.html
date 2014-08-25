@@ -16,6 +16,7 @@
       
       
       
+      
     
     
      
@@ -32,16 +33,16 @@
   </div>
   <!--The mobile navigation Markup hidden via css-->
   <nav class="mobileNav">  
-    <div style="padding:18px"> 
+    <div style="padding:26px 0px 10px 0px"> 
       <div class="header secondary-title">Cruising Bliss</div>         
     </div>    
     <ul>
-      <li><a href="#" id="settings_home" data-direction="reverse" data-transition="slide"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-      <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon glyphicon-star"></i>My Favourites</a></li>
-      <li><a href="tel: (+91) 9740525347" data-direction="reverse" data-transition="slide"><i class="glyphicon glyphicon-phone-alt"></i>Book Over Phone </a></li> 
-       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon glyphicon-star"></i>About</a></li>
+      <li><a href="#" id="settings_home" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-home"></i> Home</a></li>
+      <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>My Favourites</a></li>
+      <li><a href="tel: (+91) 9740525347" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-ios7-telephone"></i>Book Over Phone </a></li> 
+       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div">version 1.0.5</div>
+    <div class="version_div">version 1.0.6</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -64,7 +65,7 @@
     <div class="fixedfooter"  data-theme="i">
       <a id="cruiseCount"  href="#"   data-role="none" 
       data-transition="slide" data-theme="i"  class="footer_btn"      >
-        Show All Cruises  <span class="icon icon-caret02 show_listings"></span>
+        View All Cruises  <span class="icon icon-caret02 show_listings"></span>
       </a>
     </div> 
   </div> 
@@ -118,7 +119,7 @@
     </div> 
     <div id="detailed_page_content" class="wrapper">
     </div> 
-      <div class="fixedfooter" data-theme="i"> 
+      <div class="fixedfooter hidden" data-theme="i"> 
           <a class="footer_btn" href="#" data-theme="i"  >Buy Now</a> 
       </div>
   </div>   
@@ -147,7 +148,7 @@
       <img src="{{= image}}" width="" height="" />
       <div class="mask"  >
          <div class="icon_holder">
-          <i  class="glyphicon  glyphicon-ok-circle"></i>
+          <i  class="ion-ios7-checkmark-outline glyphicon"></i>
          </div>
        </div>
       <span class="text">{{= title }}</span>
@@ -196,13 +197,17 @@
             {{ } }} 
               </div>
 
-              <div class="body-content">
+              <div class="kroose-content">
                 <div class="icon icon-{{=cruiseDetails['shipOverallRating']}}"></div>
                 <div class="trip-detail">{{=cruiseDetails['cruiseName']}}</div>
                 <div class="cruise-liner">
                     <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
                 </div>
             </div> 
+                <div align="center"><a class="item_select_button" data-id="" data-date="" >
+              <span class="selection_info"></span>
+              <span class="icon icon-caret02 "></span>
+             </a></div>
 
             <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates[0].itineraryPrice.length}}" id="deckWrapperId"> 
               {{ var selectedItePrices= cruiseDetails.itineraryDates[0].itineraryPrice;
@@ -225,10 +230,7 @@
                   </div>{{ } }}
             </div>
 
-            <div align="center"><a class="item_select_button" data-id="" data-date="" >
-              <span class="selection_info"></span>
-              <span class="icon icon-caret02 show_listings"></span>
-             </a></div>
+        
             <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates.length}}"> 
               {{ var itenaryDates= cruiseDetails.itineraryDates;
                 for(idx=0;idx<itenaryDates.length;idx++){ 
@@ -290,10 +292,7 @@
             </div>
             <div class="blank"></div>
         </div>
-  </script> 
-
-                   
-
+  </script>  
   <script type="text/template" id="tmpl_detail_price_item">  
     <div class="deck-price" > 
       {{if(leadPrice !== 'Sold Out'){ }}
@@ -315,6 +314,7 @@
                 <img  src="css/images/ajax-loader.gif" style="height:100px" />
               </div>
               <div class="deck-content-wrapper">
+               <a class="footer_btn" href="#" data-theme="i"  >Buy Now</a> 
                   <p>{{= roomDesc }}</p>
                   <h3>What&rsquo;s included?</h3>
                   <ul id="amenList">
