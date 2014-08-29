@@ -42,7 +42,7 @@
       <li><a href="tel: (+91) 9740525347" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-ios7-telephone"></i>Book Over Phone </a></li> 
        <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div">version 1.0.6</div>
+    <div class="version_div">version 1.0.7</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -63,9 +63,9 @@
 
     <div class="clearfix"></div> 
     <div class="fixedfooter"  data-theme="i">
-      <a id="cruiseCount"  href="#"   data-role="none" 
+      <a id="cruiseCount"  href="#" data-role="none" 
       data-transition="slide" data-theme="i"  class="footer_btn"      >
-        View All Cruises  <span class="icon icon-caret02 show_listings"></span>
+        View All Cruises  <i class="icon icon-caret02 show_listings"></i>
       </a>
     </div> 
   </div> 
@@ -192,9 +192,30 @@
                     var curImage="http://107.161.124.98:8080/zap-capi-1.0/"+destImages[idx];
                 }}
                  <span class="pdp-img"> 
-                       <a href="{{=curImage }}" class="swipebox"><img src={{=curImage }} width="100%" /></a>
+                       <a href="{{=curImage }}" class="swipebox" title="">
+                        <img  src={{=curImage }} width="100%" />
+                        </a>
                   </span> 
             {{ } }} 
+
+            {{
+              for(idx = 0;idx < cruiseDetails.shipActivities.length;idx++) {
+                var act = cruiseDetails.shipActivities[idx];
+                var img = "http://107.161.124.98:8080/zap-capi-1.0/" + act.activityImage;
+              }}
+              <span class="pdp-img"> 
+                <a href="{{= img }}" class="swipebox" title="{{=act.activityDescription}}">
+                  <img  src={{=img }} width="100%" />
+                </a>
+              </span> 
+
+              {{
+
+
+              }
+
+            }}
+            shipActivities
               </div>
 
               <div class="kroose-content">
@@ -204,7 +225,7 @@
                     <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
                 </div>
             </div> 
-                <div align="center"><a class="item_select_button" data-id="" data-date="" >
+              <div align="center"><a class="item_select_button" data-id="" data-date="" >
               <span class="selection_info"></span>
               <span class="icon icon-caret02 "></span>
              </a></div>
@@ -223,8 +244,7 @@
                   if(leadPrice == 'Sold Out') { 
                     dollarClass = 'hidden';
                   }
-              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" >  
-                      <span class="name">{{= categoryName }}</span><br/>
+              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" >     <span class="name">{{= categoryName }}</span><br/>
                       <span class="amount-dolar {{= dollarClass}}" >$</span> 
                       <span class="price-val">{{= leadPrice }}</span>  
                   </div>{{ } }}
