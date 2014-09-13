@@ -42,7 +42,7 @@
       <li><a href="tel:1-866-234-7350" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-ios7-telephone"></i>Book Over Phone </a></li> 
        <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div">version 1.0.72</div>
+    <div class="version_div">version 1.0.74 - Sat, 13 Sep 2014 05:34:50 GMT</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -215,7 +215,7 @@
               }
 
             }}
-            shipActivities
+            
               </div>
 
               <div class="kroose-content">
@@ -225,12 +225,27 @@
                     <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
                 </div>
             </div> 
-              <div align="center"><a class="item_select_button" data-id="" data-date="" >
-              <span class="selection_info"></span>
-              <span class="icon icon-caret02 "></span>
-             </a></div>
+              
+          
 
-            <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates[0].itineraryPrice.length}}" id="deckWrapperId"> 
+        
+            <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates.length}}"> 
+              {{ var itenaryDates= cruiseDetails.itineraryDates;
+                for(idx=0;idx<itenaryDates.length;idx++){ 
+                  var dat=itenaryDates[idx]['date'];
+                  var mmyy=dat.split(',');
+                  var cls='';
+                  if(idx == 0){
+                    cls='selected';
+                  }
+              }}<div class="price_change_date cruise_btn {{=cls}}" 
+                    data-date="{{=dat}}" > 
+                      <div class="ddmm">{{=mmyy[0]}}</div>  
+                      <div class="year">{{=mmyy[1]}}</div> 
+                  </div>{{ } }}
+            </div>
+
+              <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates[0].itineraryPrice.length}}" id="deckWrapperId"> 
               {{ var selectedItePrices= cruiseDetails.itineraryDates[0].itineraryPrice;
                 for(idx=0;idx < selectedItePrices.length;idx++){ 
                   var categoryName = selectedItePrices[idx]['categoryName'];
@@ -250,22 +265,13 @@
                   </div>{{ } }}
             </div>
 
-        
-            <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates.length}}"> 
-              {{ var itenaryDates= cruiseDetails.itineraryDates;
-                for(idx=0;idx<itenaryDates.length;idx++){ 
-                  var dat=itenaryDates[idx]['date'];
-                  var mmyy=dat.split(',');
-                  var cls='';
-                  if(idx == 0){
-                    cls='selected';
-                  }
-              }}<div class="price_change_date cruise_btn {{=cls}}" 
-                    data-date="{{=dat}}" > 
-                      <div class="ddmm">{{=mmyy[0]}}</div>  
-                      <div class="year">{{=mmyy[1]}}</div> 
-                  </div>{{ } }}
-            </div>
+            <div align="center">
+                <a class="item_select_button" data-id="" data-date="" >
+                  <span class="selection_info"></span>
+                  <span class="icon icon-caret02 "></span>
+                </a>
+             </div>
+
             <div class="journey-map">
                 <a href="#">
                     <img src=http://107.161.124.98:8080/zap-capi-1.0/{{= cruiseDetails.itineraryImage }} width="100%" />
