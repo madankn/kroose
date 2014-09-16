@@ -12,17 +12,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/> 
          
     <title>Cruising Bliss</title> 
+
+      
+      
+      
     
-      
-      
-      
-      
+ 
     
-    
-     
-     
     
      
+     
+    
+       
        
    <link rel="stylesheet" href="css/combined.min.css">
 <script type="text/javascript" src="cordova.js"></script>
@@ -40,9 +41,10 @@
       <li><a href="#" id="settings_home" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-home"></i> Home</a></li>
       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>My Favourites</a></li>
       <li><a href="tel:1-866-234-7350" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-ios7-telephone"></i>Book Over Phone </a></li> 
-       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
+      <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-chatbox"></i>Live Chat</a></li>
+      <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div">version 1.0.74 - Sat, 13 Sep 2014 05:34:50 GMT</div>
+    <div class="version_div">version 1.0.75 - Tue, 16 Sep 2014 08:16:20 GMT</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -73,7 +75,7 @@
     <div data-role="header"  data-theme="i">
       <a href="#main-page" data-role="button" class="filter_btn" 
         data-direction="reverse" data-transition="slide"> 
-        <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span>
+        <i class="icon ion-ios7-arrow-left"></i>
       </a>
       <div  id="listPageHeader" class="header secondary-title">Cruises</div>  
       <header>
@@ -106,7 +108,7 @@
   <div  class="jq_page" data-role="page" id="detailed_page" data-theme="i" >
     <div data-role="header"  data-theme="i">
       <a href="#listing_page" data-role="button"  data-direction="reverse" data-transition="slide"> 
-        <span class="icon icon-caret01 prev-caret"></span> <span class="back"></span>
+        <span class="icon ion-ios7-arrow-left"></span>
       </a>
       <div  id="listHCount" class="header secondary-title">Cruise</div>  
       <header>
@@ -126,7 +128,7 @@
   <div  class="jq_page" data-role="page" id="room-detail" data-theme="i" >
       <div data-role="header" data-theme="i">
           <a href="#detailed_page" data-role="button" data-direction="reverse" data-transition="slide">
-             <span class="icon icon-caret01 prev-caret"></span>  <span class="back"></span>
+             <span class="icon ion-ios7-arrow-left"></span> 
           </a>
           <div class="header secondary-title" id="room_detail_title"></div>
           <header>
@@ -209,9 +211,7 @@
                 </a>
               </span> 
 
-              {{
-
-
+              {{ 
               }
 
             }}
@@ -259,18 +259,18 @@
                   if(leadPrice == 'Sold Out') { 
                     dollarClass = 'hidden';
                   }
-              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" >     <span class="name">{{= categoryName }}</span><br/>
+              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" > <span class="name">{{= categoryName }}</span><br/>
                       <span class="amount-dolar {{= dollarClass}}" >$</span> 
                       <span class="price-val">{{= leadPrice }}</span>  
                   </div>{{ } }}
             </div>
 
-            <div align="center">
-                <a class="item_select_button" data-id="" data-date="" >
+             <div align="center" >
+                <a class="item_select_button hidden" data-id="" data-date="" >
                   <span class="selection_info"></span>
-                  <span class="icon icon-caret02 "></span>
+                  <span class="icon ion-ios7-arrow-right "></span>
                 </a>
-             </div>
+             </div>  
 
             <div class="journey-map">
                 <a href="#">
@@ -340,7 +340,12 @@
                 <img  src="css/images/ajax-loader.gif" style="height:100px" />
               </div>
               <div class="deck-content-wrapper">
-               <a class="footer_btn" href="#" data-theme="i"  >Buy Now</a> 
+               <a class="footer_btn" href="#" data-theme="i"  >Buy 
+               <span class="buy_button" style=""> 
+                 <span class="buy_week"></span>
+                 <span class="buy_price"></span>
+               </span>
+               </a> 
                   <p>{{= roomDesc }}</p>
                   <h3>What&rsquo;s included?</h3>
                   <ul id="amenList">
