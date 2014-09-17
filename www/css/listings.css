@@ -19,7 +19,9 @@ html {
 }
 
 
-
+.invisilbe {
+    visibility: hidden;
+}
 
 body {
     background:#000;

@@ -42,9 +42,9 @@
       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>My Favourites</a></li>
       <li><a href="tel:1-866-234-7350" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-ios7-telephone"></i>Book Over Phone </a></li> 
       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-chatbox"></i>Live Chat</a></li>
-      <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
+      <li><a href="#" id="about_link"  data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div">version 1.0.75 - Tue, 16 Sep 2014 08:16:20 GMT</div>
+    <div class="version_div hidden">1.0.0</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -121,8 +121,10 @@
     </div> 
     <div id="detailed_page_content" class="wrapper">
     </div> 
-      <div class="fixedfooter hidden" data-theme="i"> 
-          <a class="footer_btn" href="#" data-theme="i"  >Buy Now</a> 
+      <div class="fixedfooter" data-theme="i">  
+          <a class="footer_btn buy_button" href="#" data-theme="i"  >  
+             <span>Buy</span><span class="buy_info"></span>  
+           </a> 
       </div>
   </div>   
   <div  class="jq_page" data-role="page" id="room-detail" data-theme="i" >
@@ -224,10 +226,7 @@
                 <div class="cruise-liner">
                     <span>{{=cruiseDetails['destinationFrom']}}  <span class="dots">.</span> {{=cruiseDetails['operatorName']}}</span>
                 </div>
-            </div> 
-              
-          
-
+            </div>  
         
             <div class="horizontal-wrapper item_cls_{{=cruiseDetails.itineraryDates.length}}"> 
               {{ var itenaryDates= cruiseDetails.itineraryDates;
@@ -257,11 +256,14 @@
                   }
                   var dollarClass = '';
                   if(leadPrice == 'Sold Out') { 
-                    dollarClass = 'hidden';
+                    dollarClass = 'invisilbe';
                   }
-              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" > <span class="name">{{= categoryName }}</span><br/>
-                      <span class="amount-dolar {{= dollarClass}}" >$</span> 
+              }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" > 
+                      <span class="name">{{= categoryName }}</span><br/>
+                      <span class="deck_price">
+                      <sup class="{{= dollarClass}}" >$</sup> 
                       <span class="price-val">{{= leadPrice }}</span>  
+                      </span>
                   </div>{{ } }}
             </div>
 
@@ -318,6 +320,7 @@
             </div>
             <div class="blank"></div>
         </div>
+       
   </script>  
   <script type="text/template" id="tmpl_detail_price_item">  
     <div class="deck-price" > 
@@ -340,11 +343,8 @@
                 <img  src="css/images/ajax-loader.gif" style="height:100px" />
               </div>
               <div class="deck-content-wrapper">
-               <a class="footer_btn" href="#" data-theme="i"  >Buy 
-               <span class="buy_button" style=""> 
-                 <span class="buy_week"></span>
-                 <span class="buy_price"></span>
-               </span>
+               <a class="footer_btn buy_button" href="#" data-theme="i"  >  
+                 <span>Buy</span><span class="buy_info"></span>  
                </a> 
                   <p>{{= roomDesc }}</p>
                   <h3>What&rsquo;s included?</h3>
