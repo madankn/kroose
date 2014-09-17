@@ -44,7 +44,7 @@
       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-chatbox"></i>Live Chat</a></li>
       <li><a href="#" id="about_link"  data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div hidden">1.0.0</div>
+    <div class="version_div">version 1.0.751 - Wed, 17 Sep 2014 05:59:42 GMT</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -256,13 +256,13 @@
                   }
                   var dollarClass = '';
                   if(leadPrice == 'Sold Out') { 
-                    dollarClass = 'invisilbe';
+                    dollarClass = 'invisible';
                   }
               }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" > 
                       <span class="name">{{= categoryName }}</span><br/>
                       <span class="deck_price">
-                      <sup class="{{= dollarClass}}" >$</sup> 
-                      <span class="price-val">{{= leadPrice }}</span>  
+                        <sup class="{{= dollarClass}}" >$</sup> 
+                        <span class="price-val">{{= leadPrice }}</span>  
                       </span>
                   </div>{{ } }}
             </div>
