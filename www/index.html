@@ -44,7 +44,7 @@
       <li><a href="#" data-direction="reverse" data-transition="slide"><i class="glyphicon ion-chatbox"></i>Live Chat</a></li>
       <li><a href="#" id="about_link"  data-direction="reverse" data-transition="slide"><i class="glyphicon ion-star"></i>About</a></li>
     </ul>
-    <div class="version_div">1.0.0</div>
+    <div class="version_div">Cruising Bliss - 1.0.76.20141010175334</div>
   </nav>
   <div class="jq_page" data-role="page" id="main-page" data-theme="i" >
     <div data-role="header"  data-theme="i" > 
@@ -123,7 +123,7 @@
     </div> 
       <div class="fixedfooter" data-theme="i">  
           <a class="footer_btn buy_button" href="#" data-theme="i"  >  
-             <span>Buy</span><span class="buy_info"></span>  
+             <span>Buy Now</span>  
            </a> 
       </div>
   </div>   
@@ -179,7 +179,10 @@
             <div class="wrap1">
               <div class="icon icon-{{=shipOverallRating}}"></div>
               <h2 class="trip-name">{{=cruiseName}} </h2>
-              <div class="trip-type"><span>{{=destinationFrom}}</span> <span class="dot">.</span> <span>{{=startingFrom}}</span></div>
+              <div class="trip-type clearfix">
+                <span>{{=destinationFrom}}</span> 
+                <span class="dot">.</span> 
+                <span>{{=startingFrom}}</span></div>
             </div>
           </div> 
         </a>                
@@ -193,11 +196,11 @@
             <div class="wrapper-productdetails image-gallery item_number_{{=cruiseDetails.destinationImages.length}}"> 
                 {{ var destImages= cruiseDetails.destinationImages;
                   for(idx=0;idx<destImages.length;idx++){ 
-                    var curImage="http://107.161.124.98:8080/zap-capi-1.0/"+destImages[idx];
+                    var curImage="http://107.161.124.98:8080/azap-capi-1.0/"+destImages[idx];
                 }}
                  <span class="pdp-img"> 
                        <a href="{{=curImage }}" class="swipebox" title="">
-                        <img  src={{=curImage }} width="100%" />
+                        <img onerror="$(this).parent().hide()" src={{=curImage }} width="100%" />
                         </a>
                   </span> 
             {{ } }} 
@@ -261,7 +264,7 @@
               }}<div class="deck cruise_btn  {{= cls}} " id="room_{{=categoryId}}"  data-cat="{{=categoryName}}" > 
                       <span class="name">{{= categoryName }}</span><br/>
                       <span class="deck_price">
-                        <sup class="{{= dollarClass}}" >$</sup> 
+                        <sup class="dollar-symbol {{= dollarClass}}" >$</sup> 
                         <span class="price-val">{{= leadPrice }}</span>  
                       </span>
                   </div>{{ } }}
