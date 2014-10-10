@@ -124,20 +124,20 @@ src in the following setting to "res/icon.png" -->
 
 	
     <!-- Define app splash screen for each platform. -->
-	<gap:splash src="res/screen/splash.png" />
-    <gap:splash src="res/screen/android/splash.png" gap:platform="android" width="480" height="800" />
+	<gap:splash src="res/screen/splash.jpg" />
+    <gap:splash src="res/screen/android/splash.jpg" gap:platform="android" width="480" height="800" />
 	
 	<!-- iPhone and iPod touch -->
-	<gap:splash src="res/screen/ios/320x480.png" gap:platform="ios" width="320" height="480" />
-	<gap:splash src="res/screen/ios/640x960.png" gap:platform="ios" width="640" height="960" />
+	<gap:splash src="res/screen/ios/320x480.jpg" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="res/screen/ios/640x960.jpg" gap:platform="ios" width="640" height="960" />
 	<!-- iPhone 5 / iPod Touch (5th Generation) -->
-	<gap:splash src="res/screen/ios/640x1136.png" gap:platform="ios" width="640" height="1136" />
+	<gap:splash src="res/screen/ios/640x1136.jpg" gap:platform="ios" width="640" height="1136" />
 	<!-- iPad -->
-	<gap:splash src="res/screen/ios/768x1024.png" gap:platform="ios" width="768" height="1024" />
-	<gap:splash src="res/screen/ios/1024x768.png" gap:platform="ios" width="1024" height="768" />
+	<gap:splash src="res/screen/ios/768x1024.jpg" gap:platform="ios" width="768" height="1024" />
+	<gap:splash src="res/screen/ios/1024x768.jpg" gap:platform="ios" width="1024" height="768" />
 	<!-- Retina iPad -->
-	<gap:splash src="res/screen/ios/1536x2048.png" gap:platform="ios" width="1536" height="2048" />
-	<gap:splash src="res/screen/ios/2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+	<gap:splash src="res/screen/ios/1536x2048.jpg" gap:platform="ios" width="1536" height="2048" />
+	<gap:splash src="res/screen/ios/2048x1536.jpg" gap:platform="ios" width="2048" height="1536" />
 
 	
 	
